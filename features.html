@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoldGuard — Promo Wireframe · Features</title>
+<link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="wf-pagelabel">
+    <span><strong>MoldGuard promo wireframe</strong> · Features · v0.1 · fact-check vs <em>messaging.md</em></span>
+    <span>Desktop-first · <strong>mobile:</strong> single column — feature tiles 3-col → 2-col ≤860px → 1-col ≤560px · comparison table horizontal-scrolls inside its container · spec accordions full-width · CTA band stacks</span>
+  </div>
+  <nav class="wf-pagenav" aria-label="Wireframe pages">
+    <a href="index.html">Landing</a>
+    <a href="features.html" aria-current="page">Features</a>
+    <a href="how-it-works.html">How it works</a>
+    <a href="contact.html">Contact / Get started</a>
+  </nav>
+</div>
+
+<header class="page">
+  <nav class="wf-nav">
+    <a class="wf-logo" href="index.html"><span class="wf-logo-mark">LOGO</span>MoldGuard</a>
+    <div class="wf-navlinks">
+      <a href="features.html" style="font-weight:700; color:var(--ink);">Features</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="wf-btn wf-btn-primary" href="contact.html">Get Started</a>
+  </nav>
+</header>
+
+<!-- ================= PAGE HERO ================= -->
+<section class="section-tight">
+  <div class="page">
+    <p class="eyebrow">Features</p>
+    <h1>Mold-specific intelligence, end to end.</h1>
+    <p class="lede" style="margin-top:10px;">
+      Most dehumidifiers see one number — humidity. MoldGuard reads the full picture and
+      responds on its own.
+    </p>
+  </div>
+</section>
+
+<!-- ================= FIVE SYSTEM FEATURES ================= -->
+<section class="section-tight">
+  <div class="page grid grid-3">
+    <div class="card">
+      <div class="num">FEATURE 01</div>
+      <h3>Mold Risk Index engine</h3>
+      <p>Real-time risk scoring built from humidity, temperature, and sustained exposure
+      duration — going beyond the simple threshold triggers used by commercial dehumidifiers.</p>
+      <div class="wf-note"><b>Palma:</b> consider a small risk-dial/gauge illustration here —
+      this is the flagship feature.</div>
+    </div>
+    <div class="card">
+      <div class="num">FEATURE 02</div>
+      <h3>Early mold detection</h3>
+      <p>A VOC sensor flags microbial off-gassing — evidence of existing mold growth — before
+      it becomes visible or noticeable by smell.</p>
+    </div>
+    <div class="card">
+      <div class="num">FEATURE 03</div>
+      <h3>Closed-loop auto-dehumidification</h3>
+      <p>Once risk thresholds are met, the Peltier-based dehumidifying unit activates
+      automatically. No manual intervention required.</p>
+    </div>
+    <div class="card">
+      <div class="num">FEATURE 04</div>
+      <h3>Web dashboard &amp; analytics</h3>
+      <p>Historical trend logging for humidity, temperature, and VOCs — with multi-room and
+      multi-unit views for larger households, dormitories, or property managers.</p>
+    </div>
+    <div class="card">
+      <div class="num">FEATURE 05</div>
+      <h3>Mobile alerts &amp; control</h3>
+      <p>Real-time push notifications as risk rises, live device status, and manual override
+      of the dehumidification unit from anywhere.</p>
+    </div>
+    <div class="card" style="background:var(--fill);">
+      <div class="num">BONUS</div>
+      <h3>Own it, don't rent it</h3>
+      <p>Open hardware components and open-source software services — a single fixed
+      development cost, full client ownership, no recurring subscription fees.</p>
+    </div>
+  </div>
+  <div class="page"><div class="wf-note"><b>Fact-check:</b> tiles 01–05 are proposal §1 System
+  Features 1–5, near-verbatim. Bonus tile summarizes §5 — pricing wording pending Palma
+  (messaging.md Q2).</div></div>
+</section>
+
+<!-- ================= COMPARISON TABLE ================= -->
+<section class="section section-alt">
+  <div class="page">
+    <p class="eyebrow">How it compares</p>
+    <h2>Where MoldGuard fits.</h2>
+    <p class="lede">Existing options were built for general comfort or simple humidity
+    control — not mold-specific risk modeling.</p>
+    <div style="overflow-x:auto; margin-top:24px;">
+      <table class="wf-table">
+        <thead>
+          <tr>
+            <th style="width:22%;">Option</th>
+            <th style="width:30%;">What it does</th>
+            <th style="width:22%;">Cost model</th>
+            <th>Drawbacks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Passive moisture absorbers</strong></td>
+            <td>Chemical moisture absorption, no sensors</td>
+            <td>Low one-time cost</td>
+            <td>No monitoring, no data, no automation</td>
+          </tr>
+          <tr>
+            <td><strong>Commercial smart dehumidifiers</strong></td>
+            <td>App-controlled humidity threshold triggers</td>
+            <td>Mid-to-high retail hardware cost</td>
+            <td>No mold-specific modeling; locked to vendor app; no web dashboard</td>
+          </tr>
+          <tr class="col-hl">
+            <td><strong>MoldGuard V1.0</strong></td>
+            <td>Mold Risk Index (humidity + temperature + duration + VOC), closed-loop
+            auto-dehumidification, web dashboard, mobile app</td>
+            <td>Fixed development fee</td>
+            <td>Requires dedicated power source; periodic condensate tray emptying</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wf-note"><b>Fact-check:</b> table is proposal §4 verbatim — including the honest
+    "drawbacks" column for our own product (power source + tray emptying). <b>Palma:</b> keep the
+    honest column? My take: yes — it reads as credible, and it sets expectations the device
+    genuinely has. Final tone is your call.</div>
+  </div>
+</section>
+
+<!-- ================= UNDER THE HOOD (SPECS) ================= -->
+<section class="section">
+  <div class="page">
+    <p class="eyebrow">Under the hood</p>
+    <h2>Sensible hardware, no black box.</h2>
+    <p class="lede">Open, off-the-shelf components — expand a row for the plain-language spec.</p>
+    <div style="margin-top:24px; max-width:760px;">
+      <details class="acc">
+        <summary>Humidity &amp; temperature sensing</summary>
+        <div class="acc-body">SHT31-D sensor (DHT22 as the budget alternative) — ±2% RH accuracy,
+        ±0.3&nbsp;°C temperature accuracy, full 0–100% RH range.</div>
+      </details>
+      <details class="acc">
+        <summary>VOC / air-quality sensing</summary>
+        <div class="acc-body">BME680 (recommended) or MQ-135 (budget option) — detects the
+        volatile organic compounds associated with microbial growth.</div>
+      </details>
+      <details class="acc">
+        <summary>Dehumidification unit</summary>
+        <div class="acc-body">TEC1-12706 Peltier thermoelectric module (12&nbsp;V, up to 92&nbsp;W
+        heat transfer) with aluminum heatsink and 40&nbsp;mm fan for hot-side heat dissipation,
+        switched via relay or MOSFET driver.</div>
+      </details>
+      <details class="acc">
+        <summary>Brain &amp; connectivity</summary>
+        <div class="acc-body">ESP32-WROOM-32 (dual-core 240&nbsp;MHz, WiFi + Bluetooth) on
+        2.4&nbsp;GHz WiFi, with onboard flash buffering readings during connectivity loss and
+        syncing once reconnected.</div>
+      </details>
+      <details class="acc">
+        <summary>Enclosure &amp; placement</summary>
+        <div class="acc-body">Compact housing (approx. 15×10×12&nbsp;cm, ABS or 3D-printed PLA)
+        with ventilated intake/exhaust slots, a removable condensate tray (~50–100&nbsp;ml), and
+        a wall-mount bracket or tabletop base.</div>
+      </details>
+      <details class="acc">
+        <summary>Software stack</summary>
+        <div class="acc-body">Next.js + React + TypeScript web dashboard, Flutter or React Native
+        mobile app, Node.js/Express backend, PostgreSQL history store, WebSocket real-time sync.</div>
+      </details>
+    </div>
+    <div class="wf-note"><b>Fact-check:</b> specs condensed from proposal §6 (Hardware) and §7
+    (Software) — numbers kept exact. <b>Palma:</b> if "Under the hood" feels too technical for
+    the promo audience, we can demote this whole section to a collapsible footer block.</div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section-tight">
+  <div class="page">
+    <div class="cta-band">
+      <div>
+        <h2>See it work end to end.</h2>
+        <p class="lede" style="margin-top:8px;">From sensor reading to automatic response — the full loop, explained.</p>
+      </div>
+      <div class="chips" style="margin:0;">
+        <a class="wf-btn wf-btn-primary wf-btn-lg" href="how-it-works.html">How it works →</a>
+        <a class="wf-btn wf-btn-lg" href="contact.html">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wf-footer">
+  <div class="page cols">
+    <div><strong>MoldGuard</strong><br>IoT mold risk prevention &amp; detection</div>
+    <div><a href="index.html">Home</a> · <a href="how-it-works.html">How it works</a> · <a href="contact.html">Contact</a></div>
+    <div>moldguard.dev.team@gmail.com<br>0992 543 0608</div>
+  </div>
+  <div class="page" style="margin-top:16px; color:var(--ink-3);">© 2026 MoldGuard Team · Wireframe v0.1</div>
+</footer>
+
+</body>
+</html>

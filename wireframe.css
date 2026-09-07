@@ -1,0 +1,196 @@
+/* ============================================================
+   MoldGuard promo site — low-fidelity wireframe styles
+   Gray-box aesthetic is intentional: these wireframes exist to
+   review STRUCTURE + MESSAGING. Visual design (color, type,
+   imagery) is Palma's call — see README.md and messaging.md.
+   ✎ amber boxes = annotations for the review, not site copy.
+   ============================================================ */
+
+:root {
+  --ink: #1c1c1c;
+  --ink-2: #565656;
+  --ink-3: #8f8f8f;
+  --line: #d6d6d6;
+  --fill: #f4f4f4;
+  --fill-2: #eaeaea;
+  --accent: #2563eb;        /* placeholder accent — replace with brand color */
+  --accent-ink: #1d4ed8;
+  --note: #8a5a00;          /* annotation ink */
+  --note-bg: #fff7e0;
+  --note-line: #e3b341;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: #fff;
+  line-height: 1.55;
+  font-size: 16px;
+}
+.page { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+
+/* ---- review chrome (not part of the site design) ---- */
+.wf-pagelabel {
+  display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between;
+  padding: 14px 0 10px; border-bottom: 1px dashed var(--line);
+  font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+}
+.wf-pagelabel strong { color: var(--ink-2); font-weight: 600; }
+.wf-pagenav {
+  display: flex; gap: 8px; flex-wrap: wrap; padding: 10px 0 0;
+  font-size: 12px; color: var(--ink-3);
+}
+.wf-pagenav a {
+  color: var(--ink-2); text-decoration: none;
+  border: 1px solid var(--line); padding: 2px 9px; border-radius: 99px;
+}
+.wf-pagenav a[aria-current="page"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* ---- top nav ---- */
+.wf-nav {
+  display: flex; align-items: center; gap: 20px;
+  padding: 18px 0; border-bottom: 1.5px solid var(--ink);
+}
+.wf-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 17px; letter-spacing: -.01em; text-decoration: none;
+}
+.wf-logo-mark {
+  width: 30px; height: 30px; border: 1.5px solid var(--ink); border-radius: 8px;
+  display: grid; place-items: center; background: var(--fill);
+  font-size: 10px; color: var(--ink-3);
+}
+.wf-navlinks { display: flex; gap: 18px; margin-left: auto; font-size: 14px; }
+.wf-navlinks a { text-decoration: none; color: var(--ink-2); }
+.wf-navlinks a:hover { color: var(--ink); }
+.wf-nav .wf-btn { margin-left: 8px; }
+
+/* ---- buttons ---- */
+.wf-btn {
+  display: inline-block; padding: 10px 20px;
+  border: 1.5px solid var(--ink); border-radius: 8px;
+  background: #fff; color: var(--ink);
+  font-weight: 650; font-size: 14px; text-decoration: none; cursor: pointer;
+}
+.wf-btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.wf-btn-lg { padding: 14px 26px; font-size: 16px; }
+
+/* ---- sections & type ---- */
+.section { padding: 56px 0; }
+.section-tight { padding: 36px 0; }
+.section-alt { background: var(--fill); }
+h1 { font-size: clamp(30px, 4.6vw, 46px); line-height: 1.12; letter-spacing: -.02em; font-weight: 800; }
+h2 { font-size: clamp(22px, 3vw, 30px); line-height: 1.2; letter-spacing: -.015em; font-weight: 750; margin-bottom: 10px; }
+h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.lede { font-size: 18px; color: var(--ink-2); max-width: 660px; }
+.eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px;
+}
+
+/* ---- image placeholder box (classic X) ---- */
+.wf-img {
+  border: 1.5px dashed var(--ink-3); border-radius: 10px;
+  background:
+    linear-gradient(to top right,    transparent calc(50% - .8px), var(--line) calc(50% - .8px) calc(50% + .8px), transparent calc(50% + .8px)),
+    linear-gradient(to bottom right, transparent calc(50% - .8px), var(--line) calc(50% - .8px) calc(50% + .8px), transparent calc(50% + .8px)),
+    var(--fill);
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  color: var(--ink-3); font-size: 12.5px; padding: 12px; min-height: 120px;
+}
+
+/* ---- annotation ---- */
+.wf-note {
+  border: 1.2px dashed var(--note-line); background: var(--note-bg); color: var(--note);
+  font-size: 12.5px; line-height: 1.45; padding: 8px 11px; border-radius: 6px; margin-top: 12px;
+}
+.wf-note::before { content: "✎ "; font-weight: 700; }
+.wf-note b { font-weight: 700; }
+
+/* ---- chips ---- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chip {
+  border: 1px solid var(--line); background: #fff; border-radius: 99px;
+  padding: 5px 12px; font-size: 12.5px; color: var(--ink-2);
+}
+
+/* ---- cards & grids ---- */
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 860px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+.card { border: 1.5px solid var(--line); border-radius: 10px; padding: 18px; background: #fff; }
+.card .num { font-size: 12px; font-weight: 700; color: var(--ink-3); letter-spacing: .06em; }
+.card p { font-size: 14px; color: var(--ink-2); }
+
+/* ---- numbered steps ---- */
+.steps { display: grid; gap: 22px; }
+.step { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+.step .stepnum {
+  width: 44px; height: 44px; border: 1.5px solid var(--ink); border-radius: 50%;
+  display: grid; place-items: center; font-weight: 800; background: #fff;
+}
+.step p { font-size: 14.5px; color: var(--ink-2); max-width: 640px; }
+
+/* ---- flow diagram ---- */
+.flow { display: flex; align-items: stretch; gap: 10px; flex-wrap: wrap; }
+.flow .flowbox {
+  flex: 1; min-width: 150px; border: 1.5px solid var(--ink); border-radius: 10px;
+  padding: 14px; background: #fff; text-align: center; font-size: 13.5px;
+}
+.flow .flowbox small { display: block; color: var(--ink-3); font-size: 11.5px; margin-top: 4px; }
+.flow .flowarrow { align-self: center; color: var(--ink-3); font-size: 20px; }
+
+/* ---- comparison table ---- */
+.wf-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.wf-table th, .wf-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+.wf-table thead th { background: var(--fill-2); }
+.wf-table .col-hl { background: #eef4ff; }
+.tick { color: var(--accent-ink); font-weight: 700; }
+.dash { color: var(--ink-3); }
+
+/* ---- forms ---- */
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 13px; font-weight: 650; margin-bottom: 6px; }
+.field .input, .field textarea {
+  width: 100%; border: 1.5px solid var(--line); border-radius: 8px;
+  background: var(--fill); min-height: 42px; padding: 10px 12px;
+  color: var(--ink-3); font-size: 14px; font-family: inherit;
+}
+.field textarea { min-height: 110px; resize: vertical; }
+
+/* ---- FAQ accordion ---- */
+.acc { border: 1.5px solid var(--line); border-radius: 10px; background: #fff; }
+.acc + .acc { margin-top: 10px; }
+.acc summary {
+  padding: 14px 16px; font-weight: 650; cursor: pointer; list-style: none;
+  display: flex; justify-content: space-between; gap: 12px;
+}
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary::after { content: "+"; color: var(--ink-3); font-weight: 700; }
+.acc[open] summary::after { content: "–"; }
+.acc .acc-body { padding: 0 16px 14px; font-size: 14px; color: var(--ink-2); }
+
+/* ---- CTA band ---- */
+.cta-band {
+  border: 1.5px solid var(--ink); border-radius: 14px; padding: 36px;
+  background: var(--fill); display: flex; flex-wrap: wrap; gap: 18px;
+  align-items: center; justify-content: space-between;
+}
+
+/* ---- footer ---- */
+.wf-footer { border-top: 1.5px solid var(--ink); margin-top: 24px; padding: 26px 0 40px; font-size: 13px; color: var(--ink-2); }
+.wf-footer .cols { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-start; }
+
+/* ---- team ---- */
+.person .avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  border: 1.5px dashed var(--ink-3); background: var(--fill);
+  display: grid; place-items: center; font-weight: 700; color: var(--ink-3); margin-bottom: 10px;
+}
+.person .role { font-size: 12.5px; color: var(--ink-3); }
