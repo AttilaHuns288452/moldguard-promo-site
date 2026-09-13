@@ -94,14 +94,38 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </div>
     </div>
 
-    <div class="rows" style="margin-top:34px;">
-      <div class="row"><span class="idx">F·03</span><h3>Predictive weather integration</h3><p>Weather API forecasts are combined with indoor readings to anticipate humidity spikes and pre-dry spaces ahead of them.</p></div>
-      <div class="row"><span class="idx">F·04</span><h3>Closed-loop auto-dehumidification</h3><p>When the index crosses the risk threshold, the ESP32 switches a connected semiconductor dehumidifier on via a solid-state relay, and off once conditions return to safe range.</p></div>
-      <div class="row"><span class="idx">F·05</span><h3>Water-tank monitoring</h3><p>A time-of-flight sensor and magnetic reed switch track the removable tank's fill level, alerting you before overflow.</p></div>
-      <div class="row"><span class="idx">F·06</span><h3>Web dashboard &amp; analytics</h3><p>Historical trend logging for humidity, temperature, and VOCs, with multi-room and multi-unit views for larger households, dormitories, or property managers.</p></div>
-      <div class="row"><span class="idx">F·07</span><h3>Mobile alerts &amp; control</h3><p>Real-time push notifications as risk rises, live device status, and manual override of the dehumidification unit from anywhere.</p></div>
+    <div class="feat-grid" style="margin-top:34px;">
+      <div class="card">
+        <div class="feat-num">Feature 03</div>
+        <h3>Predictive weather integration</h3>
+        <p>Weather API forecasts are combined with indoor readings to anticipate humidity spikes and pre-dry spaces ahead of them.</p>
+      </div>
+      <div class="card">
+        <div class="feat-num">Feature 04</div>
+        <h3>Closed-loop auto-dehumidification</h3>
+        <p>When the index crosses the risk threshold, the ESP32 switches a connected semiconductor dehumidifier on via a solid-state relay, and off once conditions return to safe range.</p>
+      </div>
+      <div class="card">
+        <div class="feat-num">Feature 05</div>
+        <h3>Water-tank monitoring</h3>
+        <p>A time-of-flight sensor and magnetic reed switch track the removable tank's fill level, alerting you before overflow.</p>
+      </div>
+      <div class="card">
+        <div class="feat-num">Feature 06</div>
+        <h3>Web dashboard &amp; analytics</h3>
+        <p>Historical trend logging for humidity, temperature, and VOCs, with multi-room and multi-unit views for larger households, dormitories, or property managers.</p>
+      </div>
+      <div class="card card-deep">
+        <div class="feat-num">Feature 07</div>
+        <h3>Mobile alerts &amp; control</h3>
+        <p>Real-time push notifications as risk rises, live device status, and manual override of the dehumidification unit from anywhere.</p>
+      </div>
+      <div class="card">
+        <div class="feat-num">How it compares</div>
+        <h3>Honest positioning.</h3>
+        <p>See the full comparison below, including our own drawbacks column. No black boxes, no marketing fog.</p>
+      </div>
     </div>
-
     <div class="statement" style="margin-top:34px;">
       <div>
         <h3>Proactive, not reactive.</h3>
@@ -116,6 +140,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <section class="section section-alt">
   <div class="page">
     <div class="section-head">
+      <p class="kicker">How it compares</p>
       <h2>Where MoldGuard fits.</h2>
       <p class="lede">Existing options were built for general comfort or simple humidity
       control, not mold-specific risk modeling.</p>
@@ -161,6 +186,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <section class="section">
   <div class="page">
     <div class="section-head">
+      <p class="kicker">Under the hood</p>
       <h2>Sensible hardware, no black box.</h2>
       <p class="lede">Open, off-the-shelf components, expand a row for the plain-language spec.</p>
     </div>

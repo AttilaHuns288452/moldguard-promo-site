@@ -92,6 +92,10 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+.kicker {
+  font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--accent-ink); margin-bottom: 10px;
+}
 .section-head { max-width: 720px; margin-bottom: 48px; }
 .section-head .lede { margin-top: 8px; }
 
@@ -258,6 +262,10 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 
 /* phone mock (reused) */
 .phone-ui { font-family: var(--font-mono); font-size: 8.5px; color: var(--on-dark-2); letter-spacing: .08em; }
+.phone-ui .p-cardline, .phone-ui .p-big em, .phone-ui .p-cap { text-transform: none; }
+.phone-ui .p-scale { font-size: 12px; color: var(--on-dark-2); font-weight: 400; margin-left: 2px; }
+.phone-ui .p-cap { font-size: 7.5px; letter-spacing: .12em; color: var(--on-dark-2); margin-top: 3px; }
+.phone-ui .p-cardline .p-dot { margin-right: 2px; }
 .phone-ui .p-top { display: flex; justify-content: space-between; padding: 8px 12px 4px; }
 .phone-ui .p-body { padding: 6px 12px 14px; }
 .phone-ui .p-risk { color: #ffd9a1; font-weight: 700; }
@@ -266,6 +274,21 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .phone-ui .p-bars i.warm { background: #d9973b; }
 .phone-ui .p-row { display: flex; justify-content: space-between; border-top: 1px solid rgba(231,240,245,.14); padding: 6px 0 0; }
 .phone-ui .p-toggle { display: inline-block; background: #2e8fa3; color: #eaf5f8; border-radius: 99px; padding: 3px 9px; font-weight: 700; }
+
+/* labeled app preview (download page) */
+.phone-ui .p-label { font-size: 8px; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark-2); }
+.phone-ui .p-big { font-family: var(--font-display); font-size: 30px; font-weight: 700; color: var(--on-dark); letter-spacing: -.01em; margin: 4px 0 8px; }
+.phone-ui .p-big em { font-style: normal; font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #ffd9a1; vertical-align: 4px; margin-left: 6px; }
+.phone-ui .p-card { border: 1px solid rgba(231,240,245,.16); border-radius: 10px; padding: 9px 11px; margin-top: 9px; }
+.phone-ui .p-cardline { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 9.5px; letter-spacing: .02em; color: var(--on-dark); text-transform: none; padding: 3px 0; }
+.phone-ui .p-cardline + .p-cardline { border-top: 1px solid rgba(231,240,245,.08); }
+.phone-ui .p-on { background: #2e8fa3; color: #eaf5f8; border-radius: 99px; padding: 2px 9px; font-weight: 700; font-size: 9px; }
+.phone-ui .p-dot { color: #ffd9a1; }
+.dl-phone-note {
+  text-align: center; margin-top: 14px;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--steel-deep);
+}
 
 /* ================= station log (problem) ================= */
 .logpanel {
@@ -505,7 +528,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .dl-phone { width: 218px; border-radius: 32px; border: 1px solid var(--line-strong); background: var(--deeper); box-shadow: var(--shadow-pop); overflow: hidden; }
 .dl-phone .phone-ui { font-size: 10px; }
 .dl-phone .p-top { padding: 14px 16px 6px; }
-.dl-phone .p-body { padding: 8px 16px 22px; }
+.dl-phone .p-body { padding: 10px 16px 30px; }
 .dl-phone .p-bars { height: 92px; gap: 5px; }
 .dl-phone .p-risk { font-size: 13px; }
 
