@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://attilahuns288452.github.io/moldguard-promo-site/sitemap.xml
