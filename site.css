@@ -24,9 +24,6 @@
   --ink-3: #687979;
   --accent: #2D9A91;         /* MoldGuard teal — primary CTA, key data, active states */
   --accent-ink: #1E6E68;     /* teal on light backgrounds; CTA fill (white text 6:1) */
-  --amber: #d9973b;          /* RETIRED — defined for token history only; no rule may reference it */
-  --coral: #c25a41;          /* RETIRED — defined for token history only; no rule may reference it */
-  --ok: #3d8f6a;             /* RETIRED — defined for token history only; no rule may reference it */
   --sky: #8FBDB8;            /* LEGACY ALIAS — muted teal-gray; only existing chart-bar/state rules still reference it */
   --beige: #F7F8F6;          /* LEGACY ALIAS = paper; existing band rules collapse into the foundation */
   --on-dark: #E9F1F0;
@@ -73,7 +70,7 @@ h1 { font-size: clamp(2.75rem, 5.8vw, 4.6rem); line-height: 1.02; font-weight: 7
 h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.1; font-weight: 650; margin-bottom: 14px; letter-spacing: -.025em; max-width: 24ch; }
 h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .lede { font-size: 1.22rem; color: var(--ink-2); max-width: 560px; line-height: 1.58; }
-.measure { max-width: 640px; }
+.measure { max-width: 660px; margin-left: auto; margin-right: auto; }
 
 /* ---- mono readouts (data only: statline, badges, captions) ---- */
 .readout {
@@ -91,10 +88,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
   background: var(--paper-deep);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-}
-.kicker {
-  font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; letter-spacing: .16em;
-  text-transform: uppercase; color: var(--accent-ink); margin-bottom: 10px;
 }
 .section-head { max-width: 720px; margin-bottom: 48px; }
 .section-head .lede { margin-top: 8px; }
@@ -143,17 +136,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 :focus-visible { outline: 2.5px solid var(--accent-ink); outline-offset: 2px; border-radius: 4px; }
 
 /* ================= chips ================= */
-.chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
-.chip {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 7px 14px; border-radius: 999px;
-  background: var(--card); border: 1px solid var(--line-strong);
-  font-size: 13.5px; font-weight: 600; color: var(--ink-2);
-}
-.chip::before {
-  content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent);
-}
 /* ================= cards ================= */
 .card {
   background: var(--card); border: 1px solid var(--line); border-radius: 12px;
@@ -188,13 +170,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .specline { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--steel-deep); margin-top: 14px; }
 
 /* ---- trio: one instrument strip, three hairline columns ---- */
-.trio { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-.trio > div { padding: 28px; }
-.trio > div + div { border-left: 1px solid var(--line); }
-.trio h3 { margin-top: 20px; font-size: 1.08rem; }
-.trio .tile-mock { height: 210px; display: grid; align-items: center; justify-items: center; overflow: hidden; }
-.trio p { font-size: 14.5px; color: var(--ink-2); }
-.trio .tile-mock { border-radius: 0; border-left: none; border-right: none; border-top: none; margin-bottom: 0; background: var(--surface); }
 @media (max-width: 860px) { .trio { grid-template-columns: 1fr; } .trio > div + div { border-left: none; border-top: 1px solid var(--line); } }
 
 /* ---- full-width statement band ---- */
@@ -256,11 +231,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
   width: 168px; border-radius: 26px; border: 1px solid var(--line-strong);
   background: var(--deeper); box-shadow: var(--shadow-card); overflow: hidden;
 }
-.hero-dim {
-  position: absolute; z-index: 2;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--steel-deep); line-height: 1.7; text-align: left;
-}
 .hero-dim-l { left: 26px; bottom: 96px; }
 .hero-dim-r { right: 26px; bottom: 96px; text-align: right; }
 @media (max-width: 480px) { .hero-dim { display: none; } }
@@ -297,22 +267,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 }
 
 /* ================= station log (problem) ================= */
-.logpanel {
-  background: var(--deep);
-  border: 1px solid rgba(233,241,240,.12); border-radius: 16px; overflow: hidden;
-}
-.logpanel .log-head {
-  display: flex; justify-content: space-between; align-items: center; gap: 14px;
-  padding: 16px 26px; border-bottom: 1px solid rgba(233,241,240,.12);
-}
-.log-row {
-  display: grid; grid-template-columns: 92px 210px 1fr auto; gap: 20px; align-items: baseline;
-  padding: 19px 26px; border-bottom: 1px solid rgba(233,241,240,.09);
-}
-.log-row:last-child { border-bottom: none; }
-.log-time { font-family: var(--font-mono); font-size: 12px; color: #7fb0c4; letter-spacing: .08em; }
-.log-row h3 { color: var(--on-dark); font-size: 1.05rem; margin: 0; }
-.log-row p { color: var(--on-dark-2); font-size: 14px; }
 .lamp { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #f0b7a4; }
 .lamp i { width: 8px; height: 8px; border-radius: 50%; background: var(--sky); }
 @media (max-width: 860px) { .log-row { grid-template-columns: 1fr auto; } .log-row .log-time { grid-column: 1 / -1; } .log-row p { grid-column: 1 / -1; } }
@@ -516,16 +470,16 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 }
 .qr-frame svg, .qr-frame img { width: 100%; height: 100%; image-rendering: pixelated; }
 .qr-card .form-note { max-width: 34ch; margin-left: auto; margin-right: auto; }
-.store-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
-.store-pill {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--deeper); color: var(--on-dark); border-radius: 13px;
-  padding: 11px 18px; text-decoration: none; min-width: 172px;
-}
-.store-pill small { display: block; font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--on-dark-2); }
-.store-pill b { font-size: 15px; font-weight: 650; letter-spacing: -.01em; }
-.dl-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-@media (max-width: 860px) { .dl-hero { grid-template-columns: 1fr; } }
+.dl-hero { display: grid; grid-template-columns: minmax(0,1fr) 300px; grid-template-areas: "h1 stage" "lede stage" "cluster stage"; grid-template-rows: auto auto 1fr; gap: 10px 56px; align-items: center; text-align: center; }
+.dl-hero h1 { grid-area: h1; justify-self: start; text-align: left; max-width: 24ch; margin: 0; }
+.dl-hero .lede { grid-area: lede; justify-self: start; text-align: left; margin: 0; }
+.dl-hero .dl-cluster { grid-area: cluster; justify-self: center; align-self: start; }
+.dl-hero .dl-stage { grid-area: stage; }
+.dl-cluster { display: grid; justify-items: center; gap: 18px; }
+.dl-scan { font-size: 15px; font-weight: 600; color: var(--ink); margin: 0; }
+.dl-cluster .store-badges { margin-top: 4px; justify-content: center; }
+.dl-cluster .qr-frame { margin: 0; }
+@media (max-width: 860px) { .dl-hero { grid-template-columns: 1fr; grid-template-areas: 'h1' 'lede' 'cluster' 'stage'; justify-items: center; text-align: center; } .dl-hero h1, .dl-hero .lede { justify-self: center; text-align: center; max-width: 30ch; } }
 .dl-stage {
   align-self: stretch; border-radius: 18px; border: 1px solid var(--line);
   background: linear-gradient(180deg, #f2f7fa 0%, var(--paper-deep) 100%);
@@ -657,10 +611,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .store-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 28px; }
 .store-badges img { display: block; border-radius: 8px; }
 .store-badges img[alt="Download on the App Store"] { height: 62px; width: auto; }
-.store-badges img[alt="Get it on Google Play"] { height: 62px; width: auto; }
-.dl-availability { margin-top: 14px; font-size: 13.5px; color: var(--steel-deep); max-width: 46ch; }
-.dl-qr-link { margin-top: 8px; font-size: 13px; color: var(--steel-deep); }
-.dl-qr-link a { color: var(--accent-ink); font-weight: 600; }
+.store-badges img[alt="Get it on Google Play"] { height: 82px; width: auto; } /* official PNG ships with transparent padding; scaled so inner badge visual height matches the App Store SVG */
 .p-greet { font-family: var(--font-text); font-size: 15px; font-weight: 650; color: var(--on-dark); letter-spacing: -.01em; margin-top: 8px; }
 .p-sub { font-family: var(--font-text); font-size: 11px; color: var(--on-dark-2); margin-top: 3px; }
 .p-rooms { margin-top: 14px; border-top: 1px solid rgba(233,241,240,.14); }
