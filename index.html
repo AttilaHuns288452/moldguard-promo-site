@@ -47,18 +47,19 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <section class="section-tight">
   <div class="page hero-grid">
     <div>
+      <p class="readout" style="margin-bottom:18px;">MoldGuard V1.0 · <b>IoT prevention system</b></p>
       <h1>Know mold is coming before it&nbsp;shows.</h1>
-      <p class="lede" style="margin-top:18px;">
+      <p class="lede" style="margin-top:20px;">
         Warm, humid rooms are exactly where mold thrives.
         MoldGuard tracks the humidity, temperature, and air conditions that let mold take
         hold, scores your real risk in real time, and switches the dehumidifier on its own,
         before you ever see or smell a problem.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:26px;">
+      <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:30px;">
         <a class="btn btn-primary btn-lg" href="download.html">Get the app</a>
         <a class="btn btn-ghost btn-lg" href="how-it-works.html">See how it works
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <div class="statline" style="margin-top:26px;">
+      <div class="statline" style="margin-top:32px;">
         <span>Risk index <b>38 · ELEVATED</b></span>
         <span class="warn">Closet 82% RH</span>
         <span>Response <b>auto</b></span>
@@ -68,6 +69,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div>
       <div class="hero-stage">
         <span class="hero-tag"><span class="live-dot"></span> Unit 01 · Living room · <b>Risk 38</b></span>
+        <span class="hero-dim hero-dim-l" aria-hidden="true">SENS POD<br>SHT41 + SGP40</span>
+        <span class="hero-dim hero-dim-r" aria-hidden="true">MRI 38<br>ELEVATED</span>
         <!-- Device render: sensor pod concept, authored SVG (placeholder until product photography) -->
         <svg class="device-svg" viewBox="0 0 300 340" fill="none" aria-label="MoldGuard device, compact sensor unit with status dial" role="img">
           <defs>
@@ -98,7 +101,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <rect x="156" y="216" width="40" height="6" rx="3" fill="#567b8d"/>
           <rect x="156" y="228" width="28" height="6" rx="3" fill="#567b8d"/>
           <rect x="156" y="246" width="44" height="8" rx="4" fill="#2e8fa3"/>
-          <circle cx="150" cy="292" r="5" fill="#2e8fa3"><animate attributeName="opacity" values="1;.35;1" dur="2.4s" repeatCount="indefinite"/></circle>
+          <circle cx="150" cy="292" r="5" fill="#2e8fa3"/>
           <rect x="188" y="289" width="26" height="6" rx="3" fill="#a9bdc9"/>
         </svg>
 
@@ -285,10 +288,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <small>dashboard · alerts</small>
       </div>
     </div>
-    <svg class="loop-return" width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true" style="margin-top:10px;">
-      <path d="M13 3 v11 M8 9.5 L13 15 L18 9.5" stroke="#567b8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <p class="readout" style="text-align:center; margin-top:2px;">↺ the loop closes on itself, that's the product</p>
+    <div class="loop-return" aria-hidden="true">
+      <span></span><span>↺</span><span></span>
+    </div>
+    <p class="readout" style="text-align:center; margin-top:10px;">the loop closes on itself, that's the product</p>
   </div>
 </section>
 
