@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<meta name="description" content="The Mold Risk Index engine, early VOC detection, closed-loop dehumidification, web dashboard, and mobile alerts — the full MoldGuard feature set.">
+<meta name="description" content="The Mold Risk Index engine, early VOC detection, closed-loop dehumidification, web dashboard, and mobile alerts, the full MoldGuard feature set.">
 <title>MoldGuard · Features</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<!-- impeccable direction contract (seed c4ef9450, persuade) — same world as index.html: see index for the full five blocks. THESIS: features presented as instrument inventory (numbered rows, dial, duo panel) in the icy station world; seed key c4ef9450.
+<!-- impeccable direction contract (seed c4ef9450, persuade), same world as index.html: see index for the full five blocks. THESIS: features presented as instrument inventory (numbered rows, dial, duo panel) in the icy station world; seed key c4ef9450.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md. -->
 
 
@@ -45,8 +45,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <h1>Mold-specific intelligence, end to&nbsp;end.</h1>
       <p class="lede" style="margin-top:16px;">
         At 30°C and 80% RH, the Philippines is mold's ideal habitat. Most dehumidifiers see one
-        number, humidity. MoldGuard reads the full picture: humidity, temperature, exposure duration,
-        VOCs, and virtual dew point margin, and responds on its own.</p>
+        number, humidity. MoldGuard reads the full picture, humidity, temperature, exposure
+        duration, and virtual dew point margin, adds weather foresight, and responds on its own.</p>
     </div>
     <div class="photo ph-4x3">
       <img src="assets/condensation.jpg" alt="Warm air meeting cold stone in a bath" loading="lazy">
@@ -64,10 +64,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <div class="feat-num">Feature 01 · flagship</div>
           <h3>Mold Risk Index engine</h3>
           <p style="margin-top:4px;">Real-time risk scoring built from humidity, temperature, and sustained exposure
-          duration, going beyond the simple threshold triggers used by commercial dehumidifiers.
-          Uses VTT/ASHRAE cumulative risk algorithms to avoid false triggers from temporary
-          humidity spikes.</p>
-          <p class="specline">RH + TEMP + DURATION · VTT/ASHRAE CUMULATIVE · NO SPIKE TRIGGERS</p>
+          duration, with a virtual surface dew point calculation, going beyond the single-threshold
+          triggers used by commercial dehumidifiers, and avoiding false triggers during
+          temporary humidity spikes.</p>
+          <p class="specline">RH + TEMP + DURATION · VIRTUAL SURFACE DEW POINT · NO SPIKE TRIGGERS</p>
         </div>
         <div class="dial-wrap animate-needle" aria-hidden="true">
           <svg viewBox="0 0 200 130" style="width:100%; max-width:250px;">
@@ -86,25 +86,28 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </div>
       <div style="padding:28px;">
         <div class="feat-num">Feature 02</div>
-        <h3>Early mold detection</h3>
-        <p>A VOC sensor flags microbial off-gassing (mVOCs), chemical gases emitted by active
-        fungal growth, before it becomes visible or noticeable by smell. Distinguishes mold
-        signals from household chemical vapors (paints, cleaners) to reduce false positives.</p>
+        <h3>Environmental &amp; VOC monitoring</h3>
+        <p>An SGP40 VOC sensor adds supplementary air-quality context alongside humidity,
+        temperature, and duration. We treat VOC as context, never standalone proof -
+        research shows microbial VOC levels are often too low for reliable detection and
+        easily confounded by household sources.</p>
       </div>
     </div>
 
     <div class="rows" style="margin-top:34px;">
-      <div class="row"><span class="idx">F·03</span><h3>Closed-loop auto-dehumidification</h3><p>Once risk thresholds are met, the Peltier-based dehumidifying unit activates automatically. No manual intervention required.</p></div>
-      <div class="row"><span class="idx">F·04</span><h3>Web dashboard &amp; analytics</h3><p>Historical trend logging for humidity, temperature, and VOCs, with multi-room and multi-unit views for larger households, dormitories, or property managers.</p></div>
+      <div class="row"><span class="idx">F·03</span><h3>Predictive weather integration</h3><p>Weather API forecasts are combined with indoor readings to anticipate humidity spikes and pre-dry spaces ahead of them.</p></div>
+      <div class="row"><span class="idx">F·04</span><h3>Closed-loop auto-dehumidification</h3><p>When the index crosses the risk threshold, the ESP32 switches a connected semiconductor dehumidifier on via a solid-state relay, and off once conditions return to safe range.</p></div>
+      <div class="row"><span class="idx">F·05</span><h3>Water-tank monitoring</h3><p>A time-of-flight sensor and magnetic reed switch track the removable tank's fill level, alerting you before overflow.</p></div>
+      <div class="row"><span class="idx">F·06</span><h3>Web dashboard &amp; analytics</h3><p>Historical trend logging for humidity, temperature, and VOCs, with multi-room and multi-unit views for larger households, dormitories, or property managers.</p></div>
       <div class="row"><span class="idx">F·05</span><h3>Mobile alerts &amp; control</h3><p>Real-time push notifications as risk rises, live device status, and manual override of the dehumidification unit from anywhere.</p></div>
     </div>
 
     <div class="statement" style="margin-top:34px;">
       <div>
-        <h3>Predictive pre-dehumidification.</h3>
-        <p>Weather API integration pre-dries your space ahead of incoming monsoon fronts, acting before humidity spikes, not after.</p>
+        <h3>Proactive, not reactive.</h3>
+        <p>Weather forecast integration pre-dries your space ahead of incoming monsoon fronts, acting before humidity spikes, not after.</p>
       </div>
-      <span class="specline">BONUS · OPEN HW · FIXED FEE · NO SUBSCRIPTION</span>
+      <span class="specline">CORE FEATURE · FORECAST-INFORMED RESPONSE</span>
     </div>
   </div>
 </section>
@@ -142,10 +145,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           </tr>
           <tr class="row-hl">
             <td><strong>MoldGuard V1.0</strong><span class="ours-tag">Ours</span></td>
-            <td>Mold Risk Index (humidity + temperature + duration + VOC), closed-loop
-                auto-dehumidification, web dashboard, mobile app</td>
+            <td>Mold Risk Index (humidity + temperature + duration), supplementary VOC context,
+                predictive weather integration, closed-loop auto-dehumidification, water-tank
+                monitoring, web + mobile dashboard</td>
             <td>Fixed development fee</td>
-            <td>Requires dedicated power source; periodic condensate tray emptying</td>
+            <td>Requires dedicated power source; periodic water-tank emptying</td>
           </tr>
         </tbody>
       </table>
@@ -163,36 +167,38 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="measure">
       <details class="acc">
         <summary>Humidity &amp; temperature sensing</summary>
-        <div class="acc-body">SHT31-D sensor (DHT22 as the budget alternative), ±2% RH accuracy,
-        ±0.3&nbsp;°C temperature accuracy, full 0–100% RH range.</div>
+        <div class="acc-body">SHT41 sensor module, high-accuracy temperature and relative
+        humidity measurement for the risk engine's core inputs.</div>
       </details>
       <details class="acc">
         <summary>VOC / air-quality sensing</summary>
-        <div class="acc-body">BME680 (recommended) or MQ-135 (budget option), detects the
-        volatile organic compounds associated with microbial growth.</div>
+        <div class="acc-body">SGP40 VOC sensor, supplementary air-quality context, read
+        alongside humidity, temperature, and duration, never as a standalone mold verdict.</div>
       </details>
       <details class="acc">
         <summary>Dehumidification unit</summary>
-        <div class="acc-body">TEC1-12706 Peltier thermoelectric module (12&nbsp;V, up to 92&nbsp;W
-        heat transfer) with aluminum heatsink and 40&nbsp;mm fan for hot-side heat dissipation,
-        switched via relay or MOSFET driver.</div>
+        <div class="acc-body">A Gaabor 2-in-1 semiconductor dehumidifier (1&nbsp;L tank) is
+        switched safely by an SSR-40DA solid-state relay: the ESP32's low-voltage logic controls
+        220&nbsp;V AC mains with strict electrical isolation. A VL53L0X time-of-flight sensor and
+        magnetic reed switch monitor tank fill and seating.</div>
       </details>
       <details class="acc">
         <summary>Brain &amp; connectivity</summary>
-        <div class="acc-body">ESP32-WROOM-32 (dual-core 240&nbsp;MHz, WiFi + Bluetooth) on
-        2.4&nbsp;GHz WiFi, with onboard flash buffering readings during connectivity loss and
-        syncing once reconnected.</div>
+        <div class="acc-body">ESP32-WROOM-32 (dual-core, WiFi + Bluetooth) publishes telemetry
+        and receives commands over MQTT via HiveMQ Cloud, with local buffering during
+        connectivity loss and sync once reconnected.</div>
       </details>
       <details class="acc">
         <summary>Enclosure &amp; placement</summary>
-        <div class="acc-body">Compact housing (approx. 15×10×12&nbsp;cm, ABS or 3D-printed PLA)
-        with ventilated intake/exhaust slots, a removable condensate tray (~50–100&nbsp;ml), and
-        a wall-mount bracket or tabletop base.</div>
+        <div class="acc-body">Sensors and controller mount in a compact ABS housing (1×200×300&nbsp;mm
+        boards) attached to the dehumidifier, with a removable 1&nbsp;L tank you empty when the
+        app tells you it's full.</div>
       </details>
       <details class="acc">
         <summary>Software stack</summary>
-        <div class="acc-body">Next.js + React + TypeScript web dashboard, Flutter or React Native
-        mobile app, Node.js/Express backend, PostgreSQL history store, WebSocket real-time sync.</div>
+        <div class="acc-body">React + Tailwind web dashboard on Vercel, React Native mobile app,
+        Node.js/Express + TypeScript backend on Render, PostgreSQL (Neon) history store, MQTT
+        via HiveMQ Cloud, and Socket.IO real-time sync to clients.</div>
       </details>
     </div>
   </div>

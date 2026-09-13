@@ -14,7 +14,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<!-- impeccable direction contract (seed c4ef9450, persuade) — same world as index.html: see index for the full five blocks. THESIS: the loop is the page — numbered stage instruction spreads (brick-book challenger) inside the icy station world; seed key c4ef9450.
+<!-- impeccable direction contract (seed c4ef9450, persuade), same world as index.html: see index for the full five blocks. THESIS: the loop is the page, numbered stage instruction spreads (brick-book challenger) inside the icy station world; seed key c4ef9450.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md. -->
 
 
@@ -44,7 +44,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <h1>From invisible risk to handled, automatically.</h1>
     <p class="lede" style="margin-top:16px;">
       MoldGuard runs a continuous loop: monitor the room, score the real mold risk,
-      and act before conditions turn into growth.</p>
+      and act before conditions turn into growth, informed by the weather forecast too.</p>
   </div>
 </section>
 
@@ -65,7 +65,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <div class="loopnode">
         <span class="stage">Stage 3</span>
         <h3>Act</h3>
-        <small>Peltier auto-on</small>
+        <small>dehumidifier auto-on</small>
       </div>
       <div class="loopnode">
         <span class="stage">Stage 4</span>
@@ -76,7 +76,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <svg class="loop-return" width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true" style="margin-top:10px;">
       <path d="M13 3 v11 M8 9.5 L13 15 L18 9.5" stroke="#567b8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <p class="readout" style="text-align:center; margin-top:2px;">↺ the loop closes on itself — that's the product</p>
+    <p class="readout" style="text-align:center; margin-top:2px;">↺ the loop closes on itself, that's the product</p>
   </div>
 </section>
 
@@ -86,11 +86,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="step-copy">
       <span class="stage-tag"><i>1</i> Stage 1 · Sense</span>
       <h2>Sense the room, continuously.</h2>
-      <p>A sensor array watches the three conditions mold actually cares about:
-      relative humidity, temperature, and volatile organic compounds (VOCs), the
-      microbial off-gassing that signals growth has already begun, ahead of any
-      visible sign.</p>
-      <p class="specline">±2% RH · ±0.3 °C · VOC / IAQ</p>
+      A sensor pod watches the conditions mold actually cares about:
+      relative humidity, temperature, and volatile organic compounds (VOCs).
+      The SHT41 measures the risk engine's core inputs; VOCs add supplementary
+      context, read together with everything else rather than as a verdict.
+      <p class="specline">SHT41 RH + TEMP · SGP40 VOC CONTEXT</p>
     </div>
     <div class="photo ph-4x3">
       <img src="assets/window.jpg" alt="Bright white bathroom with a window, plants, and cold tiled surfaces" loading="lazy">
@@ -108,7 +108,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <p>The Mold Risk Index combines humidity, temperature, and <em>how long</em> those
       conditions persist, instead of reacting to a single humidity threshold. That's
       what makes the prediction early: it catches the window where mold <em>can</em>
-      start, before it does.</p>
+      start, before it does. Outdoor forecast data sharpens that window further.
       <p class="specline">RH + TEMP + SUSTAINED DURATION · NOT ONE THRESHOLD</p>
     </div>
     <div class="hero-stage" style="min-height:360px; place-items:center; padding:30px 24px 26px;">
@@ -141,11 +141,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="step-copy">
       <span class="stage-tag"><i>3</i> Stage 3 · Act</span>
       <h2>Act: dehumidify, no hands.</h2>
-      <p>When the index crosses the risk threshold, the compact Peltier-based
-      dehumidifying unit switches itself on and pulls moisture back down, closing the
-      loop without you touching anything. Extracted water collects in a removable tray
-      you empty occasionally.</p>
-      <p class="specline">AUTO ACTIVATION · APP OVERRIDE · REMOVABLE TRAY</p>
+      <p>When the index crosses the risk threshold, the ESP32 switches the connected
+      semiconductor dehumidifier on through a solid-state relay and pulls moisture back
+      down, closing the loop without you touching anything. Extracted water collects in
+      the removable 1&nbsp;L tank, monitored so you're told before it's full.</p>
+      <p class="specline">SSR-SAFE SWITCHING · APP OVERRIDE · TANK LEVEL ALERTS</p>
     </div>
     <div class="photo ph-4x3">
       <img src="assets/purifier.jpg" alt="Calm white bathroom with bathtub and plants" loading="lazy">
@@ -163,7 +163,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <p>Live status and historical trends stream to the web dashboard over real-time
       sync; the mobile app pushes an alert the moment risk rises, and lets you override
       the unit manually from anywhere.</p>
-      <p class="specline">WEBSOCKET SYNC · TREND CHARTS · MULTI-ROOM</p>
+      <p class="specline">MQTT + SOCKET.IO · TREND CHARTS · MULTI-ROOM</p>
     </div>
     <div>
       <div class="dash" style="margin-bottom:14px;" aria-hidden="true">
@@ -229,26 +229,29 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="measure">
       <details class="acc">
         <summary>Do I still need a dehumidifier?</summary>
-        <div class="acc-body">MoldGuard's built-in unit handles the prevention loop itself:
-        it dehumidifies when risk rises, automatically. <em>[Team note: confirm scope vs. standalone
-        dehumidifiers before publishing — messaging.md Q3.]</em></div>
+        <div class="acc-body">MoldGuard works with its paired semiconductor dehumidifier:
+        the risk engine switches it on and off automatically. If you already own a
+        compatible dehumidifier, talk to us about pairing it.</div>
       </details>
       <details class="acc">
         <summary>What maintenance does it need?</summary>
-        <div class="acc-body">Periodic emptying of the condensate tray and a dedicated power
-        source: that's the honest list, straight from our own comparison table.</div>
+        <div class="acc-body">Periodic emptying of the 1&nbsp;L water tank (you get an alert
+        before it's full) and a dedicated power source: that's the honest list, straight
+        from our own comparison table.</div>
       </details>
       <details class="acc">
         <summary>Does it work without the internet?</summary>
-        <div class="acc-body">The device keeps buffering readings locally when connectivity
-        drops and syncs once reconnected. <em>[Team note: confirm offline behavior of automatic
-        dehumidification with firmware: messaging.md Q1.]</em></div>
+        <div class="acc-body">The device buffers readings locally when connectivity drops
+        and syncs once reconnected; cloud services (MQTT broker, dashboard, database) run
+        hosted, so there's nothing to maintain on your machine.</div>
       </details>
       <details class="acc">
         <summary>How much does it cost?</summary>
-        <div class="acc-body">MoldGuard uses open hardware and open-source software with a
-        single fixed development fee and no recurring subscription. Exact figures come from
-        the team's quote, not published on the site. <em>[Team note: confirm: messaging.md Q4.]</em></div>
+        <div class="acc-body">MoldGuard builds its intelligence around an off-the-shelf
+        dehumidifier with open, individually-sourced components: a fixed, itemized hardware
+        cost, a single fixed development fee, full client ownership, and only minimal,
+        predictable cloud service costs at small scale. Exact figures come from the team's
+        quote, not published on the site.</div>
       </details>
       <details class="acc">
         <summary>Who is it for?</summary>
