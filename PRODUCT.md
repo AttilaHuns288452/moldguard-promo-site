@@ -32,7 +32,7 @@ No backend on this site yet (contact form build note pending, Q4). No numeric ri
 
 ## Brand Commitments
 
-User-pinned palette: the cold icy-blue world of the reference image — dominant icy white-blue ≈ #dfe7ec (65%), steel blue ≈ #567b8d (16%), deep navy-slate ≈ #2f4157 (15%). User-pinned: keep the four-page structure (Landing / Features / How it works / Contact) and the existing messaging verbatim. "Get Started" must lead to a download page offering the mobile app with a QR code (fake for now). Fake/placeholder photography is user-approved for this build.
+User-pinned palette: the 5-color system — NAVY #2f4157 (foundation), WHITE (content), TEAL #2e8fa3 (primary accent), SKY BLUE #8ec7dd (secondary), BEIGE #f0e8da (warmth, sparing). Steel #567b8d = navy-tint chrome only. Amber/coral/green retired. User-pinned: keep the four-page structure (Landing / Features / How it works / Contact) and the existing messaging verbatim. "Get Started" must lead to a download page offering the mobile app with a QR code (fake for now). Fake/placeholder photography is user-approved for this build.
 
 ## Evidence on Hand
 

@@ -26,9 +26,9 @@
   --ink-3: #5f7688;
   --accent: #2e8fa3;         /* glacial teal — signal lamps, live data */
   --accent-ink: #1d6b7c;
-  --amber: #d9973b;          /* elevated lamp */
-  --coral: #c25a41;          /* high lamp */
-  --ok: #3d8f6a;             /* low-risk lamp — retired from index.html (legacy pages only) */
+  --amber: #d9973b;          /* RETIRED — pinned 5-color system; unused */
+  --coral: #c25a41;          /* RETIRED — pinned 5-color system; unused */
+  --ok: #3d8f6a;             /* RETIRED — pinned 5-color system; unused */
   --sky: #8ec7dd;            /* sky blue — charts, env graphics, Wi-Fi/cloud nodes (pinned 5-color system) */
   --beige: #f0e8da;          /* warm home-context band — sparingly, 2 bands max per page (pinned 5-color system) */
   --on-dark: #e7f0f5;
@@ -173,6 +173,10 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 900px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 580px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .section { padding: 68px 0; } }
+/* grid children must be allowed to shrink below content min-content (long emails/URLs) */
+.grid-2 > *, .grid-3 > *, .grid-4 > * { min-width: 0; }
+.mono { overflow-wrap: anywhere; }   /* anywhere (not break-word): actually reduces min-content so grid cells can shrink */
+.rows .row > * { min-width: 0; }
 
 /* ================= tide-table rows ================= */
 .rows { border-top: 2px solid var(--deep); margin-top: 8px; }
@@ -232,7 +236,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
   width: fit-content;
 }
 .statline b { color: var(--ink); font-weight: 600; }
-.statline .warn { color: var(--amber); font-weight: 600; }
+.statline .warn { color: var(--steel-deep); font-weight: 600; }
 
 /* ================= hero composite ================= */
 .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 64px; align-items: center; }
@@ -254,14 +258,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
   width: 168px; border-radius: 26px; border: 1px solid var(--line-strong);
   background: var(--deeper); box-shadow: var(--shadow-card); overflow: hidden;
 }
-.hero-tag {
-  position: absolute; left: 22px; top: 22px; z-index: 2;
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--card); border: 1px solid var(--line); border-radius: 99px;
-  padding: 7px 14px 7px 11px; box-shadow: var(--shadow-card);
-  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2);
-}
-.hero-tag b { color: var(--accent-ink); }
 .hero-dim {
   position: absolute; z-index: 2;
   font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
@@ -280,22 +276,22 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .phone-ui .p-cardline .p-dot { margin-right: 2px; }
 .phone-ui .p-top { display: flex; justify-content: space-between; padding: 8px 12px 4px; }
 .phone-ui .p-body { padding: 6px 12px 14px; }
-.phone-ui .p-risk { color: #ffd9a1; font-weight: 700; }
+.phone-ui .p-risk { color: var(--on-dark); font-weight: 700; }
 .phone-ui .p-bars { display: flex; align-items: flex-end; gap: 3px; height: 46px; margin: 8px 0 10px; }
 .phone-ui .p-bars i { flex: 1; border-radius: 2px 2px 0 0; background: #4d8fa6; }
-.phone-ui .p-bars i.warm { background: #d9973b; }
+.phone-ui .p-bars i.warm { background: var(--sky); }
 .phone-ui .p-row { display: flex; justify-content: space-between; border-top: 1px solid rgba(231,240,245,.14); padding: 6px 0 0; }
 .phone-ui .p-toggle { display: inline-block; background: #2e8fa3; color: #eaf5f8; border-radius: 99px; padding: 3px 9px; font-weight: 700; }
 
 /* labeled app preview (download page) */
 .phone-ui .p-label { font-size: 8px; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark-2); }
 .phone-ui .p-big { font-family: var(--font-display); font-size: 30px; font-weight: 700; color: var(--on-dark); letter-spacing: -.01em; margin: 4px 0 8px; }
-.phone-ui .p-big em { font-style: normal; font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #ffd9a1; vertical-align: 4px; margin-left: 6px; }
+.phone-ui .p-big em { font-style: normal; font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--sky); vertical-align: 4px; margin-left: 6px; }
 .phone-ui .p-card { border: 1px solid rgba(231,240,245,.16); border-radius: 10px; padding: 9px 11px; margin-top: 9px; }
 .phone-ui .p-cardline { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 9.5px; letter-spacing: .02em; color: var(--on-dark); text-transform: none; padding: 3px 0; }
 .phone-ui .p-cardline + .p-cardline { border-top: 1px solid rgba(231,240,245,.08); }
 .phone-ui .p-on { background: #2e8fa3; color: #eaf5f8; border-radius: 99px; padding: 2px 9px; font-weight: 700; font-size: 9px; }
-.phone-ui .p-dot { color: #ffd9a1; }
+.phone-ui .p-dot { color: var(--sky); }
 .dl-phone-note {
   text-align: center; margin-top: 14px;
   font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
@@ -320,7 +316,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .log-row h3 { color: var(--on-dark); font-size: 1.05rem; margin: 0; }
 .log-row p { color: var(--on-dark-2); font-size: 14px; }
 .lamp { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #f0b7a4; }
-.lamp i { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 8px rgba(194,90,65,.8); }
+.lamp i { width: 8px; height: 8px; border-radius: 50%; background: var(--sky); }
 @media (max-width: 860px) { .log-row { grid-template-columns: 1fr auto; } .log-row .log-time { grid-column: 1 / -1; } .log-row p { grid-column: 1 / -1; } }
 
 /* ================= loop diagram ================= */
@@ -367,8 +363,8 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .dash .d-room { display: flex; justify-content: space-between; align-items: center; gap: 8px; border: 1px solid rgba(231,240,245,.14); border-radius: 9px; padding: 8px 10px; color: var(--on-dark-2); }
 .dash .d-badge { border-radius: 99px; padding: 2px 8px; font-weight: 700; font-size: 9px; }
 .dash .d-low { background: rgba(46,143,163,.25); color: #8fdceb; }
-.dash .d-elev { background: rgba(217,151,59,.22); color: #ffd9a1; }
-.dash .d-high { background: rgba(194,90,65,.28); color: #f4b3a2; }
+.dash .d-elev { background: rgba(142,199,221,.22); color: #d6ecf5; }
+.dash .d-high { background: rgba(34,51,74,.55); color: #ffffff; }
 .dash .d-kpi { display: flex; gap: 18px; padding: 0 16px 14px; color: var(--on-dark-2); }
 .dash .d-kpi b { display: block; color: var(--on-dark); font-size: 13px; letter-spacing: .04em; }
 @media (max-width: 560px) { .dash .d-body { grid-template-columns: 1fr; } .dash .d-side { border-left: none; border-top: 1px solid rgba(231,240,245,.12); } }
@@ -535,7 +531,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .dl-stage {
   align-self: stretch; border-radius: 18px; border: 1px solid var(--line);
   background: linear-gradient(180deg, #f2f7fa 0%, var(--paper-deep) 100%);
-  display: grid; place-items: center; padding: 48px 24px;
+  display: grid; place-items: center; align-content: center; gap: 14px; padding: 48px 24px;
 }
 .dl-phone { width: 218px; border-radius: 32px; border: 1px solid var(--line-strong); background: var(--deeper); box-shadow: var(--shadow-pop); overflow: hidden; }
 .dl-phone .phone-ui { font-size: 10px; }
@@ -752,8 +748,24 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 
 /* ---- index craft-floor overrides (scoped to this page only) ---- */
 .page-index .loopnode .stage { font-size: 11px; }
-.page-index .hero-tag { font-size: 11px; }
 .page-index .photo figcaption { font-size: 11px; }
 
 /* index: warm bars (legacy amber) -> sky, per pinned 5-color system */
 .page-index .p-bars i.warm { background: var(--sky); }
+
+/* ---- download page: human app-download destination ---- */
+.store-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 28px; }
+.store-badges img { display: block; border-radius: 8px; }
+.store-badges img[alt="Download on the App Store"] { height: 62px; width: auto; }
+.store-badges img[alt="Get it on Google Play"] { height: 62px; width: auto; }
+.dl-availability { margin-top: 14px; font-size: 13.5px; color: var(--steel-deep); max-width: 46ch; }
+.dl-qr-link { margin-top: 8px; font-size: 13px; color: var(--steel-deep); }
+.dl-qr-link a { color: var(--accent-ink); font-weight: 600; }
+.p-greet { font-family: var(--font-text); font-size: 15px; font-weight: 650; color: var(--on-dark); letter-spacing: -.01em; margin-top: 8px; }
+.p-sub { font-family: var(--font-text); font-size: 11px; color: var(--on-dark-2); margin-top: 3px; }
+.p-rooms { margin-top: 14px; border-top: 1px solid rgba(231,240,245,.14); }
+.p-room { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(231,240,245,.08); font-family: var(--font-text); font-size: 11.5px; color: var(--on-dark); }
+.p-state { font-style: normal; font-family: var(--font-mono); font-size: 8.5px; letter-spacing: .12em; text-transform: uppercase; border-radius: 99px; padding: 3px 8px; }
+.p-ok { background: rgba(46,143,163,.22); color: #9fdcec; }
+.p-watch { background: rgba(142,199,221,.20); color: var(--sky); }
+@media (max-width: 860px) { .store-badges { gap: 12px; } .store-badges img { height: 54px; } }

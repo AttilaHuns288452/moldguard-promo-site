@@ -1,60 +1,58 @@
 #!/usr/bin/env python3
-"""Generate the placeholder (fake, non-scannable) QR code SVG for download.html.
+"""Generate the download QR code (REAL, scannable) for download.html.
 
-Deterministic: same seed -> same SVG. Visually a plausible QR (finder patterns,
-timing lines, module noise) but encodes nothing. Replace with a real app-store
-QR before launch.
+Destination: APP_DOWNLOAD_URL below. No published app-store listing exists yet,
+so the code resolves to the MoldGuard site (smart-link placeholder). When store
+listings go live, point APP_DOWNLOAD_URL at a router/smart-link (or the Play
+listing) and regenerate — this file is the single place to change.
+
+Verify after any change: python3 -m venv /tmp/qrvenv && /tmp/qrvenv/bin/pip install qrcode[pil] zxing-cpp
+  /tmp/qrvenv/bin/python generate_qr.py   (self-check decodes the PNG and asserts the payload)
 """
-import zlib
+import qrcode
 
-W = 29  # modules per side
-SCALE = 8
-QUIET = 2
-TOTAL = (W + QUIET * 2) * SCALE
-SEED = b"MOLDGUARD-V1-FAKE-QR-NOT-SCANNABLE"
-
-
-def rng_byte(i: int) -> int:
-    return zlib.crc32(SEED + i.to_bytes(4, "big")) & 0xFF
-
-
-def in_finder(x: int, y: int) -> bool:
-    for fx, fy in ((0, 0), (W - 7, 0), (0, W - 7)):
-        if fx <= x < fx + 7 and fy <= y < fy + 7:
-            lx, ly = x - fx, y - fy
-            return lx in (0, 6) or ly in (0, 6) or (2 <= lx <= 4 and 2 <= ly <= 4)
-    return False
-
-
-def is_timing(x: int, y: int) -> bool:
-    return x == 6 or y == 6
+APP_DOWNLOAD_URL = "https://attilahuns288452.github.io/moldguard-promo-site/download.html"
+OUT_SVG = "download-qr.svg"
+OUT_PNG = "/tmp/qr-check.png"          # scratch raster used only for the decode self-check
+FILL = "#22334a"                        # brand deep navy
+BACK = "#ffffff"
 
 
 def main() -> None:
-    rects = []
-    n_modules = W * W
-    for y in range(W):
-        for x in range(W):
-            if is_timing(x, y):
-                on = (x % 2 == 0) if y == 6 else (y % 2 == 0)
-            elif in_finder(x, y):
-                on = True
-            else:
-                on = rng_byte(y * W + x) < 116  # ~45% fill
-            if on:
-                rects.append(
-                    f'<rect x="{(x + QUIET) * SCALE}" y="{(y + QUIET) * SCALE}" '
-                    f'width="{SCALE}" height="{SCALE}"/>'
-                )
+    qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q, border=4, box_size=10)
+    qr.add_data(APP_DOWNLOAD_URL)
+    qr.make(fit=True)
+    matrix = qr.get_matrix()
+    n = len(matrix)
+    quiet = 4
+    total = (n + quiet * 2) * 8
+
+    rects = [
+        f'<rect x="{(x + quiet) * 8}" y="{(y + quiet) * 8}" width="8" height="8"/>'
+        for y, row in enumerate(matrix) for x, on in enumerate(row) if on
+    ]
     svg = (
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {TOTAL} {TOTAL}" '
-        f'role="img" aria-label="Placeholder QR code (not scannable)">\n'
-        f'<rect width="{TOTAL}" height="{TOTAL}" fill="#ffffff"/>\n'
-        f'<g fill="#22334a">\n' + "\n".join(rects) + "\n</g>\n</svg>\n"
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {total} {total}" '
+        f'role="img" aria-label="QR code linking to the MoldGuard app download page">\n'
+        f'<rect width="{total}" height="{total}" fill="{BACK}"/>\n'
+        f'<g fill="{FILL}">\n' + "\n".join(rects) + f"\n</g>\n</svg>\n"
     )
-    with open("download-qr.svg", "w") as f:
+    with open(OUT_SVG, "w") as f:
         f.write(svg)
-    print(f"wrote download-qr.svg  viewBox 0 0 {TOTAL} {TOTAL}  modules {n_modules}")
+
+    # self-check: same matrix rasterized to PNG, decoded back, payload asserted
+    try:
+        from PIL import Image
+        import zxingcpp
+    except ImportError:
+        print(f"wrote {OUT_SVG} ({n}x{n} modules, payload {APP_DOWNLOAD_URL}) — decode check skipped (pip install qrcode[pil] zxing-cpp)")
+        return
+    img = qr.make_image(fill_color=FILL, back_color=BACK).convert("RGB")
+    img.save(OUT_PNG)
+    results = zxingcpp.read_barcodes(Image.open(OUT_PNG))
+    assert results, "decode failed"
+    assert results[0].text == APP_DOWNLOAD_URL, f"payload mismatch: {results[0].text}"
+    print(f"wrote {OUT_SVG} ({n}x{n} modules) — decode-verified: {results[0].text}")
 
 
 if __name__ == "__main__":

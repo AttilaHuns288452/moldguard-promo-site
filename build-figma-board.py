@@ -39,10 +39,10 @@ def frame_body(fname: str) -> str:
         body = body.replace(f"var({name})", val.strip())
     def img_data(m):
         path = ROOT / m.group(1)
-        mime = "image/svg+xml" if path.suffix == ".svg" else "image/jpeg"
+        mime = "image/svg+xml" if path.suffix == ".svg" else "image/jpeg" if path.suffix == ".jpg" else "image/png"
         data = path.read_bytes()
         return f"data:{mime};base64,{base64.b64encode(data).decode()}"
-    body = re.sub(r'(assets/[\w-]+\.jpg|download-qr\.svg)', img_data, body)
+    body = re.sub(r'(assets/[\w-]+\.(?:jpg|png|svg)|download-qr\.svg)', img_data, body)
     body = body.replace('href="index.html"', 'href="#"').replace('href="features.html"', 'href="#"')
     body = body.replace('href="how-it-works.html"', 'href="#"').replace('href="contact.html"', 'href="#"')
     body = body.replace('href="download.html"', 'href="#"')
