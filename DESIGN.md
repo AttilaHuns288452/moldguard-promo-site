@@ -1,89 +1,81 @@
 # DESIGN.md — MoldGuard promo site
 
-<!-- impeccable:documented-from-build 1 · seed c4ef9450 · 2026-09-13 -->
-
 Recorded from the built pages, not intentions. Any new page or section on this
 site inherits this system; changes here are system changes.
 
 ## World
 
-**Coastal instrument station.** The site reads like the device's own station
-log: a navy instrument world sitting on icy white-blue paper. The palette is the
-user-pinned 5-color system: NAVY + WHITE foundation, TEAL primary accent,
-SKY BLUE supporting, BEIGE warmth (visual balance ≈ navy 25–30%, white 35–45%,
-beige 10–15%, teal 8–12%, sky 5–10%). Steel stays as navy-tint chrome.
-Assigned by concept-seed (marine-meteorological instrument world, seed
-`c4ef9450`, challenger "brick build-instruction book" fused into the numbered
-stage/setup diagrams).
+**Clean, clinical, trustworthy, domestic.** The site should read like a real
+consumer IoT product company, with the clarity of Google-Nest-style product
+sites. Navy-green + white dominant; **MoldGuard teal is the only loud accent**.
+Severity (risk states) is communicated through typography and contrast only,
+never colored lamps. Precision is kept; the instrument-station theme is gone.
 
 ## Color tokens (site.css `:root`)
 
 | Token | Value | Role |
 |---|---|---|
-| `--paper` | `#e9eff3` | page ground |
-| `--paper-deep` | `#dfe7ec` | alternating bands, icon tiles |
-| `--surface` | `#f6fafc` | inputs, chips, statline |
-| `--card` | `#ffffff` | cards |
-| `--line` / `--line-strong` | `#cdd9e0` / `#aebfca` | hairlines, borders |
-| `--steel` / `--steel-deep` | `#567b8d` / `#3e5f70` | secondary buttons, chip ink |
-| `--deep` / `--deeper` | `#2f4157` / `#22334a` | panels, ticker, footer, primary buttons |
-| `--accent` / `--accent-ink` | `#2e8fa3` / `#1d6b7c` | glacial teal — live dots, lamps, focus rings |
-| `--sky` | `#8ec7dd` | sky blue — charts, environmental graphics, Wi-Fi/cloud nodes, secondary accents (pinned 5-color system) |
-| `--beige` | `#f0e8da` | warm home-context section bands, used sparingly — max 2 bands per page (pinned 5-color system) |
-| `--amber` / `--coral` / `--ok` | `#d9973b` / `#c25a41` / `#3d8f6a` | **RETIRED site-wide** — definitions kept only for token-history; no rule may reference them |
+| `--paper` | `#F7F8F6` | warm off-white page ground |
+| `--paper-deep` | `#EDF1F0` | subtle alternating band tint |
+| `--surface` | `#F2F4F2` | inputs, subtle fills |
+| `--card` | `#ffffff` | cards, showcase panels |
+| `--line` / `--line-strong` | `#DDE5E5` / `#C7D4D3` | hairlines, borders |
+| `--deep` / `--deeper` | `#183B43` / `#122C33` | navy-green dark: CTA band, footer, phone chrome (`--deeper` = footer/phone-inset only) |
+| `--accent` | `#2D9A91` | **MoldGuard teal — THE accent:** primary CTA, key data, active states |
+| `--accent-ink` | `#1E6E68` | teal on light backgrounds; CTA fill (white text ≈ 6:1) |
+| `--ink` / `--ink-2` / `--ink-3` | `#213132` / `#465754` / `#687979` | body text / secondary / muted |
+| `--steel` / `--steel-deep` | `#687979` / `#465754` | aliases of the muted grays — kept for token-name compatibility with the other pages |
+| `--sky` | `#8FBDB8` | LEGACY ALIAS, muted teal-gray; only existing chart-bar/state rules reference it — no new uses |
+| `--beige` | `#F7F8F6` | LEGACY ALIAS = `--paper`; existing band rules collapse into the foundation |
+| `--amber` / `--coral` / `--ok` | `#d9973b` / `#c25a41` / `#3d8f6a` | RETIRED — definitions kept only for token history; no rule may reference them |
 
-**Pinned 5-color system (ALL pages, binding):** NAVY (`--deep`/`--deeper`) ·
-TEAL (`--accent`) · SKY (`--sky`) · WHITE (`--card`) · BEIGE (`--beige`).
-Steel `--steel`/`--steel-deep` stays as a navy-tint for secondary chrome only.
-**Severity-via-typography rule:** risk severity (LOW/MODERATE/HIGH/CRITICAL) is
-communicated only through type weight, label text, border weight, background
-intensity, and contrast — never through amber/coral/green lamps. Ladder:
-LOW = teal chip · MODERATE = sky chip · HIGH/CRITICAL = navy treatment
-(white-on-navy chip, heavier border, bolder label). Teal is the primary accent
-(CTAs, active states, key numbers); sky complements it for charts/lines/env
-data, never competing.
-| `--on-dark` / `--on-dark-2` | `#e7f0f5` / `#a9c0cf` | text on navy |
+**Simplified 4-role palette:** PAPER (`--paper`/`--paper-deep`/`--card`) ·
+DARK (`--deep`/`--deeper`) · INK (text grays) · TEAL (`--accent`/`--accent-ink`).
+The page must read navy-green + white dominant, teal as the only loud accent.
+No color carries a "narrative" role: no beige warmth bands, no sky environment
+graphics.
 
-Elevation: **flat by default**. Borders carry structure; the only shadow is
-`--shadow-pop` on the few raised panels (hero stage, statement bands, floats).
-No CTA glow, no per-card shadows. Radii: 9–10px controls, 12–16px panels.
+**Severity-via-typography rule:** risk severity (Steady / Watch / Low /
+Elevated / High) is communicated only through label text, type weight, and
+background intensity in the neutral/teal range — never through amber/coral/green
+lamps.
+
+Contrast (measured): ink on paper 12.7:1 · ink-2 on paper 7.2:1 · accent-ink on
+paper 5.7:1 · white on accent-ink (CTA) 6.0:1 · on-dark-2 on deep 6.1:1.
+
+Elevation: **flat by default**. Borders carry structure; the only shadow is on
+the hero showcase panel (`--shadow-card`) and raised phone mocks
+(`--shadow-pop`). Radii: 8px controls, 12px cards, one 20px hero showcase panel.
 
 ## Typography
 
 - **Display:** Bricolage Grotesque 650–700, tracking −.03em, clamp(2.5→4.1rem) h1.
-- **Text:** Figtree 400–700, body 16.5px/1.6 — humanist and warm; the page must
-  read like a product site, not a terminal.
-- **Readouts:** Spline Sans Mono, 10–12.5px, uppercase, +.1–.16em tracking.
-  Mono is for **data** (statline, badges, captions, lamps, row indices,
-  step letters) — never for kickers above headings (banned by craft floor;
-  data-bearing readouts are fine).
-- **Chrome:** no top ticker bar — the site opens with a clean sticky nav
-  (logo + wordmark, links, one CTA). Favicon + meta description on every page.
+- **Text:** Figtree 400–700, body 16.5px/1.6.
+- **Mono:** Spline Sans Mono, **measurements and row indices only** — risk
+  readouts (38/100), RH %, °C, and the 01/02/03 step numbers. Everything else
+  (labels, captions, fine print, tags) is Figtree. No mono eyebrows/kickers.
 
 ## Components (all in site.css)
 
-Ticker (navy live-status bar) · sticky blurred header · logo (shield-wave
-mark + wordmark/sub-label) · buttons (`--deep` primary, steel secondary,
-ghost, on-dark light; 9–10px radius; labels name the action: "Get the app") ·
-mono spec lines (`.specline` — the only annotation device) · **tide-table
-rows** (`.rows`/`.row`: 2px navy top rule, mono index · title · text, hairline
-separators — features, steps, channels, perks all use this one grammar) ·
-trio (`.trio`: one strip, three hairline columns) · duo (`.duo`: two-column
-instrument panel) · statement band (`.statement`: flat navy, big claim + mono
-tag — used once per page at most) · station-log rows (WK ## · title · text · sky lamp) · threshold ruler (authored SVG: 60–100% RH scale, 75%
-colonization marker, 80% PH-average marker) · loop nodes with clip-path
-arrow connectors · risk dial SVG — severity arcs teal→sky→navy (reduced-motion respected)
-· dashboard/phone mocks (`.dash`, `.phone-ui`) · device render SVG · photo cards with mono figcaption (status float-cards used sparingly) ·
-comparison table
-(`.ours-tag` pill) · accordions (plus/minus circle) · forms (46px fields,
-teal focus ring) · roster (`.roster`: 4-col hairline team grid, small
-gradient avatars) · flat navy CTA with 7px inset outline (instrument bezel,
-no gradient, no glow) · footer (navy, mono fine print).
+Sticky blurred header · logo (shield-arc mark + wordmark) · buttons
+(`--accent-ink` primary, ghost, light-on-dark; 9–10px radius; labels name the
+action: "Get Started") · editorial numbered lists (`.problist`: 2-col hairline
+grid, mono index + title + one sentence) · alternating solution rows
+(`.solrow`: large visual + number + title + one line, left/right alternating) ·
+numbered steps (`.steps3`: hairline top rule, 01/02/03 columns) · features
+list (`.featlist`: two-column numbered rows) · tide-table rows (`.rows`/
+`.row`, shared grammar) · dashboard mock (`.dash`: trend line + plain-text
+room states, Low/Elevated labels via typography) · phone mocks (`.phone-ui`,
+`.showcase-phone`: app name, risk index, one-line status, plain-text room
+list) · simplified device SVG (clean body, grille, single teal status LED —
+no control-panel readout, no gauge) · photos with plain figcaption (no float
+status cards) · statement band (`.statement`, features page) · comparison
+table (`.ours-tag` pill, features page) · accordions · forms · roster · navy
+CTA band (`.cta-band`, no bezel ornament) · footer (navy, Figtree fine print).
 
-**Anti-slop rules baked in:** no equal-card grids (rows/duo/trio instead),
-no icon tiles, no decorative eyebrows/kickers (banned site-wide), no floating
-status labels or redundant pills — a chip/lamp must carry data or it goes,
-one statement band per page, shadows only on pop panels, honest button labels.
+**No chips, no lamps, no speclines, no kickers, no floating status labels.**
+Nothing decorative survives: every element either carries data or structures
+content.
 
 ## Distribution (treat it like a real website)
 
@@ -100,7 +92,7 @@ per-page meta description, favicon. Repo root: `robots.txt` + `sitemap.xml`
   hotlinking): bathroom, window/bathroom, purifier/bath, condensation, living
   room. All are **placeholder** material — footer says so on every page;
   replace with product/team photography when it exists.
-- **Device/UI:** authored SVG (device render, dial, dashboard, phone) — never
+- **Device/UI:** authored SVG (clean device render, dashboard, phone) — never
   photos of other brands' devices.
 - **QR:** `download-qr.svg`, generated by `generate_qr.py` — REAL and
   decode-verified. Payload = `APP_DOWNLOAD_URL` constant (currently the
@@ -112,28 +104,34 @@ per-page meta description, favicon. Repo root: `robots.txt` + `sitemap.xml`
 
 ## Voice & claims
 
-Messaging is frozen to `messaging.md` C-register. Draft FAQ answers carry
-inline `[Team note: … Q#]` markers instead of silent claims. Numbers shown on
-mocks (38 ELEVATED, 82% RH) are illustrative demo data, consistent across all
-pages.
+Messaging is frozen to `messaging.md` C-register. Numbers shown on mocks
+(38/100 risk index, room states) are illustrative demo data. No em dashes in
+visible copy; sentences are short, benefit-first, plain product-team voice.
 
 ## Page inventory
 
-index (hero composite, threshold ruler, station log, solution trio, loop,
-feature rows, own-it statement, placement, CTA) · features (duo: dial
-flagship + VOC, rows 03–05, bonus statement, comparison, spec accordions) ·
-how-it-works (loop diagram, 4 stages alternating, setup rows A/B/C, wide
-photo, FAQ) · contact (real mailto form, channel row-grid, 3-step rows,
+index — the 8 content sections: (1) light editorial hero (category line, h1,
+one paragraph, Get Started + See how it works, showcase panel with device SVG
++ phone app screen), (2) problem (4-item editorial numbered list), (3) solution
+"Meet MoldGuard." (3 alternating rows: device / dashboard / app), (4) "Sense.
+Score. Act." 3-step section, (5) features (6-item editorial two-column list),
+(6) own-it band, (7) where-it-lives photo section, (8) navy final CTA. The
+Mold Risk Index panel moved to features.html; the ecosystem/system diagram
+moved to how-it-works.html.
+
+features (duo: dial flagship + VOC, rows, statement, comparison, spec
+accordions) · how-it-works (loop diagram, 4 stages alternating, setup rows,
+wide photo, FAQ) · contact (real mailto form, channel rows, 3-step rows,
 roster of 8) · **download** (Get Started destination: QR card, store pills,
 phone stage, perk rows). Every "Get Started" leads to `download.html`.
 
 ## Motion
 
-Two authored moments only: live-dot pulse (2.4s) and dial needle sweep on
-load. Exponential ease-out; everything else static. Reduced-motion kills both.
+Live-dot pulse (2.4s) only; reduced-motion kills it. Everything else static.
 
 ## Accessibility floor
 
-Body text ≥4.5:1 (ink on paper ≈ 9:1; on-dark-2 on deep ≈ 7:1). Focus-visible
-2.5px teal ring everywhere. Decorative SVGs `aria-hidden`; photos carry real
-alt text; QR labeled as placeholder. Forms use real labels + required.
+Body text ≥4.5:1 (measured ratios above). Focus-visible 2.5px teal ring
+everywhere. Decorative SVGs `aria-hidden`; photos carry real alt text; QR
+labeled as placeholder. Forms use real labels + required. Skip link on every
+page.

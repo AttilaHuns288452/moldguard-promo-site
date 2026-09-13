@@ -32,7 +32,17 @@ No backend on this site yet (contact form build note pending, Q4). No numeric ri
 
 ## Brand Commitments
 
-User-pinned palette: the 5-color system — NAVY #2f4157 (foundation), WHITE (content), TEAL #2e8fa3 (primary accent), SKY BLUE #8ec7dd (secondary), BEIGE #f0e8da (warmth, sparing). Steel #567b8d = navy-tint chrome only. Amber/coral/green retired. User-pinned: keep the four-page structure (Landing / Features / How it works / Contact) and the existing messaging verbatim. "Get Started" must lead to a download page offering the mobile app with a QR code (fake for now). Fake/placeholder photography is user-approved for this build.
+User-pinned palette: the simplified 4-role system — PAPER #F7F8F6 (warm
+off-white foundation), DARK #183B43 (navy-green primary dark), INK #213132
+(body text grays), TEAL #2D9A91 (the only loud accent: primary CTA, key data,
+active states). Legacy alias tokens kept for compatibility: --sky #8FBDB8
+(muted teal-gray, existing chart rules only), --beige = paper. Steel tokens
+(#687979/#465754) alias the muted grays. Amber/coral/green retired. The site
+reads navy-green + white dominant, clean and domestic, not instrument-themed.
+User-pinned: keep the four-page structure (Landing / Features / How it works /
+Contact) and the existing messaging verbatim. "Get Started" must lead to a
+download page offering the mobile app with a QR code (fake for now).
+Fake/placeholder photography is user-approved for this build.
 
 ## Evidence on Hand
 
