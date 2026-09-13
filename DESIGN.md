@@ -61,7 +61,9 @@ tag — used once per page at most) · station-log rows (WK ## · title · text 
 coral lamp) · threshold ruler (authored SVG: 60–100% RH scale, 75%
 colonization marker, 80% PH-average marker) · loop nodes with clip-path
 arrow connectors · risk dial SVG (animated needle; reduced-motion respected)
-· dashboard/phone mocks (`.dash`, `.phone-ui`) · device render SVG · photo
+· dashboard/phone mocks (`.dash`, `.phone-ui`) · device render SVG · hero
+benefit chips (`.chip`: white pill, hairline border, teal dot — hero only,
+the three headline capabilities; never as section decoration) · photo
 cards with mono figcaption + `.float-card` status · comparison table
 (`.ours-tag` pill) · accordions (plus/minus circle) · forms (46px fields,
 teal focus ring) · roster (`.roster`: 4-col hairline team grid, small
@@ -69,8 +71,18 @@ gradient avatars) · flat navy CTA with 7px inset outline (instrument bezel,
 no gradient, no glow) · footer (navy, mono fine print).
 
 **Anti-slop rules baked in:** no equal-card grids (rows/duo/trio instead),
-no icon tiles, no pill-chip clusters, no decorative eyebrows, one statement
-band per page, shadows only on pop panels, honest button labels.
+no icon tiles, chips confined to the hero benefit trio, no decorative
+eyebrows, one statement band per page, shadows only on pop panels, honest
+button labels.
+
+## Distribution (treat it like a real website)
+
+Every page ships: canonical URL, full Open Graph + Twitter `summary_large_image`
+card pointing at `assets/og-card.png` (1200×630, rendered from the site's own
+palette/type — regenerate by re-screenshotting if the hero story changes),
+per-page meta description, favicon. Repo root: `robots.txt` + `sitemap.xml`
+(listing the bare directory URL as home), `404.html` (on-brand, noindex),
+`.nojekyll`. Canonical home = `.../moldguard-promo-site/` (no `index.html`).
 
 ## Imagery
 
