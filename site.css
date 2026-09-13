@@ -260,11 +260,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .phone-ui .p-cardline + .p-cardline { border-top: 1px solid rgba(233,241,240,.08); }
 .phone-ui .p-on { background: #2D9A91; color: #E9F1F0; border-radius: 99px; padding: 2px 9px; font-weight: 700; font-size: 9px; }
 .phone-ui .p-dot { color: var(--sky); }
-.dl-phone-note {
-  text-align: center; margin-top: 14px;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--steel-deep);
-}
 
 /* ================= station log (problem) ================= */
 .lamp { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #f0b7a4; }
@@ -470,27 +465,18 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 }
 .qr-frame svg, .qr-frame img { width: 100%; height: 100%; image-rendering: pixelated; }
 .qr-card .form-note { max-width: 34ch; margin-left: auto; margin-right: auto; }
-.dl-hero { display: grid; grid-template-columns: minmax(0,1fr) 300px; grid-template-areas: "h1 stage" "lede stage" "cluster stage"; grid-template-rows: auto auto 1fr; gap: 10px 56px; align-items: center; text-align: center; }
-.dl-hero h1 { grid-area: h1; justify-self: start; text-align: left; max-width: 24ch; margin: 0; }
-.dl-hero .lede { grid-area: lede; justify-self: start; text-align: left; margin: 0; }
-.dl-hero .dl-cluster { grid-area: cluster; justify-self: center; align-self: start; }
-.dl-hero .dl-stage { grid-area: stage; }
+.dl-hero { display: grid; justify-items: center; text-align: center; gap: 8px; }
+.dl-hero h1 { margin: 0; }
+.dl-hero .lede { margin: 0 0 26px; }
+.dl-cluster { display: grid; justify-items: center; gap: 18px; }
+.dl-scan { font-size: 15px; font-weight: 600; color: var(--ink); margin: 0; }
+.dl-cluster .store-badges { justify-content: center; }
+.dl-cluster .qr-frame { margin: 0; }
 .dl-cluster { display: grid; justify-items: center; gap: 18px; }
 .dl-scan { font-size: 15px; font-weight: 600; color: var(--ink); margin: 0; }
 .dl-cluster .store-badges { margin-top: 4px; justify-content: center; }
 .dl-cluster .qr-frame { margin: 0; }
-@media (max-width: 860px) { .dl-hero { grid-template-columns: 1fr; grid-template-areas: 'h1' 'lede' 'cluster' 'stage'; justify-items: center; text-align: center; } .dl-hero h1, .dl-hero .lede { justify-self: center; text-align: center; max-width: 30ch; } }
-.dl-stage {
-  align-self: stretch; border-radius: 18px; border: 1px solid var(--line);
-  background: linear-gradient(180deg, #f2f7fa 0%, var(--paper-deep) 100%);
-  display: grid; place-items: center; align-content: center; gap: 14px; padding: 48px 24px;
-}
-.dl-phone { width: 218px; border-radius: 32px; border: 1px solid var(--line-strong); background: var(--deeper); box-shadow: var(--shadow-pop); overflow: hidden; }
-.dl-phone .phone-ui { font-size: 10px; }
-.dl-phone .p-top { padding: 14px 16px 6px; }
-.dl-phone .p-body { padding: 10px 16px 30px; }
-.dl-phone .p-bars { height: 92px; gap: 5px; }
-.dl-phone .p-risk { font-size: 13px; }
+@media (max-width: 860px) { .dl-hero { gap: 8px; } .dl-hero h1, .dl-hero .lede { max-width: 30ch; } }
 
 
 /* ================= footer ================= */
