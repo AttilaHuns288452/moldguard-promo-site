@@ -5,8 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<meta name="description" content="How MoldGuard works: sense the room, score the real mold risk, act automatically, and report to your dashboard and phone.">
-<title>MoldGuard · How it works</title>
+<meta name="description" content="The Mold Risk Index engine, early VOC detection, closed-loop dehumidification, web dashboard, and mobile alerts, the full MoldGuard feature set.">
+<title>MoldGuard · Features</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@450;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<!-- impeccable direction contract (seed c4ef9450, persuade), same world as index.html: see index for the full five blocks. THESIS: the loop is the page, numbered stage instruction spreads (brick-book challenger) inside the icy station world; seed key c4ef9450.
+<!-- impeccable direction contract (seed c4ef9450, persuade), same world as index.html: see index for the full five blocks. THESIS: features presented as instrument inventory (numbered rows, dial, duo panel) in the icy station world; seed key c4ef9450.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md. -->
 
 
@@ -29,8 +29,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <span class="logo-word">MoldGuard</span>
     </a>
     <div class="navlinks">
-      <a href="features.html">Features</a>
-      <a href="how-it-works.html" aria-current="page">How it works</a>
+      <a href="features.html" aria-current="page">Features</a>
+      <a href="how-it-works.html">How it works</a>
       <a href="contact.html">Contact</a>
     </div>
     <a class="btn btn-primary" href="download.html">Get the app</a>
@@ -40,224 +40,165 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 <!-- ================= PAGE HERO ================= -->
 <section class="section-tight">
-  <div class="page">
-    <h1>From invisible risk to handled, automatically.</h1>
-    <p class="lede" style="margin-top:16px;">
-      MoldGuard runs a continuous loop: monitor the room, score the real mold risk,
-      and act before conditions turn into growth, informed by the weather forecast too.</p>
-  </div>
-</section>
-
-<!-- ================= CLOSED LOOP DIAGRAM ================= -->
-<section class="section-tight" style="padding-top:8px;">
-  <div class="page">
-    <div class="loopline">
-      <div class="loopnode">
-        <span class="stage">Stage 1</span>
-        <h3>Sense</h3>
-        <small>humidity · temp · VOC</small>
-      </div>
-      <div class="loopnode">
-        <span class="stage">Stage 2</span>
-        <h3>Score</h3>
-        <small>risk index engine</small>
-      </div>
-      <div class="loopnode">
-        <span class="stage">Stage 3</span>
-        <h3>Act</h3>
-        <small>dehumidifier auto-on</small>
-      </div>
-      <div class="loopnode">
-        <span class="stage">Stage 4</span>
-        <h3>Report</h3>
-        <small>dashboard · alerts</small>
-      </div>
-    </div>
-    <svg class="loop-return" width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true" style="margin-top:10px;">
-      <path d="M13 3 v11 M8 9.5 L13 15 L18 9.5" stroke="#567b8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <p class="readout" style="text-align:center; margin-top:2px;">↺ the loop closes on itself, that's the product</p>
-  </div>
-</section>
-
-<!-- ================= STEP 1: SENSE ================= -->
-<section class="section">
-  <div class="page stepgrid">
-    <div class="step-copy">
-      <span class="stage-tag"><i>1</i> Stage 1 · Sense</span>
-      <h2>Sense the room, continuously.</h2>
-      A sensor pod watches the conditions mold actually cares about:
-      relative humidity, temperature, and volatile organic compounds (VOCs).
-      The SHT41 measures the risk engine's core inputs; VOCs add supplementary
-      context, read together with everything else rather than as a verdict.
-      <p class="specline">SHT41 RH + TEMP · SGP40 VOC CONTEXT</p>
-    </div>
-    <div class="photo ph-4x3">
-      <img src="assets/window.jpg" alt="Bright white bathroom with a window, plants, and cold tiled surfaces" loading="lazy">
-      <figcaption>Cold surfaces, warm air · condensation waits here</figcaption>
-    </div>
-  </div>
-</section>
-
-<!-- ================= STEP 2: SCORE ================= -->
-<section class="section section-alt">
-  <div class="page stepgrid flip">
-    <div class="step-copy">
-      <span class="stage-tag"><i>2</i> Stage 2 · Score</span>
-      <h2>Score the risk, not just a number.</h2>
-      <p>The Mold Risk Index combines humidity, temperature, and <em>how long</em> those
-      conditions persist, instead of reacting to a single humidity threshold. That's
-      what makes the prediction early: it catches the window where mold <em>can</em>
-      start, before it does. Outdoor forecast data sharpens that window further.
-      <p class="specline">RH + TEMP + SUSTAINED DURATION · NOT ONE THRESHOLD</p>
-    </div>
-    <div class="hero-stage" style="min-height:360px; place-items:center; padding:30px 24px 26px;">
-      <div class="dial-wrap animate-needle" style="width:100%;" aria-hidden="true">
-        <svg viewBox="0 0 200 130" style="width:100%; max-width:320px;">
-          <path d="M18 112 A82 82 0 0 1 56 33" stroke="#3d8f6a" stroke-width="9" fill="none" stroke-linecap="round" opacity=".85"/>
-          <path d="M60 30 A82 82 0 0 1 100 18" stroke="#d9973b" stroke-width="9" fill="none" stroke-linecap="round" opacity=".9"/>
-          <path d="M104 18 A82 82 0 0 1 150 40" stroke="#c25a41" stroke-width="9" fill="none" stroke-linecap="round" opacity=".9"/>
-          <text x="26" y="127" font-family="Spline Sans Mono" font-size="9" letter-spacing="2" fill="#3d8f6a">LOW</text>
-          <text x="88" y="10" font-family="Spline Sans Mono" font-size="9" letter-spacing="2" fill="#a8772c">ELEV</text>
-          <text x="146" y="34" font-family="Spline Sans Mono" font-size="9" letter-spacing="2" fill="#c25a41">HIGH</text>
-          <g class="needle"><line x1="100" y1="96" x2="100" y2="34" stroke="#2f4157" stroke-width="3.5" stroke-linecap="round"/></g>
-          <circle cx="100" cy="96" r="7" fill="#2f4157"/>
-          <circle cx="100" cy="96" r="3" fill="#7fd0dd"/>
-          <text x="100" y="122" text-anchor="middle" font-family="Spline Sans Mono" font-size="15" font-weight="600" fill="#2f4157">38 ELEVATED</text>
-        </svg>
-      </div>
-      <div class="statline" style="margin:18px auto 0;">
-        <span>Closet <b>82% RH</b></span>
-        <span class="warn">26h sustained</span>
-        <span>Dew point margin <b class="warn">−0.4°C</b></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= STEP 3: ACT ================= -->
-<section class="section">
-  <div class="page stepgrid">
-    <div class="step-copy">
-      <span class="stage-tag"><i>3</i> Stage 3 · Act</span>
-      <h2>Act: dehumidify, no hands.</h2>
-      <p>When the index crosses the risk threshold, the ESP32 switches the connected
-      semiconductor dehumidifier on through a solid-state relay and pulls moisture back
-      down, closing the loop without you touching anything. Extracted water collects in
-      the removable 1&nbsp;L tank, monitored so you're told before it's full.</p>
-      <p class="specline">SSR-SAFE SWITCHING · APP OVERRIDE · TANK LEVEL ALERTS</p>
-    </div>
-    <div class="photo ph-4x3">
-      <img src="assets/purifier.jpg" alt="Calm white bathroom with bathtub and plants" loading="lazy">
-      <figcaption>The room the loop protects · pulled back from the threshold</figcaption>
-    </div>
-  </div>
-</section>
-
-<!-- ================= STEP 4: REPORT ================= -->
-<section class="section section-alt">
-  <div class="page stepgrid flip">
-    <div class="step-copy">
-      <span class="stage-tag"><i>4</i> Stage 4 · Report</span>
-      <h2>Report: see everything, anywhere.</h2>
-      <p>Live status and historical trends stream to the web dashboard over real-time
-      sync; the mobile app pushes an alert the moment risk rises, and lets you override
-      the unit manually from anywhere.</p>
-      <p class="specline">MQTT + SOCKET.IO · TREND CHARTS · MULTI-ROOM</p>
-    </div>
+  <div class="page hero-grid" style="align-items:center;">
     <div>
-      <div class="dash" style="margin-bottom:14px;" aria-hidden="true">
-        <div class="d-top"><span class="d-dot"></span><span class="d-dot"></span><span class="d-dot"></span><span class="d-title">app.moldguard.ph</span><span class="d-live"><span class="live-dot" style="width:6px;height:6px"></span> live</span></div>
-        <div class="d-body">
-          <div class="d-chart">
-            <svg viewBox="0 0 260 84" style="width:100%;height:auto">
-              <path d="M0 62 L24 58 L48 60 L72 50 L96 54 L120 44 L144 47 L168 36 L192 30 L216 26 L240 20 L260 16" stroke="#7fd0dd" stroke-width="2" fill="none"/>
-              <path d="M0 72 L24 70 L48 71 L72 66 L96 68 L120 60 L144 62 L168 52 L192 47 L216 40 L240 35 L260 30" stroke="#567b8d" stroke-width="1.5" stroke-dasharray="3 4" fill="none"/>
-            </svg>
-            <div class="d-kpi"><span>RH trend <b>74 → 82%</b></span><span>MRI <b>38</b></span></div>
-          </div>
-          <div class="d-side">
-            <div class="d-room"><span>Living</span><span class="d-badge d-low">Low</span></div>
-            <div class="d-room"><span>Closet</span><span class="d-badge d-elev">Elev</span></div>
-            <div class="d-room"><span>Bathroom</span><span class="d-badge d-high">High</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="phone-float" style="position:static; width:190px; margin-left:auto;" aria-hidden="true">
-        <div class="phone-ui">
-          <div class="p-top"><span>MG · ALERT</span><span>20:41</span></div>
-          <div class="p-body">
-            <span class="p-risk">RISK 38 · ELEVATED</span>
-            <div class="p-bars" style="height:44px"><i style="height:36%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:68%"></i><i class="warm" style="height:84%"></i><i class="warm" style="height:92%"></i></div>
-            <div class="p-row"><span>UNIT 01</span><span class="p-toggle">AUTO · ON</span></div>
-          </div>
-        </div>
-      </div>
+      <h1>Mold-specific intelligence, end to&nbsp;end.</h1>
+      <p class="lede" style="margin-top:16px;">
+        Warm, humid rooms are mold's ideal habitat. Most dehumidifiers see one
+        number, humidity. MoldGuard reads the full picture, humidity, temperature, exposure
+        duration, and virtual dew point margin, adds weather foresight, and responds on its own.</p>
+    </div>
+    <div class="photo ph-4x3">
+      <img src="assets/condensation.jpg" alt="Warm air meeting cold stone in a bath" loading="lazy">
+      <figcaption>Warm air meets cold stone · condensation waits</figcaption>
     </div>
   </div>
 </section>
 
-<!-- ================= PLACEMENT & SETUP ================= -->
-<section class="section">
+<!-- ================= SYSTEM FEATURES ================= -->
+<section class="section-tight">
   <div class="page">
-    <div class="section-head">
-      <h2>Plug in, connect, done.</h2>
+    <div class="duo" style="align-items:stretch;">
+      <div style="padding:28px; display:grid; grid-template-columns:1.15fr .85fr; gap:26px; align-items:center;">
+        <div>
+          <div class="feat-num">Feature 01 · flagship</div>
+          <h3>Mold Risk Index engine</h3>
+          <p style="margin-top:4px;">Real-time risk scoring built from humidity, temperature, and sustained exposure
+          duration, with a virtual surface dew point calculation, going beyond the single-threshold
+          triggers used by commercial dehumidifiers, and avoiding false triggers during
+          temporary humidity spikes.</p>
+          <p class="specline">RH + TEMP + DURATION · VIRTUAL SURFACE DEW POINT · NO SPIKE TRIGGERS</p>
+        </div>
+        <div class="dial-wrap animate-needle" aria-hidden="true">
+          <svg viewBox="0 0 200 130" style="width:100%; max-width:250px;">
+            <path d="M18 112 A82 82 0 0 1 56 33" stroke="#3d8f6a" stroke-width="9" fill="none" stroke-linecap="round" opacity=".85"/>
+            <path d="M60 30 A82 82 0 0 1 100 18" stroke="#d9973b" stroke-width="9" fill="none" stroke-linecap="round" opacity=".9"/>
+            <path d="M104 18 A82 82 0 0 1 150 40" stroke="#c25a41" stroke-width="9" fill="none" stroke-linecap="round" opacity=".9"/>
+            <text x="26" y="127" font-family="Spline Sans Mono" font-size="9" letter-spacing="2" fill="#3d8f6a">LOW</text>
+            <text x="88" y="10" font-family="Spline Sans Mono" font-size="9" letter-spacing="2" fill="#a8772c">ELEV</text>
+            <text x="146" y="34" font-family="Spline Sans Mono" font-size="9" letter-spacing="2" fill="#c25a41">HIGH</text>
+            <g class="needle"><line x1="100" y1="96" x2="100" y2="34" stroke="#2f4157" stroke-width="3.5" stroke-linecap="round"/></g>
+            <circle cx="100" cy="96" r="7" fill="#2f4157"/>
+            <circle cx="100" cy="96" r="3" fill="#7fd0dd"/>
+            <text x="100" y="122" text-anchor="middle" font-family="Spline Sans Mono" font-size="15" font-weight="600" fill="#2f4157">38 ELEVATED</text>
+          </svg>
+        </div>
+      </div>
+      <div style="padding:28px;">
+        <div class="feat-num">Feature 02</div>
+        <h3>Environmental &amp; VOC monitoring</h3>
+        <p>An SGP40 VOC sensor adds supplementary air-quality context alongside humidity,
+        temperature, and duration. We treat VOC as context, never standalone proof -
+        research shows microbial VOC levels are often too low for reliable detection and
+        easily confounded by household sources.</p>
+      </div>
     </div>
-    <div class="setuprows">
-      <div class="row"><span class="idx">A</span><h3>Place the unit</h3><p>Tabletop or wall-mounted, near humidity-prone areas:
-        bathrooms, closets, basements. Compact housing fits where mold actually starts.</p></div>
-      <div class="row"><span class="idx">B</span><h3>Connect to WiFi</h3><p>The device joins your 2.4&nbsp;GHz network and syncs to
-        the dashboard; readings buffer locally during any connectivity loss and catch up
-        automatically.</p></div>
-      <div class="row"><span class="idx">C</span><h3>Watch the loop run</h3><p>From here it's automatic. Check trends in the
-        dashboard, get alerts in the app, empty the tray when it's full.</p></div>
+
+    <div class="rows" style="margin-top:34px;">
+      <div class="row"><span class="idx">F·03</span><h3>Predictive weather integration</h3><p>Weather API forecasts are combined with indoor readings to anticipate humidity spikes and pre-dry spaces ahead of them.</p></div>
+      <div class="row"><span class="idx">F·04</span><h3>Closed-loop auto-dehumidification</h3><p>When the index crosses the risk threshold, the ESP32 switches a connected semiconductor dehumidifier on via a solid-state relay, and off once conditions return to safe range.</p></div>
+      <div class="row"><span class="idx">F·05</span><h3>Water-tank monitoring</h3><p>A time-of-flight sensor and magnetic reed switch track the removable tank's fill level, alerting you before overflow.</p></div>
+      <div class="row"><span class="idx">F·06</span><h3>Web dashboard &amp; analytics</h3><p>Historical trend logging for humidity, temperature, and VOCs, with multi-room and multi-unit views for larger households, dormitories, or property managers.</p></div>
+      <div class="row"><span class="idx">F·05</span><h3>Mobile alerts &amp; control</h3><p>Real-time push notifications as risk rises, live device status, and manual override of the dehumidification unit from anywhere.</p></div>
     </div>
-    <div class="photo ph-16x10" style="margin-top:18px;">
-      <img src="assets/living.jpg" alt="Bright modern living room interior" loading="lazy">
-      <figcaption>Placed in the room · tabletop or wall-mount</figcaption>
-      <div class="float-card"><i></i> Unit 01 · Living room · RH 61% · stable</div>
+
+    <div class="statement" style="margin-top:34px;">
+      <div>
+        <h3>Proactive, not reactive.</h3>
+        <p>Weather forecast integration pre-dries your space ahead of incoming humid spells, acting before humidity spikes, not after.</p>
+      </div>
+      <span class="specline">CORE FEATURE · FORECAST-INFORMED RESPONSE</span>
     </div>
   </div>
 </section>
 
-<!-- ================= FAQ ================= -->
+<!-- ================= COMPARISON TABLE ================= -->
 <section class="section section-alt">
   <div class="page">
     <div class="section-head">
-      <h2>Straight answers.</h2>
+      <h2>Where MoldGuard fits.</h2>
+      <p class="lede">Existing options were built for general comfort or simple humidity
+      control, not mold-specific risk modeling.</p>
+    </div>
+    <div class="tablewrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th style="width:22%;">Option</th>
+            <th style="width:30%;">What it does</th>
+            <th style="width:22%;">Cost model</th>
+            <th>Drawbacks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Passive moisture absorbers</strong></td>
+            <td>Chemical moisture absorption, no sensors</td>
+            <td>Low one-time cost</td>
+            <td><span class="dash-mark">No monitoring, no data, no automation</span></td>
+          </tr>
+          <tr>
+            <td><strong>Commercial smart dehumidifiers</strong></td>
+            <td>App-controlled humidity threshold triggers</td>
+            <td>Mid-to-high retail hardware cost</td>
+            <td><span class="dash-mark">No mold-specific modeling; locked to vendor app; no web dashboard</span></td>
+          </tr>
+          <tr class="row-hl">
+            <td><strong>MoldGuard V1.0</strong><span class="ours-tag">Ours</span></td>
+            <td>Mold Risk Index (humidity + temperature + duration), supplementary VOC context,
+                predictive weather integration, closed-loop auto-dehumidification, water-tank
+                monitoring, web + mobile dashboard</td>
+            <td>Fixed development fee</td>
+            <td>Requires dedicated power source; periodic water-tank emptying</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UNDER THE HOOD ================= -->
+<section class="section">
+  <div class="page">
+    <div class="section-head">
+      <h2>Sensible hardware, no black box.</h2>
+      <p class="lede">Open, off-the-shelf components, expand a row for the plain-language spec.</p>
     </div>
     <div class="measure">
       <details class="acc">
-        <summary>Do I still need a dehumidifier?</summary>
-        <div class="acc-body">MoldGuard works with its paired semiconductor dehumidifier:
-        the risk engine switches it on and off automatically. If you already own a
-        compatible dehumidifier, talk to us about pairing it.</div>
+        <summary>Humidity &amp; temperature sensing</summary>
+        <div class="acc-body">SHT41 sensor module, high-accuracy temperature and relative
+        humidity measurement for the risk engine's core inputs.</div>
       </details>
       <details class="acc">
-        <summary>What maintenance does it need?</summary>
-        <div class="acc-body">Periodic emptying of the 1&nbsp;L water tank (you get an alert
-        before it's full) and a dedicated power source: that's the honest list, straight
-        from our own comparison table.</div>
+        <summary>VOC / air-quality sensing</summary>
+        <div class="acc-body">SGP40 VOC sensor, supplementary air-quality context, read
+        alongside humidity, temperature, and duration, never as a standalone mold verdict.</div>
       </details>
       <details class="acc">
-        <summary>Does it work without the internet?</summary>
-        <div class="acc-body">The device buffers readings locally when connectivity drops
-        and syncs once reconnected; cloud services (MQTT broker, dashboard, database) run
-        hosted, so there's nothing to maintain on your machine.</div>
+        <summary>Dehumidification unit</summary>
+        <div class="acc-body">A Gaabor 2-in-1 semiconductor dehumidifier (1&nbsp;L tank) is
+        switched safely by an SSR-40DA solid-state relay: the ESP32's low-voltage logic controls
+        220&nbsp;V AC mains with strict electrical isolation. A VL53L0X time-of-flight sensor and
+        magnetic reed switch monitor tank fill and seating.</div>
       </details>
       <details class="acc">
-        <summary>How much does it cost?</summary>
-        <div class="acc-body">MoldGuard builds its intelligence around an off-the-shelf
-        dehumidifier with open, individually-sourced components: a fixed, itemized hardware
-        cost, a single fixed development fee, full client ownership, and only minimal,
-        predictable cloud service costs at small scale. Exact figures come from the team's
-        quote, not published on the site.</div>
+        <summary>Brain &amp; connectivity</summary>
+        <div class="acc-body">ESP32-WROOM-32 (dual-core, WiFi + Bluetooth) publishes telemetry
+        and receives commands over MQTT via HiveMQ Cloud, on a pipeline built to stay stable
+        under fluctuating network conditions.</div>
       </details>
       <details class="acc">
-        <summary>Who is it for?</summary>
-        <div class="acc-body">Renters, households, dormitories, and small property managers:
-        anyone who wants affordable, vendor-agnostic mold monitoring without a
-        building-management system built for towers.</div>
+        <summary>Enclosure &amp; placement</summary>
+        <div class="acc-body">Sensors and controller mount in a compact ABS housing (1×200×300&nbsp;mm
+        boards) attached to the dehumidifier, with a removable 1&nbsp;L tank you empty when the
+        app tells you it's full.</div>
+      </details>
+      <details class="acc">
+        <summary>Software stack</summary>
+        <div class="acc-body">React + Tailwind web dashboard on Vercel, React Native mobile app,
+        Node.js/Express + TypeScript backend on Render, PostgreSQL (Neon) history store, MQTT
+        via HiveMQ Cloud, and Socket.IO real-time sync to clients.</div>
       </details>
     </div>
   </div>
@@ -268,12 +209,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="page">
     <div class="cta-band">
       <div>
-        <h2>Prevention that runs itself.</h2>
-        <p class="lede" style="margin-top:6px;">Get started with MoldGuard, or ask the team anything.</p>
+        <h2>See it work end to end.</h2>
+        <p class="lede" style="margin-top:6px;">From sensor reading to automatic response, the full loop, explained.</p>
       </div>
       <div style="display:flex; flex-wrap:wrap; gap:12px;">
         <a class="btn btn-light btn-lg" href="download.html">Get the app</a>
-        <a class="btn btn-lg" href="contact.html" style="background:rgba(231,240,245,.08); border-color:rgba(231,240,245,.3); color:var(--on-dark);">Contact us</a>
+        <a class="btn btn-lg" href="how-it-works.html" style="background:rgba(231,240,245,.08); border-color:rgba(231,240,245,.3); color:var(--on-dark);">How it works →</a>
       </div>
     </div>
   </div>
@@ -288,7 +229,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
     <div style="display:grid; gap:8px; font-size:14px;">
       <a href="index.html">Home</a>
-      <a href="features.html">Features</a>
+      <a href="how-it-works.html">How it works</a>
       <a href="contact.html">Contact</a>
       <a href="download.html">Get the app</a>
     </div>
@@ -300,6 +241,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="page fine">
     <span>© 2026 MoldGuard Team</span>
     <span>Prototype build · photography is placeholder</span>
+    <span>Monitoring device · not a mold diagnostic or substitute for professional inspection</span>
   </div>
 </footer>
 </body>

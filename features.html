@@ -44,7 +44,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div>
       <h1>Mold-specific intelligence, end to&nbsp;end.</h1>
       <p class="lede" style="margin-top:16px;">
-        At 30°C and 80% RH, the Philippines is mold's ideal habitat. Most dehumidifiers see one
+        Warm, humid rooms are mold's ideal habitat. Most dehumidifiers see one
         number, humidity. MoldGuard reads the full picture, humidity, temperature, exposure
         duration, and virtual dew point margin, adds weather foresight, and responds on its own.</p>
     </div>
@@ -99,13 +99,13 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <div class="row"><span class="idx">F·04</span><h3>Closed-loop auto-dehumidification</h3><p>When the index crosses the risk threshold, the ESP32 switches a connected semiconductor dehumidifier on via a solid-state relay, and off once conditions return to safe range.</p></div>
       <div class="row"><span class="idx">F·05</span><h3>Water-tank monitoring</h3><p>A time-of-flight sensor and magnetic reed switch track the removable tank's fill level, alerting you before overflow.</p></div>
       <div class="row"><span class="idx">F·06</span><h3>Web dashboard &amp; analytics</h3><p>Historical trend logging for humidity, temperature, and VOCs, with multi-room and multi-unit views for larger households, dormitories, or property managers.</p></div>
-      <div class="row"><span class="idx">F·05</span><h3>Mobile alerts &amp; control</h3><p>Real-time push notifications as risk rises, live device status, and manual override of the dehumidification unit from anywhere.</p></div>
+      <div class="row"><span class="idx">F·07</span><h3>Mobile alerts &amp; control</h3><p>Real-time push notifications as risk rises, live device status, and manual override of the dehumidification unit from anywhere.</p></div>
     </div>
 
     <div class="statement" style="margin-top:34px;">
       <div>
         <h3>Proactive, not reactive.</h3>
-        <p>Weather forecast integration pre-dries your space ahead of incoming monsoon fronts, acting before humidity spikes, not after.</p>
+        <p>Weather forecast integration pre-dries your space ahead of incoming humid spells, acting before humidity spikes, not after.</p>
       </div>
       <span class="specline">CORE FEATURE · FORECAST-INFORMED RESPONSE</span>
     </div>
@@ -185,8 +185,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <details class="acc">
         <summary>Brain &amp; connectivity</summary>
         <div class="acc-body">ESP32-WROOM-32 (dual-core, WiFi + Bluetooth) publishes telemetry
-        and receives commands over MQTT via HiveMQ Cloud, with local buffering during
-        connectivity loss and sync once reconnected.</div>
+        and receives commands over MQTT via HiveMQ Cloud, on a pipeline built to stay stable
+        under fluctuating network conditions.</div>
       </details>
       <details class="acc">
         <summary>Enclosure &amp; placement</summary>
@@ -241,6 +241,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="page fine">
     <span>© 2026 MoldGuard Team</span>
     <span>Prototype build · photography is placeholder</span>
+    <span>Monitoring device · not a mold diagnostic or substitute for professional inspection</span>
   </div>
 </footer>
 </body>
