@@ -27,13 +27,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@450;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="page-index">
 <a class="skip" href="#main">Skip to content</a>
 <!-- impeccable direction contract (seed c4ef9450, persuade)
-THESIS: the site reads like the device's own station log, live ticker, mono readouts, dials, refusing the generic smart-home hero-card arrangement.
-OWN-WORLD: icy paper #e9eff3/#dfe7ec, steel #567b8d, deep navy #2f4157 panels, glacial teal #2e8fa3 signal lamps; Bricolage Grotesque display, Instrument Sans text, Spline Sans Mono readouts; navy instrument panels, soft deep shadows.
-STORY: the visitor grasps the closed loop (sense-score-act-report), believes mold risk is measurable now, downloads the app or requests a quote.
-FIRST VIEWPORT: ticker over sticky nav; left h1 + lede + Get Started (to download.html) + live statline; right icy stage with authored SVG device render, live unit tag, floating phone mock.
+THESIS: the site reads like the device's own station log, mono readouts, dials, refusing the generic smart-home hero-card arrangement. Pinned 5-color system: navy / teal / sky / white / beige — severity via typography, never amber/coral lamps.
+OWN-WORLD: navy #2f4157 instrument panels, glacial teal #2e8fa3 primary accent, sky #8ec7dd env graphics, icy white-blue paper, beige #f0e8da home-warmth bands; Bricolage Grotesque display, Figtree text, Spline Sans Mono readouts.
+STORY: the visitor grasps the closed loop (sense-analyze-decide-act-inform), believes mold risk is measurable now, tries the dashboard view or requests a quote.
+FIRST VIEWPORT: navy hero, sticky nav over it; left h1 + one-breath lede + teal "Try the Dashboard" (anchor to the Mold Risk Index showcase) + chips + statline; right large icy instrument stage with authored SVG device render, live unit tag, floating phone mock.
 FORM: assigned candidate 7, marine-meteorological instrument world, brick-instruction challenger fused into numbered stage/setup diagrams; seed key c4ef9450.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md. -->
 
@@ -58,19 +58,17 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </header>
 <main id="main">
 
-<!-- ================= HERO ================= -->
-<section class="section-tight">
-  <div class="page hero-grid">
+<!-- ================= HERO (navy) ================= -->
+<section class="section-tight section-alt--navy">
+  <div class="page hero-grid hero-grid--device">
     <div>
-      <p class="readout" style="margin-bottom:18px;">MoldGuard V1.0 · <b>IoT prevention system</b></p>
       <h1>Know mold is coming before it&nbsp;shows.</h1>
       <p class="lede" style="margin-top:20px;">
-        Warm, humid rooms are exactly where mold thrives.
-        MoldGuard tracks the humidity, temperature, and air conditions that let mold take
-        hold, scores your real risk in real time, and switches the dehumidifier on its own,
+        MoldGuard watches the humidity, temperature, and air conditions mold needs,
+        scores a live Mold Risk Index, and switches a connected dehumidifier on by itself —
         before you ever see or smell a problem.</p>
       <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:30px;">
-        <a class="btn btn-primary btn-lg" href="download.html">Get the app</a>
+        <a class="btn btn-primary btn-lg" href="#risk-index">Try the Dashboard</a>
         <a class="btn btn-ghost btn-lg" href="how-it-works.html">See how it works
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
@@ -87,7 +85,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
 
     <div>
-      <div class="hero-stage">
+      <div class="hero-stage hero-stage--big">
         <span class="hero-tag"><span class="live-dot"></span> Unit 01 · Living room · <b>Risk 38</b></span>
         <span class="hero-dim hero-dim-l" aria-hidden="true">SENS POD<br>SHT41 + SGP40</span>
         <span class="hero-dim hero-dim-r" aria-hidden="true">MRI 38<br>ELEVATED</span>
@@ -116,8 +114,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <rect x="96" y="204" width="108" height="66" rx="14" fill="url(#panel)"/>
           <circle cx="126" cy="237" r="21" fill="#22334a" stroke="#4f7286" stroke-width="1.5"/>
           <path d="M126 237 L134 223" stroke="#7fd0dd" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M113 244 a14 14 0 0 1 6 -18" stroke="#3d8f6a" stroke-width="2" stroke-linecap="round" opacity=".85"/>
-          <path d="M139 244 a14 14 0 0 0 4 -9" stroke="#d9973b" stroke-width="2" stroke-linecap="round" opacity=".9"/>
+          <path d="M113 244 a14 14 0 0 1 6 -18" stroke="#2e8fa3" stroke-width="2" stroke-linecap="round" opacity=".9"/>
+          <path d="M139 244 a14 14 0 0 0 4 -9" stroke="#8ec7dd" stroke-width="2" stroke-linecap="round"/>
           <rect x="156" y="216" width="40" height="6" rx="3" fill="#567b8d"/>
           <rect x="156" y="228" width="28" height="6" rx="3" fill="#567b8d"/>
           <rect x="156" y="246" width="44" height="8" rx="4" fill="#2e8fa3"/>
@@ -143,153 +141,108 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </section>
 
-<!-- ================= PROBLEM ================= -->
+<!-- ================= PROBLEM / FAILURE FLOW (white) ================= -->
 <section class="section section-alt">
   <div class="page">
     <div class="section-head">
-      <p class="kicker">The problem</p>
       <h2>By the time you can see mold, it has already been growing.</h2>
-      <p class="lede">
-        Tropical homes spend most of the year well above the U.S. EPA's recommendation to keep
-        indoor RH below 60%. When warm, humid air meets a cooler wall or corner, it condenses
-        silently, and ASHRAE's moisture criteria say it's the sustained surface humidity that
-        matters, feeding mold you won't see for weeks.</p>
+      <p class="lede">Tropical indoor air spends most of the year far above the U.S. EPA's recommendation to keep RH below 60% — exactly where mold wins.</p>
     </div>
-    <figure class="threshold" style="margin-bottom:30px;">
+    <figure class="threshold" style="margin-bottom:36px;">
       <svg viewBox="0 0 1100 150" role="img" aria-label="Threshold ruler: the EPA recommends keeping indoor relative humidity below 60 percent; Philippine indoor air averages 80 percent">
-        <rect x="10" y="88" width="1080" height="22" fill="#d9973b" opacity=".13"/>
-        <text x="800" y="103" text-anchor="middle" font-family="Spline Sans Mono" font-size="10" letter-spacing="2" fill="#a8772c">CONDENSATION &amp; MOLD RISK GROWS ABOVE 60%</text>
+        <rect x="10" y="88" width="1080" height="22" fill="#8ec7dd" opacity=".22"/>
+        <text x="800" y="103" text-anchor="middle" font-family="Spline Sans Mono" font-size="10" letter-spacing="2" fill="#3e5f70">CONDENSATION &amp; MOLD RISK GROWS ABOVE 60%</text>
         <line x1="10" y1="118" x2="1090" y2="118" stroke="#2f4157" stroke-width="2"/>
         <g stroke="#aebfca" stroke-width="1.5">
           <line x1="10" y1="118" x2="10" y2="126"/><line x1="145" y1="118" x2="145" y2="126"/><line x1="280" y1="118" x2="280" y2="126"/><line x1="415" y1="118" x2="415" y2="126"/><line x1="550" y1="118" x2="550" y2="126"/><line x1="685" y1="118" x2="685" y2="126"/><line x1="820" y1="118" x2="820" y2="126"/><line x1="955" y1="118" x2="955" y2="126"/><line x1="1090" y1="118" x2="1090" y2="126"/>
         </g>
-        <g font-family="Spline Sans Mono" font-size="10" fill="#5f7688" text-anchor="middle">
+        <g font-family="Spline Sans Mono" font-size="10" fill="#3e5f70" text-anchor="middle">
           <text x="10" y="142">60%</text><text x="145" y="142">65%</text><text x="280" y="142">70%</text><text x="415" y="142">75%</text><text x="550" y="142">80%</text><text x="685" y="142">85%</text><text x="820" y="142">90%</text><text x="955" y="142">95%</text><text x="1090" y="142">100%</text>
         </g>
-        <line x1="10" y1="42" x2="10" y2="118" stroke="#a8772c" stroke-width="2.5"/>
-        <text x="18" y="30" text-anchor="start" font-family="Spline Sans Mono" font-size="11" letter-spacing="1.5" fill="#a8772c">EPA RECOMMENDED MAX · 60% RH</text>
-        <line x1="550" y1="52" x2="550" y2="84" stroke="#d9973b" stroke-width="1.5" stroke-dasharray="3 4"/>
-        <circle cx="550" cy="84" r="6" fill="#d9973b" stroke="#fff" stroke-width="2"/>
-        <text x="560" y="52" text-anchor="start" font-family="Spline Sans Mono" font-size="11" letter-spacing="1.5" fill="#a8772c">DEW POINT CONDENSATION BEGINS</text>
+        <line x1="10" y1="42" x2="10" y2="118" stroke="#2f4157" stroke-width="2.5"/>
+        <text x="18" y="30" text-anchor="start" font-family="Spline Sans Mono" font-size="11" letter-spacing="1.5" fill="#2f4157">EPA RECOMMENDED MAX · 60% RH</text>
+        <line x1="550" y1="52" x2="550" y2="84" stroke="#2e8fa3" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <circle cx="550" cy="84" r="6" fill="#2e8fa3" stroke="#fff" stroke-width="2"/>
+        <text x="560" y="52" text-anchor="start" font-family="Spline Sans Mono" font-size="11" letter-spacing="1.5" fill="#1d6b7c">DEW POINT CONDENSATION BEGINS</text>
       </svg>
       <figcaption class="specline" style="margin-top:8px;">Relative humidity, % RH · EPA indoor recommendation · ASHRAE: judge sustained surface RH, not instant readings</figcaption>
     </figure>
-    <div class="logpanel">
-      <div class="log-head">
-        <span style="font-size:14px; color:var(--on-dark-2)">How mold wins today</span>
-        <span class="lamp"><i></i> No MoldGuard installed</span>
+    <div class="failflow" role="list" aria-label="How mold wins today: five steps from rising humidity to late discovery">
+      <div class="ff-step ff-s1" role="listitem">
+        <span class="ff-num">Step 01</span>
+        <h3>Humidity rises</h3>
+        <p>Warm, humid air keeps walls, closets, and corners damp for days at a time.</p>
+        <span class="ff-lamp"><i></i> ONSET</span>
       </div>
-      <div class="log-row">
-        <span class="log-time">WK 01–06</span>
+      <div class="ff-step ff-s2" role="listitem">
+        <span class="ff-num">Step 02</span>
+        <h3>Risk builds silently</h3>
+        <p>Sustained moisture feeds mold you won't see or smell for weeks.</p>
+        <span class="ff-lamp"><i></i> UNSEEN</span>
+      </div>
+      <div class="ff-step ff-s3" role="listitem">
+        <span class="ff-num">Step 03</span>
+        <h3>Devices miss the point</h3>
+        <p>Dehumidifiers react to one humidity number — ignoring exposure duration and temperature. Passive absorbers offer no monitoring, no data, no automation.</p>
+        <span class="ff-lamp"><i></i> MISREAD</span>
+      </div>
+      <div class="ff-step ff-s4" role="listitem">
+        <span class="ff-num">Step 04</span>
+        <h3>Mold becomes visible</h3>
+        <p>Growth, staining, and odor finally appear — the damage is already underway.</p>
+        <span class="ff-lamp"><i></i> VISIBLE</span>
+      </div>
+      <div class="ff-step ff-s5" role="listitem">
+        <span class="ff-num">Step 05</span>
         <h3>Discovered too late</h3>
-        <p>Most households only learn mold risk exists once visible growth or odor already appears.</p>
-        <span class="lamp"><i></i> Detected: too late</span>
-      </div>
-      <div class="log-row">
-        <span class="log-time">WK 07</span>
-        <h3>Dumb triggers</h3>
-        <p>Typical smart dehumidifiers react to one humidity threshold, ignoring exposure duration and temperature, so the response comes late or not at all.</p>
-        <span class="lamp"><i></i> One number, no context</span>
-      </div>
-      <div class="log-row">
-        <span class="log-time">WK 08</span>
-        <h3>Zero feedback</h3>
-        <p>Passive moisture absorbers offer no monitoring, no data, and no automation whatsoever.</p>
-        <span class="lamp"><i></i> Blind</span>
-      </div>
-      <div class="log-row">
-        <span class="log-time">WK 09</span>
-        <h3>Priced for enterprises</h3>
-        <p>Building-grade monitoring exists, but affordable, vendor-agnostic options for renters and small property owners are scarce.</p>
-        <span class="lamp"><i></i> Out of reach</span>
+        <p>Cleanup, not prevention. Building-grade monitoring that could have caught it early remains priced out of reach for renters and small property owners.</p>
+        <span class="ff-lamp"><i></i> TOO LATE</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SOLUTION ================= -->
-<section class="section">
+<!-- ================= MOLD RISK INDEX SHOWCASE (beige band, navy panel) ================= -->
+<section class="section section-band--beige" id="risk-index">
   <div class="page">
     <div class="section-head">
-      <p class="kicker">The solution</p>
-      <h2>Meet MoldGuard.</h2>
-      <p class="lede">
-        A compact IoT device, a web dashboard, and a mobile app, working as one closed loop:
-        sense the risk, act on it automatically, and show you everything.</p>
+      <h2>Four readings. One decision.</h2>
+      <p class="lede">MoldGuard weighs humidity, temperature, and sustained exposure together — not a single threshold — and turns them into one live score with a clear next action.</p>
     </div>
-    <div class="trio">
-      <div>
-        <div class="tile-mock" style="background:radial-gradient(110% 120% at 30% 0%, #f2f7fa, #dfe7ec); padding:20px 0 0;">
-          <svg class="device-svg" style="width:130px;margin:0 auto;" viewBox="0 0 300 340" fill="none" aria-hidden="true">
-            <rect x="70" y="52" width="160" height="240" rx="30" fill="#eef3f6" stroke="#93a9b6" stroke-width="2"/>
-            <rect x="88" y="70" width="124" height="118" rx="20" fill="#dde6ec" stroke="#b6c7d1"/>
-            <g stroke="#a9bdc9" stroke-width="1.6"><path d="M96 86h108M96 102h108M96 118h108M96 134h108M96 150h108M96 166h108"/></g>
-            <rect x="96" y="204" width="108" height="66" rx="14" fill="#2f4157"/>
-            <circle cx="126" cy="237" r="20" fill="#22334a"/>
-            <path d="M126 237 L134 224" stroke="#7fd0dd" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="150" cy="292" r="5" fill="#2e8fa3"/>
-          </svg>
+    <div class="mri-panel">
+      <div class="mri-top">
+        <div class="mri-score">
+          <span class="mri-label">Mold Risk Index</span>
+          <span class="mri-value">82</span>
+          <span class="mri-lamp"><i></i> High risk</span>
         </div>
-        <h3>The device</h3>
-        <p>SHT41 and SGP40 sensors track humidity, temperature, and VOCs around the clock; when
-        risk rises, the connected dehumidifier switches itself on through a safe smart relay.</p>
+        <div class="mri-metrics">
+          <div class="mri-metric"><span>Humidity</span><b>84%</b></div>
+          <div class="mri-metric"><span>Temperature</span><b>28&deg;C</b></div>
+          <div class="mri-metric"><span>Exposure</span><b>6h 42m</b></div>
+          <div class="mri-metric"><span>Dew point</span><b>24&deg;C</b></div>
+        </div>
       </div>
-      <div>
-        <div class="tile-mock">
-          <div class="dash" aria-hidden="true">
-            <div class="d-top"><span class="d-dot"></span><span class="d-dot"></span><span class="d-dot"></span><span class="d-title">app.moldguard.ph</span><span class="d-live"><span class="live-dot" style="width:6px;height:6px"></span> live</span></div>
-            <div class="d-body">
-              <div class="d-chart">
-                <svg viewBox="0 0 260 84" style="width:100%;height:auto">
-                  <path d="M0 62 L24 58 L48 60 L72 50 L96 54 L120 44 L144 47 L168 36 L192 30 L216 26 L240 20 L260 16" stroke="#7fd0dd" stroke-width="2" fill="none"/>
-                  <path d="M0 72 L24 70 L48 71 L72 66 L96 68 L120 60 L144 62 L168 52 L192 47 L216 40 L240 35 L260 30" stroke="#567b8d" stroke-width="1.5" stroke-dasharray="3 4" fill="none"/>
-                </svg>
-                <div class="d-kpi"><span>RH trend <b>74 → 82%</b></span><span>MRI <b>38</b></span></div>
-              </div>
-              <div class="d-side">
-                <div class="d-room"><span>Living</span><span class="d-badge d-low">Low</span></div>
-                <div class="d-room"><span>Bedroom</span><span class="d-badge d-low">Low</span></div>
-                <div class="d-room"><span>Closet</span><span class="d-badge d-elev">Elev</span></div>
-                <div class="d-room"><span>Bathroom</span><span class="d-badge d-high">High</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>The dashboard</h3>
-        <p>A web dashboard shows live risk, historical trends, and multi-room views from any browser.</p>
-      </div>
-      <div>
-        <div class="tile-mock">
-          <div class="phone-mini">
-            <div class="phone-ui">
-              <div class="p-top" style="padding:10px 12px 4px"><span>MG</span><span>20:41</span></div>
-              <div class="p-body">
-                <span class="p-risk">RISK 38 · ELEVATED</span>
-                <div class="p-bars" style="height:40px"><i style="height:36%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:70%"></i><i class="warm" style="height:86%"></i><i class="warm" style="height:94%"></i></div>
-                <div class="p-row"><span>UNIT 01</span><span class="p-toggle">AUTO · ON</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>The app</h3>
-        <p>Push alerts the moment risk rises, live device status, and manual override from anywhere.</p>
+      <div class="mri-rec">
+        <span>Recommendation</span>
+        <b><i></i> Dehumidifier ON</b>
       </div>
     </div>
+    <p class="specline">Illustrative demo data</p>
   </div>
 </section>
 
-<!-- ================= HOW IT WORKS TEASER ================= -->
+<!-- ================= HOW IT WORKS — 5 STAGES (white) ================= -->
 <section class="section section-alt">
   <div class="page">
     <div style="display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; justify-content:space-between;">
       <div class="section-head" style="margin-bottom:0;">
-        <p class="kicker">How it works</p>
-        <h2>Sense. Score. Act.</h2>
+        <h2>The loop, end to end.</h2>
       </div>
       <a class="btn btn-ghost" href="how-it-works.html">Full walkthrough
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
-    <div class="loopline" style="margin-top:34px;">
+    <div class="loopline loopline-5" style="margin-top:34px;">
       <div class="loopnode">
         <span class="stage">Stage 1</span>
         <h3>Sense</h3>
@@ -297,90 +250,189 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </div>
       <div class="loopnode">
         <span class="stage">Stage 2</span>
-        <h3>Score</h3>
-        <small>risk index engine</small>
+        <h3>Analyze</h3>
+        <small>Mold Risk Index</small>
       </div>
       <div class="loopnode">
         <span class="stage">Stage 3</span>
-        <h3>Act</h3>
-        <small>dehumidifier auto-on</small>
+        <h3>Decide</h3>
+        <small>risk conditions evaluated</small>
       </div>
       <div class="loopnode">
         <span class="stage">Stage 4</span>
-        <h3>Report</h3>
-        <small>dashboard · alerts</small>
+        <h3>Act</h3>
+        <small>dehumidifier activated</small>
+      </div>
+      <div class="loopnode">
+        <span class="stage">Stage 5</span>
+        <h3>Inform</h3>
+        <small>dashboard · notifications</small>
       </div>
     </div>
-    <svg class="loop-return-svg" viewBox="0 0 1080 64" width="100%" height="auto" aria-hidden="true" style="display:block; margin-top:6px;">
-      <path d="M 947 4 L 947 34 Q 947 48 933 48 L 147 48 Q 133 48 133 34 L 133 4"
+    <svg class="loop-return-svg" viewBox="0 0 1080 64" width="100%" aria-hidden="true" style="display:block; margin-top:6px;">
+      <path d="M 966 4 L 966 34 Q 966 48 952 48 L 122 48 Q 108 48 108 34 L 108 4"
             fill="none" stroke="#567b8d" stroke-width="2" stroke-dasharray="5 5"/>
-      <path d="M 126 12 L 133 2 L 140 12" fill="none" stroke="#567b8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 101 12 L 108 2 L 115 12" fill="none" stroke="#567b8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       <text x="540" y="30" text-anchor="middle" font-family="Spline Sans Mono" font-size="11" letter-spacing="2" fill="#3e5f70">THE LOOP CLOSES ON ITSELF</text>
     </svg>
   </div>
 </section>
 
-<!-- ================= FEATURES TEASER ================= -->
+<!-- ================= HARDWARE + ECOSYSTEM DIAGRAM (navy) ================= -->
+<section class="section section-alt--navy">
+  <div class="page">
+    <div class="section-head">
+      <h2>One system, sensor to appliance.</h2>
+      <p class="lede">Every part of the loop is connected: the sensor reads the room, the cloud carries the data, the dashboard explains it, and the relay acts on it.</p>
+    </div>
+    <div class="card eco-card">
+      <div class="eco-scroll">
+        <svg viewBox="0 0 1100 320" role="img" aria-label="System architecture: the MoldGuard sensor reads the room environment; data flows over Wi-Fi to the cloud; the dashboard and mobile app show risk; a smart relay switches the dehumidifier; dried air returns to the room">
+          <!-- connectors row 1 -->
+          <g stroke="#8ec7dd" stroke-width="2" fill="none">
+            <path d="M 328 66 H 390"/>
+            <path d="M 708 66 H 770"/>
+            <path d="M 930 116 V 208"/>
+            <path d="M 772 258 H 712"/>
+            <path d="M 392 258 H 332"/>
+          </g>
+          <g fill="#8ec7dd">
+            <path d="M 390 60 L 398 66 L 390 72 Z"/>
+            <path d="M 770 60 L 778 66 L 770 72 Z"/>
+            <path d="M 924 208 L 930 216 L 936 208 Z"/>
+            <path d="M 712 252 L 704 258 L 712 264 Z"/>
+            <path d="M 332 252 L 324 258 L 332 264 Z"/>
+          </g>
+          <!-- return loop: dehumidifier dries the room again -->
+          <path d="M 170 212 V 160 H 550 V 118" fill="none" stroke="#8ec7dd" stroke-width="2" stroke-dasharray="5 5"/>
+          <path d="M 544 120 L 550 110 L 556 120 Z" fill="#8ec7dd"/>
+          <text x="575" y="152" font-family="Spline Sans Mono" font-size="10" letter-spacing="2" fill="#8ec7dd">THE LOOP CLOSES ON ITSELF</text>
+          <!-- row 1 nodes -->
+          <rect x="20" y="24" width="300" height="84" rx="14" fill="#2f4157" stroke="#8ec7dd" stroke-opacity=".35"/>
+          <text x="170" y="62" text-anchor="middle" font-family="Figtree" font-weight="600" font-size="15" fill="#e7f0f5">MOLDGUARD SENSOR</text>
+          <text x="170" y="84" text-anchor="middle" font-family="Spline Sans Mono" font-size="9.5" letter-spacing="1.2" fill="#a9c0cf">SHT41 + SGP40 · ESP32 WI-FI</text>
+
+          <rect x="400" y="24" width="300" height="84" rx="14" fill="#8ec7dd"/>
+          <text x="550" y="62" text-anchor="middle" font-family="Figtree" font-weight="600" font-size="15" fill="#22334a">ROOM ENVIRONMENT</text>
+          <text x="550" y="84" text-anchor="middle" font-family="Spline Sans Mono" font-size="9.5" letter-spacing="1.2" fill="#2f4157">AIR · SURFACES · DEW POINT</text>
+
+          <rect x="780" y="24" width="300" height="84" rx="14" fill="#ffffff"/>
+          <text x="930" y="62" text-anchor="middle" font-family="Figtree" font-weight="600" font-size="15" fill="#22334a">WI-FI · CLOUD</text>
+          <text x="930" y="84" text-anchor="middle" font-family="Spline Sans Mono" font-size="9.5" letter-spacing="1.2" fill="#567b8d">REAL-TIME SYNC</text>
+
+          <!-- row 2 nodes -->
+          <rect x="780" y="216" width="300" height="84" rx="14" fill="#2f4157" stroke="#8ec7dd" stroke-opacity=".35"/>
+          <text x="930" y="254" text-anchor="middle" font-family="Figtree" font-weight="600" font-size="15" fill="#e7f0f5">DASHBOARD · MOBILE APP</text>
+          <text x="930" y="276" text-anchor="middle" font-family="Spline Sans Mono" font-size="9.5" letter-spacing="1.2" fill="#a9c0cf">TRENDS · ALERTS · OVERRIDE</text>
+
+          <rect x="400" y="216" width="300" height="84" rx="14" fill="#22334a" stroke="#8ec7dd" stroke-opacity=".35"/>
+          <text x="550" y="254" text-anchor="middle" font-family="Figtree" font-weight="600" font-size="15" fill="#e7f0f5">SMART RELAY</text>
+          <text x="550" y="276" text-anchor="middle" font-family="Spline Sans Mono" font-size="9.5" letter-spacing="1.2" fill="#a9c0cf">SAFE SWITCHING</text>
+
+          <rect x="20" y="216" width="300" height="84" rx="14" fill="#1d6b7c"/>
+          <text x="170" y="254" text-anchor="middle" font-family="Figtree" font-weight="600" font-size="15" fill="#eaf5f8">DEHUMIDIFIER</text>
+          <text x="170" y="276" text-anchor="middle" font-family="Spline Sans Mono" font-size="9.5" letter-spacing="1.2" fill="#d3eef3">TEC1-12706 PELTIER · AUTO</text>
+        </svg>
+      </div>
+      <p class="specline" style="margin-top:12px;">System architecture at a glance · authored placeholder illustration</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 CAPABILITIES (white) ================= -->
 <section class="section">
   <div class="page">
     <div style="display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; justify-content:space-between;">
       <div class="section-head" style="margin-bottom:0;">
-        <p class="kicker">Features</p>
         <h2>Built for mold, not just moisture.</h2>
       </div>
       <a class="btn btn-ghost" href="features.html">All features
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
-    <div class="rows">
-      <div class="row"><span class="idx">F·01</span><h3>Mold Risk Index engine</h3><p>Risk scoring from humidity, temperature, and sustained exposure duration, with a virtual surface dew point calculation.</p></div>
-      <div class="row"><span class="idx">F·02</span><h3>Environmental &amp; VOC monitoring</h3><p>Continuous humidity, temperature, and VOC context, read together, never as a standalone mold verdict.</p></div>
-      <div class="row"><span class="idx">F·03</span><h3>Predictive weather integration</h3><p>Forecast data anticipates humid spells before they land in your rooms.</p></div>
-      <div class="row"><span class="idx">F·04</span><h3>Closed-loop auto-dehumidification</h3><p>The connected dehumidifier responds automatically, no manual intervention required.</p></div>
-      <div class="row"><span class="idx">F·05</span><h3>Water-tank monitoring</h3><p>Level sensing and alerts before the tank overflows or runs dry.</p></div>
-      <div class="row"><span class="idx">F·06</span><h3>Dashboard &amp; analytics</h3><p>Historical trends with multi-room and multi-unit views.</p></div>
-      <div class="row"><span class="idx">F·07</span><h3>Mobile alerts &amp; control</h3><p>Real-time push notifications and manual override from anywhere.</p></div>
-    </div>
-    <div class="statement" style="margin-top:34px;">
-      <div>
-        <h3>Own it, don't rent it.</h3>
-        <p>Open, individually-sourced components around a standard dehumidifier, fixed development cost, full ownership, no proprietary ecosystem.</p>
-      </div>
-      <span class="specline">OPEN HW · FIXED FEE · NO VENDOR LOCK-IN</span>
+    <div class="rows" style="margin-top:34px;">
+      <div class="row"><span class="idx">C·01 DETECT</span><h3>It sees the conditions mold needs.</h3><p>Around-the-clock humidity, temperature, and VOC readings — SHT41 and SGP40 sensors read the room as one picture, never one number.</p></div>
+      <div class="row"><span class="idx">C·02 PREDICT</span><h3>Risk, scored before it's visible.</h3><p>The Mold Risk Index weighs humidity, temperature, and sustained exposure, with weather context that anticipates humid spells before they reach your rooms.</p></div>
+      <div class="row"><span class="idx">C·03 ACT</span><h3>It acts while you're away.</h3><p>When risk rises, the connected dehumidifier switches on automatically — with water-tank monitoring before it overflows or runs dry.</p></div>
+      <div class="row"><span class="idx">C·04 UNDERSTAND</span><h3>Every room, every day, on record.</h3><p>A web dashboard with analytics and history, plus mobile alerts and manual override from anywhere.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= AUDIENCE / PLACEMENT ================= -->
+<!-- ================= OWN-IT STATEMENT (beige band) ================= -->
+<section class="section section-band--beige" style="padding-top:64px; padding-bottom:64px;">
+  <div class="page ownit">
+    <div>
+      <h3>Own it, don't rent it.</h3>
+      <p>Open, individually-sourced components around a standard dehumidifier, fixed development cost, full ownership, no proprietary ecosystem.</p>
+    </div>
+    <span class="specline">OPEN HW · FIXED FEE · NO VENDOR LOCK-IN</span>
+  </div>
+</section>
+
+<!-- ================= COMPARISON (white) ================= -->
 <section class="section section-alt">
+  <div class="page">
+    <div class="section-head">
+      <h2>Two ways to fight humidity.</h2>
+    </div>
+    <div class="vsduo">
+      <div class="vs-col vs-old">
+        <h3>A dehumidifier on a timer</h3>
+        <span class="specline" style="margin-top:4px;">TRADITIONAL · ONE NUMBER · NO CONTEXT</span>
+        <ul>
+          <li><i class="vs-x" aria-hidden="true">&times;</i>Simple humidity trigger</li>
+          <li><i class="vs-x" aria-hidden="true">&times;</i>Manual monitoring</li>
+          <li><i class="vs-x" aria-hidden="true">&times;</i>No mold-risk scoring</li>
+          <li><i class="vs-x" aria-hidden="true">&times;</i>Limited feedback</li>
+          <li><i class="vs-x" aria-hidden="true">&times;</i>Standalone appliance</li>
+        </ul>
+      </div>
+      <div class="vs-col vs-new">
+        <h3>Prevention that acts on its own</h3>
+        <span class="specline" style="margin-top:4px;">MOLDGUARD · CLOSED LOOP · SENSE · SCORE · ACT · REPORT</span>
+        <ul>
+          <li><i class="vs-check" aria-hidden="true">&#10003;</i>Multi-factor environmental monitoring</li>
+          <li><i class="vs-check" aria-hidden="true">&#10003;</i>Mold Risk Index</li>
+          <li><i class="vs-check" aria-hidden="true">&#10003;</i>Automated response</li>
+          <li><i class="vs-check" aria-hidden="true">&#10003;</i>Historical analytics</li>
+          <li><i class="vs-check" aria-hidden="true">&#10003;</i>Notifications</li>
+          <li><i class="vs-check" aria-hidden="true">&#10003;</i>Connected ecosystem</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUDIENCE / PLACEMENT (white) ================= -->
+<section class="section">
   <div class="page stepgrid">
     <div>
       <h2>Made for the rooms where mold actually starts.</h2>
       <p class="lede" style="margin-top:8px;">
-        Place it tabletop or wall-mounted near humidity-prone areas, bathrooms, closets,
-        basements, and watch every unit from one dashboard. Multi-room and multi-unit views
-        fit larger households, dormitories, and property managers.</p>
+        Tabletop or wall-mounted near humidity-prone areas — bathrooms, closets, basements.
+        Multi-room and multi-unit views fit households, dormitories, and property managers.</p>
       <a class="btn btn-ghost" href="how-it-works.html" style="margin-top:20px;">Placement &amp; setup
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
     <div class="photo ph-4x3">
-      <img src="assets/bathroom.jpg" alt="Tiled bathroom with visible moisture on surfaces, the room where mold starts" loading="lazy">
+      <img src="assets/bathroom.jpg" alt="Tiled bathroom with visible moisture on surfaces, the room where mold starts" width="1100" height="733" loading="lazy">
       <figcaption>Unit 03 · Bathroom</figcaption>
       <div class="float-card"><i></i> Bathroom · RH 84% · unit active</div>
     </div>
   </div>
 </section>
 
-<!-- ================= FINAL CTA ================= -->
-<section class="section">
+<!-- ================= FINAL CTA (navy) ================= -->
+<section class="section section-alt--navy" style="padding-top:72px;">
   <div class="page">
     <div class="cta-band">
       <div>
-        <h2>Stop cleaning up. Start preventing.</h2>
-        <p class="lede" style="margin-top:6px;">Download the app, or talk to the team about your space.</p>
+        <h2>Protect your space before mold appears.</h2>
+        <p class="lede" style="margin-top:6px;">See the dashboard in action, or talk to the team about your space.</p>
       </div>
       <div style="display:flex; flex-wrap:wrap; gap:12px;">
-        <a class="btn btn-light btn-lg" href="download.html">Get the app</a>
-        <a class="btn btn-lg" href="contact.html" style="background:rgba(231,240,245,.08); border-color:rgba(231,240,245,.3); color:var(--on-dark);">Contact us</a>
+        <a class="btn btn-light btn-lg" href="#risk-index">Try the Dashboard</a>
+        <a class="btn btn-lg" href="contact.html" style="background:rgba(231,240,245,.08); border-color:rgba(231,240,245,.3); color:var(--on-dark);">Contact MoldGuard</a>
       </div>
     </div>
   </div>

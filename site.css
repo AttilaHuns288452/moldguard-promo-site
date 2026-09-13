@@ -28,7 +28,9 @@
   --accent-ink: #1d6b7c;
   --amber: #d9973b;          /* elevated lamp */
   --coral: #c25a41;          /* high lamp */
-  --ok: #3d8f6a;
+  --ok: #3d8f6a;             /* low-risk lamp — retired from index.html (legacy pages only) */
+  --sky: #8ec7dd;            /* sky blue — charts, env graphics, Wi-Fi/cloud nodes (pinned 5-color system) */
+  --beige: #f0e8da;          /* warm home-context band — sparingly, 2 bands max per page (pinned 5-color system) */
   --on-dark: #e7f0f5;
   --on-dark-2: #a9c0cf;
   --font-display: "Bricolage Grotesque", "Archivo", sans-serif;
@@ -552,3 +554,206 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .site-foot .mono { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .04em; }
 .site-foot .fine { border-top: 1px solid rgba(231,240,245,.12); margin-top: 26px; padding: 16px 0 30px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: rgba(169,192,207,.75); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
 
+/* ============================================================
+   index.html additions (v2 landing) — index-only classes,
+   nothing here is referenced by other pages.
+   ============================================================ */
+
+/* ---- hero: visual-dominant split (index only; features.html
+   keeps the stock .hero-grid 50/50) ---- */
+.section-alt--navy { background: var(--deep); border-top: 1px solid var(--deeper); border-bottom: 1px solid var(--deeper); color: var(--on-dark); }
+.section-alt--navy .lede { color: var(--on-dark-2); }
+.section-alt--navy h1, .section-alt--navy h2, .section-alt--navy h3 { color: var(--on-dark); }
+.section-alt--navy .readout { color: var(--on-dark-2); }
+.hero-grid--device { max-width: 1240px; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
+.section-alt--navy .hero-grid--device { padding-top: 8px; padding-bottom: 24px; }
+/* teal primary CTA on navy hero (5-color system: teal is the primary accent) */
+.section-alt--navy .btn-primary { background: var(--accent); }
+.section-alt--navy .btn-primary:hover { background: var(--accent-ink); box-shadow: none; }
+.section-alt--navy .statline { background: rgba(231,240,245,.06); border-color: rgba(231,240,245,.16); color: var(--on-dark-2); }
+.section-alt--navy .statline { color: var(--on-dark); }
+.section-alt--navy .statline b, .section-alt--navy .statline .warn { color: var(--sky); }
+.section-alt--navy .readout b { color: var(--sky); }
+.section-alt--navy .eco-card .specline { color: var(--sky); }
+@media (max-width: 900px) { .hero-grid--device { grid-template-columns: 1fr; } }
+.hero-stage--big { min-height: 560px; padding: 44px 30px 0; }
+.hero-stage--big .device-svg { width: min(400px, 82%); }
+@media (max-width: 480px) { .hero-stage--big { min-height: 400px; } }
+
+/* ---- problem: 5-step failure flow, escalating severity ---- */
+.failflow {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  border-top: 2px solid var(--deep); border-bottom: 2px solid var(--deep);
+  background: var(--deep); border-radius: 16px; overflow: hidden;
+}
+.ff-step { padding: 20px 18px 18px; min-width: 0; position: relative; }
+.ff-step + .ff-step { border-left: 1px solid rgba(231,240,245,.12); }
+.ff-step::after { /* chevron connector between segments */
+  content: ""; position: absolute; right: -6px; top: 26px; width: 9px; height: 9px;
+  border-top: 2px solid rgba(231,240,245,.55); border-right: 2px solid rgba(231,240,245,.55);
+  transform: rotate(45deg); z-index: 1;
+}
+.ff-step:last-child::after { display: none; }
+.ff-num {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--on-dark-2); display: block; margin-bottom: 10px;
+}
+.ff-step h3 { color: var(--on-dark); font-size: 1.02rem; margin-bottom: 7px; }
+.ff-step p { color: var(--on-dark-2); font-size: 13.5px; line-height: 1.55; }
+.ff-lamp {
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 14px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+}
+.ff-lamp i { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.ff-s1 { background: rgba(46,143,163,.16); }
+.ff-s2 { background: rgba(46,143,163,.06); }
+.ff-s3 { background: rgba(142,199,221,.10); }
+.ff-s4 { background: rgba(142,199,221,.18); }
+.ff-s5 { background: rgba(34,51,74,.30); }
+.ff-s1 .ff-lamp { color: #7fd0dd; } .ff-s1 .ff-lamp i { background: var(--accent); }
+.ff-s2 .ff-lamp { color: #7fd0dd; } .ff-s2 .ff-lamp i { background: var(--accent); }
+.ff-s3 .ff-lamp { color: var(--sky); } .ff-s3 .ff-lamp i { background: var(--sky); }
+.ff-s4 .ff-lamp { color: var(--sky); } .ff-s4 .ff-lamp i { background: var(--sky); }
+.ff-s5 .ff-lamp { color: var(--on-dark); } .ff-s5 .ff-lamp i { background: var(--on-dark); }
+/* severity-via-typography ladder: teal chip (onset) -> sky chips -> white-on-navy chip, heavy border (critical) */
+.ff-s5 { border: 2px solid var(--on-dark); }
+.ff-s5 .ff-num, .ff-s5 p { color: var(--on-dark); }
+@media (max-width: 980px) {
+  .failflow { grid-template-columns: 1fr 1fr; }
+  .ff-step + .ff-step { border-left: none; }
+  .ff-step { border-top: 1px solid rgba(231,240,245,.12); }
+  .ff-step:first-child { border-top: none; }
+  .ff-step:nth-child(even) { border-left: 1px solid rgba(231,240,245,.12); }
+  .ff-step::after { display: none; }
+}
+@media (max-width: 560px) { .failflow { grid-template-columns: 1fr; } .ff-step:nth-child(even) { border-left: none; } }
+
+/* ---- beige band (home warmth around the tech) — used sparingly ---- */
+.section-band--beige { background: var(--beige); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+/* ---- Mold Risk Index showcase panel ---- */
+.mri-panel {
+  background: linear-gradient(180deg, var(--deep) 0%, var(--deeper) 100%);
+  border: 1px solid rgba(231,240,245,.14); border-radius: 18px;
+  outline: 1px solid rgba(231,240,245,.10); outline-offset: -7px; /* instrument bezel */
+  padding: 34px 40px 30px; box-shadow: var(--shadow-pop);
+}
+.mri-top { display: grid; grid-template-columns: minmax(190px, auto) 1fr; gap: 28px 52px; align-items: center; }
+.mri-score { display: grid; gap: 8px; justify-items: start; }
+.mri-label {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--on-dark-2);
+}
+.mri-value {
+  font-family: var(--font-mono); font-weight: 600; font-size: clamp(4.6rem, 9vw, 6rem);
+  line-height: .9; letter-spacing: -.04em; color: var(--on-dark);
+}
+.mri-lamp { /* severity via navy treatment: white-on-navy chip, heavy border, bold label */
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 4px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--on-dark);
+  background: var(--deeper); border: 2px solid var(--on-dark);
+  border-radius: 99px; padding: 6px 14px;
+}
+.mri-lamp i { width: 9px; height: 9px; border-radius: 50%; background: var(--sky); }
+.mri-metrics { display: grid; grid-template-columns: repeat(4, 1fr); border-left: 1px solid rgba(231,240,245,.14); }
+.mri-metric { padding: 10px 18px; display: grid; gap: 5px; min-width: 0; }
+.mri-metric + .mri-metric { border-left: 1px solid rgba(231,240,245,.10); }
+.mri-metric span {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--on-dark-2);
+}
+.mri-metric b {
+  font-family: var(--font-mono); font-weight: 600; font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  letter-spacing: -.02em; color: var(--on-dark); line-height: 1.1;
+}
+.mri-rec {
+  margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(231,240,245,.14);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px;
+}
+.mri-rec span {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--on-dark-2);
+}
+.mri-rec b {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-mono); font-size: 12.5px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: #7fd0dd;
+  background: rgba(46,143,163,.22); border: 1px solid rgba(46,143,163,.55);
+  border-radius: 9px; padding: 9px 16px;
+}
+.mri-rec b i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+.mri-panel + .specline { color: var(--steel-deep); margin-top: 12px; }
+@media (max-width: 860px) {
+  .mri-top { grid-template-columns: 1fr; }
+  .mri-metrics { border-left: none; border-top: 1px solid rgba(231,240,245,.14); grid-template-columns: repeat(2, 1fr); }
+  .mri-metric { padding: 14px 6px 4px; }
+  .mri-metric + .mri-metric { border-left: none; }
+  .mri-metric:nth-child(even) { border-left: 1px solid rgba(231,240,245,.10); }
+  .mri-panel { padding: 26px 22px 24px; }
+}
+
+/* ---- 5-stage loop variant (index only; how-it-works keeps 4) ---- */
+.loopline-5 { grid-template-columns: repeat(5, 1fr); }
+.loopline-5 .loopnode { padding-left: 14px; padding-right: 12px; }
+.loopline-5 .loopnode:first-child { padding-left: 0; }
+.loopline-5 .loopnode h3 { font-size: 1.05rem; }
+@media (max-width: 980px) {
+  .loopline-5 { grid-template-columns: 1fr 1fr; }
+  .loopline-5 .loopnode { border-left: none !important; padding-left: 0; }
+  .loopline-5 .loopnode::after { display: none; }
+}
+@media (max-width: 480px) { .loopline-5 { grid-template-columns: 1fr; } }
+
+/* ---- ecosystem architecture diagram ---- */
+.section-alt--navy .eco-card { background: transparent; border-color: rgba(231,240,245,.14); }
+.eco-card { padding: 30px 34px 26px; }
+.eco-scroll { overflow-x: auto; } /* ponytail: svg keeps min-width on phones, scrolls instead of shrinking text to mush */
+.eco-scroll svg { display: block; width: 100%; min-width: 720px; height: auto; }
+
+/* ---- own-it: beige band treatment (index only) ---- */
+.ownit { display: flex; flex-wrap: wrap; gap: 14px 44px; align-items: center; justify-content: space-between; }
+.ownit h3 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.8vw, 2.15rem); letter-spacing: -.02em; margin: 0; color: var(--deep); }
+.ownit p { color: var(--ink-2); max-width: 54ch; font-size: 15px; margin: 0; }
+.ownit .specline { color: var(--steel-deep); margin: 0; }
+
+/* ---- comparison duo (index only; features.html keeps .compare table) ---- */
+.vsduo {
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+}
+.vs-new {
+  background: #e9f3f8; /* ponytail: flat sky-tint to mark the MoldGuard column; darker tint if contrast reads weak */
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.vs-col.vs-new h3 { color: var(--deeper); }
+.vs-col.vs-new .vs-check { color: var(--accent-ink); }
+#risk-index { scroll-margin-top: 88px; }
+.mri-metric b { font-variant-numeric: tabular-nums; }
+.vs-col { padding: 30px 34px 26px; min-width: 0; }
+.vs-col + .vs-col { border-left: 1px solid var(--line); }
+.vs-col h3 { font-size: 1.3rem; margin-top: 0; }
+.vs-col ul { list-style: none; margin-top: 16px; display: grid; gap: 0; }
+.vs-col li {
+  display: flex; align-items: baseline; gap: 11px;
+  padding: 10px 2px; font-size: 14.5px; color: var(--ink-2);
+  border-top: 1px solid var(--line);
+}
+.vs-col li:first-child { border-top: none; }
+.vs-x, .vs-check { font-style: normal; flex: none; font-weight: 700; font-size: 13px; width: 18px; text-align: center; }
+.vs-x { color: var(--ink-3); }
+.vs-check { color: var(--accent-ink); }
+.vs-old { background: var(--surface); }
+@media (max-width: 760px) {
+  .vsduo { grid-template-columns: 1fr; }
+  .vs-col + .vs-col { border-left: none; border-top: 1px solid var(--line); }
+}
+
+
+/* ---- index craft-floor overrides (scoped to this page only) ---- */
+.page-index .loopnode .stage { font-size: 11px; }
+.page-index .hero-tag { font-size: 11px; }
+.page-index .photo figcaption { font-size: 11px; }
+
+/* index: warm bars (legacy amber) -> sky, per pinned 5-color system */
+.page-index .p-bars i.warm { background: var(--sky); }

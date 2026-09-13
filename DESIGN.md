@@ -27,8 +27,21 @@ stage/setup diagrams).
 | `--steel` / `--steel-deep` | `#567b8d` / `#3e5f70` | secondary buttons, chip ink |
 | `--deep` / `--deeper` | `#2f4157` / `#22334a` | panels, ticker, footer, primary buttons |
 | `--accent` / `--accent-ink` | `#2e8fa3` / `#1d6b7c` | glacial teal — live dots, lamps, focus rings |
-| `--amber` / `--coral` | `#d9973b` / `#c25a41` | elevated / high risk lamps |
-| `--ok` | `#3d8f6a` | low-risk lamp |
+| `--sky` | `#8ec7dd` | sky blue — charts, environmental graphics, Wi-Fi/cloud nodes, secondary accents (pinned 5-color system) |
+| `--beige` | `#f0e8da` | warm home-context section bands, used sparingly — max 2 bands per page (pinned 5-color system) |
+| `--amber` / `--coral` | `#d9973b` / `#c25a41` | elevated / high risk lamps — **retired from index.html** (legacy pages only) |
+| `--ok` | `#3d8f6a` | low-risk lamp — **retired from index.html** (legacy pages only) |
+
+**Pinned 5-color system (index.html, binding):** NAVY (`--deep`/`--deeper`) ·
+TEAL (`--accent`) · SKY (`--sky`) · WHITE (`--card`) · BEIGE (`--beige`).
+Steel `--steel`/`--steel-deep` stays as a navy-tint for secondary chrome only.
+**Severity-via-typography rule:** risk severity (LOW/MODERATE/HIGH/CRITICAL) is
+communicated only through type weight, label text, border weight, background
+intensity, and contrast — never through amber/coral/green lamps. Ladder:
+LOW = teal chip · MODERATE = sky chip · HIGH/CRITICAL = navy treatment
+(white-on-navy chip, heavier border, bolder label). Teal is the primary accent
+(CTAs, active states, key numbers); sky complements it for charts/lines/env
+data, never competing.
 | `--on-dark` / `--on-dark-2` | `#e7f0f5` / `#a9c0cf` | text on navy |
 
 Elevation: **flat by default**. Borders carry structure; the only shadow is
