@@ -24,7 +24,7 @@ never colored lamps. Precision is kept; the instrument-station theme is gone.
 | `--accent` | `#2D9A91` | **MoldGuard teal — THE accent:** primary CTA, key data, active states |
 | `--accent-ink` | `#1E6E68` | teal on light backgrounds; CTA fill (white text ≈ 6:1) |
 | `--ink` / `--ink-2` / `--ink-3` | `#213132` / `#465754` / `#687979` | body text / secondary / muted |
-| `--steel` / `--steel-deep` | `#687979` / `#465754` | aliases of the muted grays — kept for token-name compatibility with the other pages |
+| `--ink-soft` / `--ink-strong` | `#687979` / `#465754` | aliases of the muted grays — kept for token-name compatibility with the other pages |
 | `--sky` | `#8FBDB8` | LEGACY ALIAS, muted teal-gray; only existing chart-bar/state rules reference it — no new uses |
 | `--beige` | `#F7F8F6` | LEGACY ALIAS = `--paper`; existing band rules collapse into the foundation |
 | `--amber` / `--coral` / `--ok` | `#d9973b` / `#c25a41` / `#3d8f6a` | RETIRED — definitions kept only for token history; no rule may reference them |

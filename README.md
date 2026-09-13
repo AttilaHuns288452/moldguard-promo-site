@@ -1,73 +1,57 @@
-# MoldGuard — Promotional Website Wireframes
+# MoldGuard — Promo Site
 
-Low-fidelity wireframes for the MoldGuard V1.0 promo site: landing, features,
-how-it-works, and contact/get-started. Messaging is grounded in the team's
-research proposal (`moldguard-proposal.pdf`) and fact-checked in
-[`messaging.md`](messaging.md).
+Promotional website for **MoldGuard**, an IoT mold-risk prevention and detection
+system: a compact sensor unit, web dashboard, and companion app that score a live
+Mold Risk Index and activate a connected dehumidifier automatically.
 
-**Status:** v0.1 — ready for review with Palma (Frontend Dev / UI/UX) before
-any visual design pass.
+Live: https://attilahuns288452.github.io/moldguard-promo-site/
 
 ## Pages
 
 | File | Page | Sections |
 |---|---|---|
-| `index.html` | Landing | hero · problem (4 cards) · solution trio · how-it-works teaser · features teaser · placement · CTA |
-| `features.html` | Features | 5 system features + ownership tile · comparison table · specs accordion · CTA |
-| `how-it-works.html` | How it works | closed-loop diagram · 4 alternating steps · setup & placement · FAQ · CTA |
-| `contact.html` | Contact / Get started | lead form · direct channels · next-steps · team grid · CTA |
+| `index.html` | Landing | hero · problem · Meet MoldGuard · Sense/Score/Act · features · ownership · placement · CTA |
+| `features.html` | Features | flagship MRI + dial · feature rows · comparison · specs accordion · CTA |
+| `how-it-works.html` | How it works | closed loop · stages · placement · FAQ (centered, ~660px) · CTA |
+| `contact.html` | Contact | lead form · direct channels · next steps · team roster · CTA |
+| `download.html` | Get the app | centered app-download handoff: QR · scan instruction · official store badges |
 
-Supporting files: `wireframe.css` (shared gray-box styles, no build step) ·
-`messaging.md` (fact-check register C1–C22 + open questions Q1–Q6) ·
-`review-email.md` (send-ready review request to Palma) ·
-`moldguard-proposal.pdf` (source document — the site may not claim anything it doesn't support).
+## System
 
-## How to review
+Static HTML + one shared stylesheet (`site.css`), no build step, no JavaScript.
+Figma-safe by construction: static layouts, authored SVG, no animation-dependent
+content. The import-ready board is regenerated with:
 
-1. Open `index.html` in a browser (links between pages work).
-2. Read the amber **✎ notes** — they carry the review questions for Palma.
-3. Cross-check any claim against `messaging.md` (register C1–C22).
-4. Leave feedback inline (HTML comments, Figma, or annotated screenshots).
-5. Not sure what to ask her first? `review-email.md` lists the four highest-priority
-   decisions in a copy-paste email.
+```
+python3 build-figma-board.py    # -> figma/MoldGuard_All_4.html (5 frames, 1280px)
+```
 
-## Palma review checklist
+## Design system
 
-- [ ] **Brand direction** — placeholder accent (`--accent` in `wireframe.css`) is not a
-      brand decision; confirm palette/typography direction so the site matches the
-      mobile-app design language.
-- [ ] **Hero treatment** — pick (a) product shot, (b) device + phone composite, or
-      (c) animated risk dial (note on `index.html` hero).
-- [ ] **Dashboard/app thumbnails** — promo site should preview the real UI once her
-      UI kit settles (note on index "solution" trio).
-- [ ] **Comparison table tone** — keep the honest "drawbacks" column for MoldGuard?
-      (messaging.md Q6, note on features.html)
-- [ ] **"Under the hood" depth** — keep the specs accordion on the features page or
-      demote to a footer block? (note on features.html)
-- [ ] **Loop diagram rendering** — icons vs. animation vs. static (note on
-      how-it-works.html)
-- [ ] **FAQ drafts** — three answers are ⚠️ DRAFT pending team answers
-      (messaging.md Q1, Q3, Q4)
-- [ ] **Team section** — publish names/roles? Personal emails excluded by default
-      (messaging.md Q5, note on contact.html)
-- [ ] **Pricing posture** — "fixed fee, no subscription" wording only, or figures?
-      (messaging.md Q2)
-- [ ] **"From message to mold-free" heading** — tone check on contact.html next-steps
-- [ ] **Footer scope** — socials, privacy page, other links TBD (noted on index footer)
+`DESIGN.md` is the contract: 17-token palette (warm off-white foundation,
+deep blue-green `#183B43`, teal `#2D9A91` as the single accent, neutral gray
+borders/ink), Bricolage Grotesque display / Figtree text / Spline Sans Mono for
+measurements and row numbers only, flat elevation, editorial lists over card
+grids. Severity and state are communicated with typography and contrast, never
+color-coded lamps.
 
-## Acceptance criteria status
+## Content governance
 
-- **Wireframes completed for all core website pages** — ✅ 4/4 pages, desktop-first with
-  mobile stacking behavior in the shared CSS.
-- **Messaging fact-checked against Cabuntas' research** — ✅ register C1–C22 in
-  `messaging.md`; every claim traced to the proposal; unsupported claims omitted or
-  flagged ⚠️ with an owner.
-- **Reviewed with Palma for alignment with overall product vision** — ⏳ blocked on the
-  checklist above; the wireframes carry targeted questions at the exact decision points.
-  Send the ready-made request in `review-email.md` to kick this off.
+All claims trace to `moldguard-proposal.pdf` via the register in
+[`messaging.md`](messaging.md) (C1–C22). Nothing goes on the site that the
+proposal doesn't support. Demo numbers shown in mockups are labeled illustrative.
 
-## Source of truth
+## QR / store links
 
-`moldguard-proposal.pdf` — MoldGuard V1.0 software development proposal (12 pp.).
-The promo site may not claim anything the proposal doesn't support; additions go
-through the register in `messaging.md` first.
+`generate_qr.py` generates a real, decode-verified QR code. Its destination is
+the `APP_DOWNLOAD_URL` constant; store-listing URLs get wired into the badges
+at launch (marked in `download.html`). Regenerate after changing:
+
+```
+python3 generate_qr.py
+```
+
+## Status
+
+Presentation-ready prototype. Footer disclaimers (prototype build, not a mold
+diagnostic) are deliberate and stay.

@@ -176,28 +176,19 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 @media (max-width: 480px) { .hero-dim { display: none; } }
 @media (max-width: 480px) { .phone-float { width: 128px; right: 12px; bottom: 14px; } .hero-stage { min-height: 380px; } }
 .phone-ui { font-family: "Spline Sans Mono", ui-monospace, monospace; font-size: 8.5px; color: #A6BDBA; letter-spacing: .08em; }
-.phone-ui .p-cardline, .phone-ui .p-big em, .phone-ui .p-cap { text-transform: none; }
+.phone-ui .p-cap { text-transform: none; }
 .phone-ui .p-scale { font-size: 12px; color: #A6BDBA; font-weight: 400; margin-left: 2px; }
 .phone-ui .p-cap { font-size: 7.5px; letter-spacing: .12em; color: #A6BDBA; margin-top: 3px; }
-.phone-ui .p-cardline .p-dot { margin-right: 2px; }
 .phone-ui .p-top { display: flex; justify-content: space-between; padding: 8px 12px 4px; }
 .phone-ui .p-body { padding: 6px 12px 14px; }
 .phone-ui .p-risk { color: #E9F1F0; font-weight: 700; }
-.phone-ui .p-bars { display: flex; align-items: flex-end; gap: 3px; height: 46px; margin: 8px 0 10px; }
-.phone-ui .p-bars i { flex: 1; border-radius: 2px 2px 0 0; background: #3D847D; }
-.phone-ui .p-bars i.warm { background: #8FBDB8; }
 .phone-ui .p-row { display: flex; justify-content: space-between; border-top: 1px solid rgba(233,241,240,.14); padding: 6px 0 0; }
 .phone-ui .p-toggle { display: inline-block; background: #2D9A91; color: #E9F1F0; border-radius: 99px; padding: 3px 9px; font-weight: 700; }
 .phone-ui .p-label { font-size: 8px; letter-spacing: .14em; text-transform: uppercase; color: #A6BDBA; }
-.phone-ui .p-big { font-family: "Bricolage Grotesque", "Archivo", sans-serif; font-size: 30px; font-weight: 700; color: #E9F1F0; letter-spacing: -.01em; margin: 4px 0 8px; }
-.phone-ui .p-big em { font-style: normal; font-family: "Spline Sans Mono", ui-monospace, monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #8FBDB8; vertical-align: 4px; margin-left: 6px; }
 .phone-ui .p-card { border: 1px solid rgba(233,241,240,.16); border-radius: 10px; padding: 9px 11px; margin-top: 9px; }
 .phone-ui .p-cardline { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 9.5px; letter-spacing: .02em; color: #E9F1F0; text-transform: none; padding: 3px 0; }
 .phone-ui .p-cardline + .p-cardline { border-top: 1px solid rgba(233,241,240,.08); }
 .phone-ui .p-on { background: #2D9A91; color: #E9F1F0; border-radius: 99px; padding: 2px 9px; font-weight: 700; font-size: 9px; }
-.phone-ui .p-dot { color: #8FBDB8; }
-.lamp { display: inline-flex; align-items: center; gap: 7px; font-family: "Spline Sans Mono", ui-monospace, monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #f0b7a4; }
-.lamp i { width: 8px; height: 8px; border-radius: 50%; background: #8FBDB8; }
 @media (max-width: 860px) { .log-row { grid-template-columns: 1fr auto; } .log-row .log-time { grid-column: 1 / -1; } .log-row p { grid-column: 1 / -1; } }
 .loopline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
 .loopnode {
@@ -454,14 +445,12 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .featlist h3 { font-size: 1.02rem; margin-bottom: 4px; }
 .featlist p { font-size: 14.5px; color: #465754; margin: 0; }
 @media (max-width: 760px) { .featlist { grid-template-columns: 1fr; column-gap: 0; } }
-.section-band--beige { background: #F7F8F6; border-top: 1px solid #DDE5E5; border-bottom: 1px solid #DDE5E5; }
 .ownit { max-width: 680px; }
 .ownit h3 { font-family: "Bricolage Grotesque", "Archivo", sans-serif; font-size: clamp(1.5rem, 2.8vw, 2.15rem); letter-spacing: -.02em; margin: 0; color: #183B43; }
 .ownit p { color: #465754; max-width: 56ch; font-size: 15.5px; margin: 0; }
 .plain-photo .photo figcaption { display: none; }
 .page-index .loopnode .stage { font-size: 11px; }
 .page-index .photo figcaption { font-size: 11px; }
-.page-index .p-bars i.warm { background: #8FBDB8; }
 .store-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 28px; }
 .store-badges img { display: block; border-radius: 8px; }
 .store-badges img[alt="Download on the App Store"] { height: 62px; width: auto; }
