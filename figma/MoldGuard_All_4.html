@@ -73,7 +73,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .navlinks a:hover { color: #213132; }
 .navlinks a[aria-current="page"] { color: #213132; border-bottom-color: #2D9A91; }
 @media (max-width: 700px) {
-  .site-nav { flex-wrap: wrap; gap: 8px 16px; padding: 14px 0; }
+  .site-nav { flex-wrap: wrap; gap: 8px 16px; padding: 14px 28px; }
   .navlinks { display: flex; order: 3; width: 100%; gap: 8px; font-size: 13.5px; margin-left: 0; }
   .navlinks a { padding: 10px 0; flex: 1; text-align: center; }
   .site-nav .btn { margin-left: auto; padding: 10px 18px; font-size: 14px; }
@@ -93,6 +93,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .btn-ghost { background: #ffffff; color: #213132; border-color: #C7D4D3; }
 .btn-ghost:hover { border-color: #687979; box-shadow: 0 1px 2px rgba(18,44,51,.05), 0 10px 26px -20px rgba(18,44,51,.30); }
 .btn-light { background: #E9F1F0; color: #122C33; }
+.btn-ghost-dark { background: rgba(233,241,240,.08); border: 1px solid rgba(233,241,240,.35); color: #E9F1F0; }
 .btn-light:hover { background: #fff; box-shadow: 0 10px 30px -12px rgba(18,44,51,.5); }
 .btn-lg { padding: 14px 28px; font-size: 16px; border-radius: 10px; }
 .btn[disabled], .btn.is-soon { opacity: .55; cursor: default; }
@@ -112,8 +113,10 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 900px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 580px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .section { padding: 68px 0; } }
+@media (max-width: 580px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .section, .section-tight { padding: 68px 0; } }
 .grid-2 > *, .grid-3 > *, .grid-4 > * { min-width: 0; }
+.swipe-note { display: none; font-size: 13px; color: #687979; margin: 0 0 10px; }
+@media (max-width: 580px) { .swipe-note { display: block; } }
 .mono { overflow-wrap: anywhere; }   
 .rows .row > * { min-width: 0; }
 .rows { border-top: 2px solid #183B43; margin-top: 8px; }
@@ -350,7 +353,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .cta-band .lede { color: #A6BDBA; }
 .cta-band .chips { margin: 0; position: relative; z-index: 1; }
 .cta-band > div:first-child { position: relative; z-index: 1; }
-@media (max-width: 700px) { .cta-band { padding: 38px 30px; } }
+@media (max-width: 700px) { .cta-band { padding: 38px 30px; } .cta-band > div:last-child { margin-inline: auto; } }
 .qr-card { padding: 36px 32px 30px; text-align: center; }
 .qr-frame {
   width: 260px; height: 260px; margin: 0 auto 20px;
@@ -367,10 +370,12 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .dl-scan { font-size: 15px; font-weight: 600; color: #213132; margin: 0; }
 .dl-cluster .store-badges { justify-content: center; }
 .dl-cluster .qr-frame { margin: 0; }
+.dl-hero { margin-bottom: -32px; }
 .dl-cluster { display: grid; justify-items: center; gap: 18px; }
 .dl-scan { font-size: 15px; font-weight: 600; color: #213132; margin: 0; }
 .dl-cluster .store-badges { margin-top: 4px; justify-content: center; }
 .dl-cluster .qr-frame { margin: 0; }
+.dl-hero { margin-bottom: -32px; }
 @media (max-width: 860px) { .dl-hero { gap: 8px; } .dl-hero h1, .dl-hero .lede { max-width: 30ch; } }
 .site-foot { background: #122C33; color: #A6BDBA; margin-top: 40px; }
 .site-foot .cols { display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; padding: 46px 0 8px; }
@@ -380,6 +385,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .site-foot .mono { font-family: "Spline Sans Mono", ui-monospace, monospace; font-size: 12.5px; letter-spacing: .04em; }
 .site-foot .fine { border-top: 1px solid rgba(233,241,240,.12); margin-top: 26px; padding: 16px 0 30px; font-family: "Spline Sans Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: rgba(169,192,207,.75); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
 .hero-grid--device { max-width: 1240px; grid-template-columns: 1.02fr .98fr; gap: 56px; align-items: center; }
+@media (max-width: 900px) { .hero-grid--device { grid-template-columns: 1fr; gap: 40px; } }
 .showcase {
   position: relative; border-radius: 20px; overflow: hidden;
   background: #ffffff; border: 1px solid #DDE5E5;
@@ -807,7 +813,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
       </div>
       <div style="display:flex; flex-wrap:wrap; gap:12px;">
         <a class="btn btn-light btn-lg" href="#">Get Started</a>
-        <a class="btn btn-lg" href="#" style="background:rgba(233,241,240,.08); border-color:rgba(233,241,240,.3); color:#E9F1F0;">Contact us</a>
+        <a class="btn btn-ghost-dark btn-lg" href="#">Contact us</a>
       </div>
     </div>
   </div>
@@ -962,6 +968,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 
 <section class="section section-alt">
   <div class="page">
+      <p class="swipe-note">Swipe the table sideways to see all columns.</p>
     <div class="section-head">
       <h2>Where MoldGuard fits.</h2>
       <p class="lede">Existing options were built for general comfort or simple humidity
@@ -1168,7 +1175,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
     <div class="step-copy">
       <span class="stage-tag"><i>1</i></span>
       <h2>Sense the room, continuously.</h2>
-      A sensor pod watches the conditions mold actually cares about:
+      <p>A sensor pod watches the conditions mold actually cares about:</p>
       relative humidity, temperature, and volatile organic compounds (VOCs).
       The SHT41 measures the risk engine's core inputs; VOCs add supplementary
       context, read together with everything else rather than as a verdict.
