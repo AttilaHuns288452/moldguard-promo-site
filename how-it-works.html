@@ -1,197 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MoldGuard, Promo Wireframe · How it works</title>
-<link rel="stylesheet" href="wireframe.css"></head>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="description" content="How MoldGuard works: sense the room, score the real mold risk, act automatically, and report to your dashboard and phone.">
+<title>MoldGuard · How it works</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@450;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- impeccable direction contract (seed c4ef9450, persuade) — same world as index.html: see index for the full five blocks. THESIS: the loop is the page — numbered stage instruction spreads (brick-book challenger) inside the icy station world; seed key c4ef9450.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md. -->
 
-<div class="page">
- <div class="wf-pagelabel">
- <span><strong>MoldGuard promo wireframe</strong> · How it works · v0.1 · fact-check vs <em>messaging.md</em></span>
- <span>Desktop-first · <strong>mobile:</strong> single column, loop diagram wraps to 2×2 grid with arrows between rows · steps become text → image per block · setup steps full-width · FAQ full-width · CTA band stacks</span></div>
- <nav class="wf-pagenav" aria-label="Wireframe pages">
- <a href="index.html">Landing</a>
- <a href="features.html">Features</a>
- <a href="how-it-works.html" aria-current="page">How it works</a>
- <a href="contact.html">Contact / Get started</a></nav></div>
 
-<header class="page">
- <nav class="wf-nav">
- <a class="wf-logo" href="index.html"><span class="wf-logo-mark">LOGO</span>MoldGuard</a>
- <div class="wf-navlinks">
- <a href="features.html">Features</a>
- <a href="how-it-works.html" style="font-weight:700; color:var(--ink);">How it works</a>
- <a href="contact.html">Contact</a></div>
- <a class="wf-btn wf-btn-primary" href="contact.html">Get Started</a></nav></header>
+<header class="site-head">
+  <nav class="site-nav page" aria-label="Main">
+    <a class="logo" href="index.html" aria-label="MoldGuard home">
+      <svg class="logo-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <rect x="1.25" y="1.25" width="31.5" height="31.5" rx="9" stroke="#2f4157" stroke-width="2.5"/>
+        <path d="M9.5 24 V15 a7.5 7.5 0 0 1 15 0 V24" stroke="#2e8fa3" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="17" cy="24.5" r="2.6" fill="#2f4157"/>
+      </svg>
+      <span class="logo-word">MoldGuard</span>
+    </a>
+    <div class="navlinks">
+      <a href="features.html">Features</a>
+      <a href="how-it-works.html" aria-current="page">How it works</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="btn btn-primary" href="download.html">Get the app</a>
+  </nav>
+</header>
+<main id="main">
 
 <!-- ================= PAGE HERO ================= -->
 <section class="section-tight">
- <div class="page">
- <p class="eyebrow">How it works</p>
- <h1>From invisible risk to handled, automatically.</h1>
- <p class="lede" style="margin-top:10px;">
- MoldGuard runs a continuous loop: monitor the room, score the real mold risk,
- and act before conditions turn into growth.</p></div></section>
+  <div class="page">
+    <h1>From invisible risk to handled, automatically.</h1>
+    <p class="lede" style="margin-top:16px;">
+      MoldGuard runs a continuous loop: monitor the room, score the real mold risk,
+      and act before conditions turn into growth.</p>
+  </div>
+</section>
 
 <!-- ================= CLOSED LOOP DIAGRAM ================= -->
-<section class="section-tight">
- <div class="page">
- <div class="flow">
- <div class="flowbox"><strong>Sense</strong><small>humidity · temperature · VOC</small></div>
- <div class="flowarrow">→</div>
- <div class="flowbox"><strong>Score</strong><small>Mold Risk Index engine</small></div>
- <div class="flowarrow">→</div>
- <div class="flowbox"><strong>Act</strong><small>Peltier dehumidifier auto-on</small></div>
- <div class="flowarrow">→</div>
- <div class="flowbox"><strong>Report</strong><small>dashboard · mobile alerts</small></div>
- <div class="flowarrow">↺</div></div>
- <div class="wf-note">this loop diagram is the page's centerpiece, final
- rendering (illustrated icons, animation, static) is yours. Keep the four stages; the loop
- closing back on itself is the core story ("closed-loop" from the ).</div></div></section>
+<section class="section-tight" style="padding-top:8px;">
+  <div class="page">
+    <div class="loopline">
+      <div class="loopnode">
+        <span class="stage">Stage 1</span>
+        <h3>Sense</h3>
+        <small>humidity · temp · VOC</small>
+      </div>
+      <div class="loopnode">
+        <span class="stage">Stage 2</span>
+        <h3>Score</h3>
+        <small>risk index engine</small>
+      </div>
+      <div class="loopnode">
+        <span class="stage">Stage 3</span>
+        <h3>Act</h3>
+        <small>Peltier auto-on</small>
+      </div>
+      <div class="loopnode">
+        <span class="stage">Stage 4</span>
+        <h3>Report</h3>
+        <small>dashboard · alerts</small>
+      </div>
+    </div>
+    <svg class="loop-return" width="26" height="22" viewBox="0 0 26 22" fill="none" aria-hidden="true" style="margin-top:10px;">
+      <path d="M13 3 v11 M8 9.5 L13 15 L18 9.5" stroke="#567b8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <p class="readout" style="text-align:center; margin-top:2px;">↺ the loop closes on itself — that's the product</p>
+  </div>
+</section>
 
 <!-- ================= STEP 1: SENSE ================= -->
 <section class="section">
- <div class="page">
- <div class="grid grid-2" style="align-items:center; gap:36px;">
- <div class="step">
- <div class="stepnum">1</div>
- <div>
- <h2>Sense, the room, continuously.</h2>
- <p>A sensor array watches the three conditions mold actually cares about:
- relative humidity, temperature, and volatile organic compounds (VOCs), the
- microbial off-gassing that signals growth has already begun, ahead of any
- visible sign.</p>
- <div class="chips">
- <span class="chip">±2% RH humidity accuracy</span>
- <span class="chip">±0.3 °C temperature accuracy</span>
- <span class="chip">VOC / IAQ sensing</span></div></div></div>
- <div class="wf-img" style="min-height:240px;">SENSOR ARRAY ILLUSTRATION, device cross-section showing SHT31-D + BME680</div></div></div></section>
+  <div class="page stepgrid">
+    <div class="step-copy">
+      <span class="stage-tag"><i>1</i> Stage 1 · Sense</span>
+      <h2>Sense the room, continuously.</h2>
+      <p>A sensor array watches the three conditions mold actually cares about:
+      relative humidity, temperature, and volatile organic compounds (VOCs), the
+      microbial off-gassing that signals growth has already begun, ahead of any
+      visible sign.</p>
+      <p class="specline">±2% RH · ±0.3 °C · VOC / IAQ</p>
+    </div>
+    <div class="photo ph-4x3">
+      <img src="assets/window.jpg" alt="Bright white bathroom with a window, plants, and cold tiled surfaces" loading="lazy">
+      <figcaption>Cold surfaces, warm air · condensation waits here</figcaption>
+    </div>
+  </div>
+</section>
 
 <!-- ================= STEP 2: SCORE ================= -->
 <section class="section section-alt">
- <div class="page">
- <div class="grid grid-2" style="align-items:center; gap:36px;">
- <div class="wf-img" style="min-height:240px;">RISK SCORE UI MOCK, gauge climbing from Low → Elevated → High with trend line</div>
- <div class="step">
- <div class="stepnum">2</div>
- <div>
- <h2>Score, risk, not just a number.</h2>
- <p>The Mold Risk Index combines humidity, temperature, and <em>how long</em> those
- conditions persist, instead of reacting to a single humidity threshold. That's
- what makes the prediction early: it catches the window where mold <em>can</em>
- start, before it does.</p>
- <div class="wf-note"><b>Fact-check:</b> deliberately does NOT state a numeric scale,
- formula, or specific threshold values, the algorithm is the team's proprietary work
- and exact parameters aren't published in the (messaging.md claim C2, rule
- R3).</div></div></div></div></div></section>
+  <div class="page stepgrid flip">
+    <div class="step-copy">
+      <span class="stage-tag"><i>2</i> Stage 2 · Score</span>
+      <h2>Score the risk, not just a number.</h2>
+      <p>The Mold Risk Index combines humidity, temperature, and <em>how long</em> those
+      conditions persist, instead of reacting to a single humidity threshold. That's
+      what makes the prediction early: it catches the window where mold <em>can</em>
+      start, before it does.</p>
+      <p class="specline">RH + TEMP + SUSTAINED DURATION · NOT ONE THRESHOLD</p>
+    </div>
+    <div class="hero-stage" style="min-height:360px; place-items:center; padding:30px 24px 26px;">
+      <div class="dial-wrap animate-needle" style="width:100%;" aria-hidden="true">
+        <svg viewBox="0 0 200 130" style="width:100%; max-width:320px;">
+          <path d="M18 112 A82 82 0 0 1 56 33" stroke="#3d8f6a" stroke-width="9" fill="none" stroke-linecap="round" opacity=".85"/>
+          <path d="M60 30 A82 82 0 0 1 100 18" stroke="#d9973b" stroke-width="9" fill="none" stroke-linecap="round" opacity=".9"/>
+          <path d="M104 18 A82 82 0 0 1 150 40" stroke="#c25a41" stroke-width="9" fill="none" stroke-linecap="round" opacity=".9"/>
+          <text x="26" y="127" font-family="Spline Sans Mono" font-size="9" letter-spacing="2" fill="#3d8f6a">LOW</text>
+          <text x="88" y="10" font-family="Spline Sans Mono" font-size="9" letter-spacing="2" fill="#a8772c">ELEV</text>
+          <text x="146" y="34" font-family="Spline Sans Mono" font-size="9" letter-spacing="2" fill="#c25a41">HIGH</text>
+          <g class="needle"><line x1="100" y1="96" x2="100" y2="34" stroke="#2f4157" stroke-width="3.5" stroke-linecap="round"/></g>
+          <circle cx="100" cy="96" r="7" fill="#2f4157"/>
+          <circle cx="100" cy="96" r="3" fill="#7fd0dd"/>
+          <text x="100" y="122" text-anchor="middle" font-family="Spline Sans Mono" font-size="15" font-weight="600" fill="#2f4157">38 ELEVATED</text>
+        </svg>
+      </div>
+      <div class="statline" style="margin:18px auto 0;">
+        <span>Closet <b>82% RH</b></span>
+        <span class="warn">26h sustained</span>
+        <span>Dew point margin <b class="warn">−0.4°C</b></span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= STEP 3: ACT ================= -->
 <section class="section">
- <div class="page">
- <div class="grid grid-2" style="align-items:center; gap:36px;">
- <div class="step">
- <div class="stepnum">3</div>
- <div>
- <h2>Act, dehumidify, no hands.</h2>
- <p>When the index crosses the risk threshold, the compact Peltier-based
- dehumidifying unit switches itself on and pulls moisture back down, closing the
- loop without you touching anything. Extracted water collects in a removable tray
- you empty occasionally.</p>
- <div class="chips">
- <span class="chip">Automatic activation</span>
- <span class="chip">Manual override in the app</span>
- <span class="chip">Removable condensate tray</span></div></div></div>
- <div class="wf-img" style="min-height:240px;">DEHUMIDIFICATION ILLUSTRATION, unit active, moisture drawn down, tray visible</div></div></div></section>
+  <div class="page stepgrid">
+    <div class="step-copy">
+      <span class="stage-tag"><i>3</i> Stage 3 · Act</span>
+      <h2>Act: dehumidify, no hands.</h2>
+      <p>When the index crosses the risk threshold, the compact Peltier-based
+      dehumidifying unit switches itself on and pulls moisture back down, closing the
+      loop without you touching anything. Extracted water collects in a removable tray
+      you empty occasionally.</p>
+      <p class="specline">AUTO ACTIVATION · APP OVERRIDE · REMOVABLE TRAY</p>
+    </div>
+    <div class="photo ph-4x3">
+      <img src="assets/purifier.jpg" alt="Calm white bathroom with bathtub and plants" loading="lazy">
+      <figcaption>The room the loop protects · pulled back from the threshold</figcaption>
+    </div>
+  </div>
+</section>
 
 <!-- ================= STEP 4: REPORT ================= -->
 <section class="section section-alt">
- <div class="page">
- <div class="grid grid-2" style="align-items:center; gap:36px;">
- <div class="wf-img" style="min-height:240px;">DASHBOARD + PHONE MOCK, live status, trend charts, push notification banner</div>
- <div class="step">
- <div class="stepnum">4</div>
- <div>
- <h2>Report, see everything, anywhere.</h2>
- <p>Live status and historical trends stream to the web dashboard over real-time
- sync; the mobile app pushes an alert the moment risk rises, and lets you override
- the unit manually from anywhere.</p>
- <div class="chips">
- <span class="chip">Real-time WebSocket sync</span>
- <span class="chip">Historical trend charts</span>
- <span class="chip">Multi-room / multi-unit view</span></div></div></div></div></div></section>
+  <div class="page stepgrid flip">
+    <div class="step-copy">
+      <span class="stage-tag"><i>4</i> Stage 4 · Report</span>
+      <h2>Report: see everything, anywhere.</h2>
+      <p>Live status and historical trends stream to the web dashboard over real-time
+      sync; the mobile app pushes an alert the moment risk rises, and lets you override
+      the unit manually from anywhere.</p>
+      <p class="specline">WEBSOCKET SYNC · TREND CHARTS · MULTI-ROOM</p>
+    </div>
+    <div>
+      <div class="dash" style="margin-bottom:14px;" aria-hidden="true">
+        <div class="d-top"><span class="d-dot"></span><span class="d-dot"></span><span class="d-dot"></span><span class="d-title">app.moldguard.ph</span><span class="d-live"><span class="live-dot" style="width:6px;height:6px"></span> live</span></div>
+        <div class="d-body">
+          <div class="d-chart">
+            <svg viewBox="0 0 260 84" style="width:100%;height:auto">
+              <path d="M0 62 L24 58 L48 60 L72 50 L96 54 L120 44 L144 47 L168 36 L192 30 L216 26 L240 20 L260 16" stroke="#7fd0dd" stroke-width="2" fill="none"/>
+              <path d="M0 72 L24 70 L48 71 L72 66 L96 68 L120 60 L144 62 L168 52 L192 47 L216 40 L240 35 L260 30" stroke="#567b8d" stroke-width="1.5" stroke-dasharray="3 4" fill="none"/>
+            </svg>
+            <div class="d-kpi"><span>RH trend <b>74 → 82%</b></span><span>MRI <b>38</b></span></div>
+          </div>
+          <div class="d-side">
+            <div class="d-room"><span>Living</span><span class="d-badge d-low">Low</span></div>
+            <div class="d-room"><span>Closet</span><span class="d-badge d-elev">Elev</span></div>
+            <div class="d-room"><span>Bathroom</span><span class="d-badge d-high">High</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-float" style="position:static; width:190px; margin-left:auto;" aria-hidden="true">
+        <div class="phone-ui">
+          <div class="p-top"><span>MG · ALERT</span><span>20:41</span></div>
+          <div class="p-body">
+            <span class="p-risk">RISK 38 · ELEVATED</span>
+            <div class="p-bars" style="height:44px"><i style="height:36%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:68%"></i><i class="warm" style="height:84%"></i><i class="warm" style="height:92%"></i></div>
+            <div class="p-row"><span>UNIT 01</span><span class="p-toggle">AUTO · ON</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= PLACEMENT & SETUP ================= -->
 <section class="section">
- <div class="page">
- <p class="eyebrow">Setup &amp; placement</p>
- <h2>Plug in, connect, done.</h2>
- <div class="steps" style="margin-top:26px;">
- <div class="step">
- <div class="stepnum">A</div>
- <div><h3>Place the unit</h3><p>Tabletop or wall-mounted, near humidity-prone areas , 
- bathrooms, closets, basements. Compact housing fits where mold actually starts.</p></div></div>
- <div class="step">
- <div class="stepnum">B</div>
- <div><h3>Connect to WiFi</h3><p>The device joins your 2.4&nbsp;GHz network and syncs to
- the dashboard, readings buffer locally during any connectivity loss and catch up
- automatically.</p></div></div>
- <div class="step">
- <div class="stepnum">C</div>
- <div><h3>Watch the loop run</h3><p>From here it's automatic. Check trends in the
- dashboard, get alerts in the app, empty the tray when it's full.</p></div></div></div>
- <div class="wf-note"><b>Fact-check:</b> placement and buffering behavior are (Deployment) + onboard-storage row. Setup steps are a promo-friendly framing of those
- facts, no new claims introduced.</div></div></section>
+  <div class="page">
+    <div class="section-head">
+      <h2>Plug in, connect, done.</h2>
+    </div>
+    <div class="setuprows">
+      <div class="row"><span class="idx">A</span><h3>Place the unit</h3><p>Tabletop or wall-mounted, near humidity-prone areas:
+        bathrooms, closets, basements. Compact housing fits where mold actually starts.</p></div>
+      <div class="row"><span class="idx">B</span><h3>Connect to WiFi</h3><p>The device joins your 2.4&nbsp;GHz network and syncs to
+        the dashboard; readings buffer locally during any connectivity loss and catch up
+        automatically.</p></div>
+      <div class="row"><span class="idx">C</span><h3>Watch the loop run</h3><p>From here it's automatic. Check trends in the
+        dashboard, get alerts in the app, empty the tray when it's full.</p></div>
+    </div>
+    <div class="photo ph-16x10" style="margin-top:18px;">
+      <img src="assets/living.jpg" alt="Bright modern living room interior" loading="lazy">
+      <figcaption>Placed in the room · tabletop or wall-mount</figcaption>
+      <div class="float-card"><i></i> Unit 01 · Living room · RH 61% · stable</div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= FAQ ================= -->
 <section class="section section-alt">
- <div class="page">
- <p class="eyebrow">FAQ</p>
- <h2>Straight answers.</h2>
- <div style="margin-top:22px; max-width:760px;">
- <details class="acc">
- <summary>Do I still need a dehumidifier?</summary>
- <div class="acc-body">MoldGuard's built-in unit handles the prevention loop itself , 
- it dehumidifies when risk rises, automatically. [DRAFT, confirm scope vs. standalone
- dehumidifiers with the team before publishing.]</div></details>
- <details class="acc">
- <summary>What maintenance does it need?</summary>
- <div class="acc-body">Periodic emptying of the condensate tray and a dedicated power
- source, that's the honest list, straight from our own comparison table.</div></details>
- <details class="acc">
- <summary>Does it work without the internet?</summary>
- <div class="acc-body">The device keeps buffering readings locally when connectivity
- drops and syncs once reconnected. [DRAFT, confirm offline behavior of automatic
- dehumidification with the firmware team.]</div></details>
- <details class="acc">
- <summary>How much does it cost?</summary>
- <div class="acc-body">MoldGuard uses open hardware and open-source software with a
- single fixed development fee and no recurring subscription. Exact figures come from
- the team's quote, not published on the site. [DRAFT, confirm /PM.]</div></details>
- <details class="acc">
- <summary>Who is it for?</summary>
- <div class="acc-body">Renters, households, dormitories, and small property managers , 
- anyone who wants affordable, vendor-agnostic mold monitoring without an
- enterprise-grade building system.</div></details></div>
- <div class="wf-note"><b>Note:</b> answers marked [DRAFT] contain claims the doesn't
- fully pin down, flagged in messaging.md (Q1, Q3, Q4) and must be confirmed before this
- page goes live.</div></div></section>
+  <div class="page">
+    <div class="section-head">
+      <h2>Straight answers.</h2>
+    </div>
+    <div class="measure">
+      <details class="acc">
+        <summary>Do I still need a dehumidifier?</summary>
+        <div class="acc-body">MoldGuard's built-in unit handles the prevention loop itself:
+        it dehumidifies when risk rises, automatically. <em>[Team note: confirm scope vs. standalone
+        dehumidifiers before publishing — messaging.md Q3.]</em></div>
+      </details>
+      <details class="acc">
+        <summary>What maintenance does it need?</summary>
+        <div class="acc-body">Periodic emptying of the condensate tray and a dedicated power
+        source: that's the honest list, straight from our own comparison table.</div>
+      </details>
+      <details class="acc">
+        <summary>Does it work without the internet?</summary>
+        <div class="acc-body">The device keeps buffering readings locally when connectivity
+        drops and syncs once reconnected. <em>[Team note: confirm offline behavior of automatic
+        dehumidification with firmware: messaging.md Q1.]</em></div>
+      </details>
+      <details class="acc">
+        <summary>How much does it cost?</summary>
+        <div class="acc-body">MoldGuard uses open hardware and open-source software with a
+        single fixed development fee and no recurring subscription. Exact figures come from
+        the team's quote, not published on the site. <em>[Team note: confirm: messaging.md Q4.]</em></div>
+      </details>
+      <details class="acc">
+        <summary>Who is it for?</summary>
+        <div class="acc-body">Renters, households, dormitories, and small property managers:
+        anyone who wants affordable, vendor-agnostic mold monitoring without a
+        building-management system built for towers.</div>
+      </details>
+    </div>
+  </div>
+</section>
 
 <!-- ================= CTA ================= -->
 <section class="section-tight">
- <div class="page">
- <div class="cta-band">
- <div>
- <h2>Prevention that runs itself.</h2>
- <p class="lede" style="margin-top:8px;">Get started with MoldGuard, or ask the team anything.</p></div>
- <div class="chips" style="margin:0;">
- <a class="wf-btn wf-btn-primary wf-btn-lg" href="contact.html">Get Started</a>
- <a class="wf-btn wf-btn-lg" href="contact.html">Contact us</a></div></div></div></section>
+  <div class="page">
+    <div class="cta-band">
+      <div>
+        <h2>Prevention that runs itself.</h2>
+        <p class="lede" style="margin-top:6px;">Get started with MoldGuard, or ask the team anything.</p>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px;">
+        <a class="btn btn-light btn-lg" href="download.html">Get the app</a>
+        <a class="btn btn-lg" href="contact.html" style="background:rgba(231,240,245,.08); border-color:rgba(231,240,245,.3); color:var(--on-dark);">Contact us</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer class="wf-footer">
- <div class="page cols">
- <div><strong>MoldGuard</strong><br>IoT mold risk prevention &amp; detection</div>
- <div><a href="index.html">Home</a> · <a href="features.html">Features</a> · <a href="contact.html">Contact</a></div>
- <div>moldguard.dev.team@gmail.com<br>0992 543 0608</div></div>
- <div class="page" style="margin-top:16px; color:var(--ink-3);">© 2026 MoldGuard Team · Wireframe v0.1</div></footer></body></html>
+</main>
+<footer class="site-foot">
+  <div class="page cols">
+    <div style="max-width:280px;">
+      <span class="brand">MoldGuard</span>
+      <p style="font-size:14px; margin-top:6px;">IoT mold risk prevention &amp; detection</p>
+    </div>
+    <div style="display:grid; gap:8px; font-size:14px;">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="contact.html">Contact</a>
+      <a href="download.html">Get the app</a>
+    </div>
+    <div class="mono">
+      moldguard.dev.team@gmail.com<br>
+      0992 543 0608
+    </div>
+  </div>
+  <div class="page fine">
+    <span>© 2026 MoldGuard Team</span>
+    <span>Prototype build · photography is placeholder</span>
+  </div>
+</footer>
+</body>
+</html>
