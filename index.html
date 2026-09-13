@@ -102,9 +102,9 @@
               <div style="font-family:var(--font-mono); font-size:26px; font-weight:600; color:var(--on-dark); line-height:1.1; margin:4px 0 2px;">38<span style="font-size:12px; color:var(--on-dark-2);">/100</span></div>
               <div class="p-cap">Conditions steady</div>
               <div class="p-rooms">
-                <div class="p-room"><span>Living room</span><i class="p-state p-ok">Steady</i></div>
-                <div class="p-room"><span>Bedroom</span><i class="p-state p-ok">Steady</i></div>
-                <div class="p-room"><span>Closet</span><i class="p-state p-watch">Watch</i></div>
+                <div class="p-room"><span>Living room</span><i class="p-state">Low</i></div>
+                <div class="p-room"><span>Bedroom</span><i class="p-state">Low</i></div>
+                <div class="p-room"><span>Closet</span><i class="p-state p-elev">Elevated</i></div>
                 <div class="p-room"><span>Dehumidifier</span><i class="p-state p-ok">Running</i></div>
               </div>
             </div>
@@ -184,23 +184,26 @@
         <p>See risk, trends and room conditions at a glance.</p>
       </div>
       <div class="sol-vis">
-        <!-- Dashboard mock: trend chart + plain-text room states (illustrative demo data) -->
-        <div class="dash" aria-label="MoldGuard web dashboard preview with humidity trend and room status">
-          <div class="d-top"><span class="d-title">Dashboard</span></div>
+        <!-- Dashboard mock: one measurement + room conditions (illustrative demo data) -->
+        <div class="dash" aria-label="MoldGuard web dashboard preview showing the Mold Risk Index and room conditions">
+          <div class="d-top"><span class="d-title">MoldGuard</span></div>
           <div class="d-body">
-            <div class="d-chart">
-              <svg viewBox="0 0 420 120" width="100%" aria-hidden="true">
-                <polyline points="0,84 60,78 120,80 180,68 240,60 300,54 360,50 420,44"
-                          fill="none" stroke="#8FBDB8" stroke-width="2.5" stroke-linecap="round"/>
-                <polyline points="0,96 60,92 120,88 180,82 240,72 300,68 360,58 420,56"
-                          fill="none" stroke="#A6BDBA" stroke-width="2" stroke-linecap="round" opacity=".7"/>
-              </svg>
-              <div class="d-kpi"><span>Humidity <b>64%</b></span><span>Temp <b>27&deg;C</b></span><span>Index <b>38</b></span></div>
-            </div>
             <div class="d-side">
+              <div class="d-hero-metric">
+                <span class="d-hero-label">Mold Risk Index</span>
+                <span class="d-hero-num">38</span>
+              </div>
               <div class="d-room"><span>Living room</span><span style="color:var(--ink-3);">Low</span></div>
               <div class="d-room"><span>Bedroom</span><span style="color:var(--ink-3);">Low</span></div>
               <div class="d-room"><span>Closet</span><span style="color:var(--ink-2); font-weight:600;">Elevated</span></div>
+              <div class="d-room"><span>Dehumidifier</span><span style="color:var(--ink-3);">Running</span></div>
+            </div>
+            <div class="d-chart">
+              <svg viewBox="0 0 420 120" width="100%" aria-hidden="true">
+                <polyline points="0,84 60,78 120,80 180,68 240,60 300,54 360,50 420,44" fill="none" stroke="#8FBDB8" stroke-width="3.5" stroke-linecap="round"/>
+                <polyline points="0,96 60,92 120,88 180,82 240,72 300,68 360,58 420,56" fill="none" stroke="#A6BDBA" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+              </svg>
+              <div class="d-kpi"><span>Humidity <b>64%</b></span><span>Temp <b>27&deg;C</b></span></div>
             </div>
           </div>
         </div>
@@ -214,14 +217,21 @@
         <p>Get alerts and control your system from anywhere.</p>
       </div>
       <div class="sol-vis" style="display:grid; place-items:center;">
-        <!-- Phone mock: alerts and control (illustrative demo data) -->
-        <div class="tile-mock" style="width:min(300px,100%);">
-          <div class="phone-mini">
-            <div class="phone-ui" style="width:190px; font-family:var(--font-text); letter-spacing:0;">
-              <div class="p-top"><span>MoldGuard</span></div>
-              <div class="p-body">
-                <div style="font-family:var(--font-text); font-size:12.5px; color:var(--on-dark); line-height:1.45;">Closet humidity has been high for 6 hours.</div>
-                <div style="font-family:var(--font-text); font-size:11px; color:var(--on-dark-2); margin-top:8px; padding-top:8px; border-top:1px solid rgba(231,240,245,.14);">The dehumidifier switched on automatically.</div>
+        <!-- Phone mock: app home screen (illustrative demo data) -->
+        <div class="phone-mini" style="width:min(260px,100%); border-radius:20px; overflow:hidden;">
+          <div class="phone-ui" style="width:auto; font-family:var(--font-text); letter-spacing:0;">
+            <div class="p-top"><span>MoldGuard</span></div>
+            <div class="p-body">
+              <div class="p-greet">Good evening</div>
+              <div class="p-metric">
+                <span class="p-label">Mold Risk Index</span>
+                <div class="p-num">38<span class="p-scale">/100</span></div>
+              </div>
+              <div class="p-rooms">
+                <div class="p-room"><span>Living room</span><em class="p-state">Low</em></div>
+                <div class="p-room"><span>Bedroom</span><em class="p-state">Low</em></div>
+                <div class="p-room"><span>Closet</span><em class="p-state p-elev">Elevated</em></div>
+                <div class="p-room"><span>Dehumidifier</span><em class="p-state">Running</em></div>
               </div>
             </div>
           </div>

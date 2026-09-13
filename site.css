@@ -238,22 +238,8 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 @media (max-width: 480px) { .phone-float { width: 128px; right: 12px; bottom: 14px; } .hero-stage { min-height: 380px; } }
 
 /* phone mock (reused) */
-.phone-ui { font-family: var(--font-mono); font-size: 8.5px; color: var(--on-dark-2); letter-spacing: .08em; }
-.phone-ui .p-cap { text-transform: none; }
-.phone-ui .p-scale { font-size: 12px; color: var(--on-dark-2); font-weight: 400; margin-left: 2px; }
-.phone-ui .p-cap { font-size: 7.5px; letter-spacing: .12em; color: var(--on-dark-2); margin-top: 3px; }
-.phone-ui .p-top { display: flex; justify-content: space-between; padding: 8px 12px 4px; }
-.phone-ui .p-body { padding: 6px 12px 14px; }
-.phone-ui .p-risk { color: var(--on-dark); font-weight: 700; }
-.phone-ui .p-row { display: flex; justify-content: space-between; border-top: 1px solid rgba(233,241,240,.14); padding: 6px 0 0; }
-.phone-ui .p-toggle { display: inline-block; background: #2D9A91; color: #E9F1F0; border-radius: 99px; padding: 3px 9px; font-weight: 700; }
 
 /* labeled app preview (download page) */
-.phone-ui .p-label { font-size: 8px; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark-2); }
-.phone-ui .p-card { border: 1px solid rgba(233,241,240,.16); border-radius: 10px; padding: 9px 11px; margin-top: 9px; }
-.phone-ui .p-cardline { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 9.5px; letter-spacing: .02em; color: var(--on-dark); text-transform: none; padding: 3px 0; }
-.phone-ui .p-cardline + .p-cardline { border-top: 1px solid rgba(233,241,240,.08); }
-.phone-ui .p-on { background: #2D9A91; color: #E9F1F0; border-radius: 99px; padding: 2px 9px; font-weight: 700; font-size: 9px; }
 
 /* ================= station log (problem) ================= */
 @media (max-width: 860px) { .log-row { grid-template-columns: 1fr auto; } .log-row .log-time { grid-column: 1 / -1; } .log-row p { grid-column: 1 / -1; } }
@@ -286,20 +272,18 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 }
 
 /* ================= dashboard mock ================= */
-.dash {
-  background: var(--deep);
-  border: 1px solid rgba(233,241,240,.14); border-radius: 18px; overflow: hidden;
-  color: var(--on-dark);
-  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
-}
+.dash { max-width: 640px; margin: 0 auto; width: 100%; background: var(--deep); border: 1px solid rgba(233,241,240,.14); border-radius: 18px; overflow: hidden; }
 .dash .d-top { display: flex; align-items: center; gap: 8px; padding: 11px 16px; border-bottom: 1px solid rgba(233,241,240,.12); }
 .dash .d-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(233,241,240,.25); }
 .dash .d-title { margin-left: 6px; color: var(--on-dark-2); }
 .dash .d-live { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; color: #8FD0CC; }
-.dash .d-body { display: grid; grid-template-columns: 1fr 132px; }
+.dash .d-body { display: grid; grid-template-columns: 192px 1fr; }
 .dash .d-chart { padding: 14px 16px 10px; }
 .dash .d-side { border-left: 1px solid rgba(233,241,240,.12); padding: 14px 14px; display: grid; gap: 9px; align-content: start; }
-.dash .d-room { display: flex; justify-content: space-between; align-items: center; gap: 8px; border: 1px solid rgba(233,241,240,.14); border-radius: 9px; padding: 8px 10px; color: var(--on-dark-2); }
+.dash .d-hero-metric { border-bottom: 1px solid rgba(233,241,240,.14); padding: 2px 2px 12px; margin-bottom: 4px; }
+.d-hero-label { display: block; font-size: 12px; color: var(--on-dark-2); }
+.d-hero-num { display: block; font-family: var(--font-mono); font-size: 44px; font-weight: 600; color: var(--on-dark); line-height: 1.1; margin-top: 4px; }
+.d-room { display: flex; justify-content: space-between; align-items: center; gap: 8px; border: 1px solid rgba(233,241,240,.14); border-radius: 9px; padding: 8px 10px; color: var(--on-dark-2); }
 .dash .d-badge { border-radius: 99px; padding: 2px 8px; font-weight: 700; font-size: 9px; }
 .dash .d-low { background: rgba(46,143,163,.25); color: #8fdceb; }
 .dash .d-elev { background: rgba(142,199,221,.22); color: #d6ecf5; }
@@ -310,10 +294,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 
 /* ================= device render SVG sizing ================= */
 .device-svg { width: 100%; height: auto; }
-.tile-mock { border-radius: 12px; overflow: hidden; margin-bottom: 16px; border: 1px solid var(--line); }
-.tile-mock .dash { border-radius: 0; box-shadow: none; border: none; font-size: 9.5px; }
-.tile-mock .phone-mini { background: var(--deeper); padding: 18px 0 22px; display: grid; place-items: center; }
-.tile-mock .phone-mini .phone-ui { width: 118px; background: #1E454E; border-radius: 16px; border: 1px solid rgba(233,241,240,.18); box-shadow: var(--shadow-card); }
 
 /* ================= feature bento ================= */
 .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -486,8 +466,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
    index.html — v3 editorial landing
    Palette tokens live in :root (shared, additive-safe). Classes
    below are index-scoped; shared grammar (.rows, .dash,
-   .phone-ui, .duo, .compare, .roster, forms, .acc, .qr-card,
-   .dl-*, .store-badges) is defined above and owned by the other
+      .dl-*, .store-badges) is defined above and owned by the other
    pages.
    ============================================================ */
 
@@ -511,7 +490,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
   width: 186px; border-radius: 24px; overflow: hidden;
   background: var(--deeper); box-shadow: var(--shadow-pop);
 }
-.showcase-phone .phone-ui { font-size: 9px; }
 @media (max-width: 480px) { .showcase { min-height: 360px; padding: 24px 16px 0; } .showcase-phone { width: 150px; right: 12px; bottom: 12px; } }
 
 /* category line above h1 (quiet, Figtree, not mono, not uppercase) */
@@ -531,17 +509,18 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 }
 
 /* ---- solution: alternating editorial rows ---- */
-.solrow { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; padding: 34px 0; border-top: 1px solid var(--line); }
-.solrow:first-of-type { border-top: none; padding-top: 0; }
+.solrow { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; padding: 72px 0; }
+.solrow:first-of-type { padding-top: 24px; }
+.solrow + .solrow { border-top: none; }  /* separation = whitespace, not rules */
 .solrow.flip .sol-copy { order: 2; }
 .solrow.flip .sol-vis { order: 1; }
 .sol-copy .num { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; color: var(--accent-ink); display: block; margin-bottom: 10px; }
 .sol-copy h3 { font-size: 1.45rem; margin-bottom: 8px; }
 .sol-copy p { color: var(--ink-2); font-size: 15.5px; max-width: 46ch; margin: 0; }
 .sol-vis { min-width: 0; }
-.solrow .device-svg { width: min(230px, 70%); margin: 0 auto; }
+.solrow .device-svg { width: min(300px, 80%); margin: 0 auto; }
 @media (max-width: 860px) {
-  .solrow { grid-template-columns: 1fr; gap: 20px; padding: 26px 0; }
+  .solrow { grid-template-columns: 1fr; gap: 26px; padding: 48px 0; }
   .solrow.flip .sol-copy { order: 0; }
   .solrow.flip .sol-vis { order: 1; }
 }
@@ -590,11 +569,31 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .store-badges img { display: block; border-radius: 8px; }
 .store-badges img[alt="Download on the App Store"] { height: 62px; width: auto; }
 .store-badges img[alt="Get it on Google Play"] { height: 82px; width: auto; } /* official PNG ships with transparent padding; scaled so inner badge visual height matches the App Store SVG */
-.p-greet { font-family: var(--font-text); font-size: 15px; font-weight: 650; color: var(--on-dark); letter-spacing: -.01em; margin-top: 8px; }
-.p-sub { font-family: var(--font-text); font-size: 11px; color: var(--on-dark-2); margin-top: 3px; }
-.p-rooms { margin-top: 14px; border-top: 1px solid rgba(233,241,240,.14); }
-.p-room { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(233,241,240,.08); font-family: var(--font-text); font-size: 11.5px; color: var(--on-dark); }
-.p-state { font-style: normal; font-family: var(--font-text); font-size: 11px; color: var(--on-dark-2); }
 .p-ok { color: var(--on-dark-2); }
 .p-watch { color: var(--on-dark); font-weight: 600; }
 @media (max-width: 860px) { .store-badges { gap: 12px; } .store-badges img { height: 54px; } }
+
+/* ---- app home-screen metric (Meet MoldGuard -> The App) ---- */
+
+/* ---- phone-ui component: dark app screen (Meet MoldGuard + hero showcase) ---- */
+.phone-ui {
+  font-family: var(--font-text); letter-spacing: 0;
+  background: var(--deeper); border: 1px solid rgba(233,241,240,.14);
+  border-radius: 20px; overflow: hidden; width: min(230px, 100%);
+}
+.phone-ui .p-top { display: flex; justify-content: space-between; padding: 10px 14px 2px; font-size: 10px; color: var(--on-dark-2); }
+.phone-ui .p-body { padding: 4px 14px 14px; }
+.phone-ui .phone-ui .phone-ui .phone-ui .phone-ui .phone-ui .phone-ui .phone-ui 
+.phone-ui .p-risk { color: var(--on-dark); font-weight: 700; font-size: 10px; letter-spacing: .1em; }
+.phone-ui .p-cap { font-size: 10.5px; color: var(--on-dark-2); margin-top: 2px; }
+.phone-ui .p-row { display: flex; justify-content: space-between; border-top: 1px solid rgba(233,241,240,.14); padding: 6px 0 0; font-size: 11px; color: var(--on-dark); }
+
+.phone-ui .p-greet { font-size: 14px; font-weight: 650; color: var(--on-dark); }
+.phone-ui .p-metric { margin: 10px 0 2px; padding: 9px 11px; background: rgba(45,154,145,.16); border-radius: 10px; }
+.phone-ui .p-label { display: block; font-size: 10px; color: var(--on-dark-2); }
+.phone-ui .p-num { font-family: var(--font-mono); font-size: 28px; font-weight: 600; color: #fff; line-height: 1.15; }
+.phone-ui .p-num .p-scale { font-size: 12px; font-weight: 400; color: var(--on-dark-2); margin-left: 2px; }
+.phone-ui .p-rooms { margin-top: 10px; border-top: 1px solid rgba(233,241,240,.14); }
+.phone-ui .p-room { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(233,241,240,.08); font-size: 11.5px; color: var(--on-dark); }
+.phone-ui .p-state { font-style: normal; font-size: 10.5px; color: var(--on-dark-2); }
+.phone-ui .p-state.p-elev { color: #fff; font-weight: 600; }
