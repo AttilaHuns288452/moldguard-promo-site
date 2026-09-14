@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@450;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=2">
+<link rel="stylesheet" href="site.css?v=6">
 </head>
 <body class="page-index">
 <a class="skip" href="#main">Skip to content</a>
@@ -132,11 +132,27 @@
   <div class="page">
     <div class="section-head">
       <h2>Meet MoldGuard.</h2>
+      <p>One device senses the room. One system understands it. When risk rises, it responds on its own.</p>
     </div>
 
-    <div class="flow-wrap">
-      <!-- Authored static flow diagram: Pod → Sensors → Analysis → Risk → Response → Dehumidifier, closed loop -->
-      <svg class="flow-svg" viewBox="0 0 1000 600" role="img"
+    <div class="meet-wrap">
+      <figure class="meet-stage">
+        <img src="assets/pod-hero.png" alt="MoldGuard Pod on a wooden shelf" width="520" height="520">
+        <figcaption>MoldGuard Pod &middot; tabletop or wall-mounted</figcaption>
+      </figure>
+
+      <ol class="meet-stages" role="list">
+        <li><span><em>01</em>The pod senses</span>Temperature, humidity and air quality, continuously.</li>
+        <li><span><em>02</em>The system understands</span>Readings become an environmental picture of the room.</li>
+        <li><span><em>03</em>The system flags risk</span>A single Mold Risk Index, updated in real time.</li>
+        <li><span><em>04</em>The system responds</span>The dehumidifier switches itself on and back off.</li>
+      </ol>
+    </div>
+
+    <details class="flow-detail" open>
+      <summary>See the full data flow</summary>
+      <div class="flow-wrap">
+        <svg class="flow-svg" viewBox="0 0 1000 600" role="img"
            aria-label="Product flow diagram. The MoldGuard pod senses room temperature, humidity and air quality. Environmental analysis produces a Mold Risk Index of 38. An automatic response controls the dehumidifier, and the result feeds back into analysis.">
         <!-- Pod (reused authored artwork) -->
         <svg x="440" y="4" width="120" height="136" viewBox="0 0 300 340" fill="none" aria-hidden="true">
@@ -210,14 +226,12 @@
         <path d="M395 570 H320 V290 H387" stroke="#2D9A91" stroke-opacity=".85" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
         <polygon points="395,284 395,296 387,290" fill="#2D9A91" fill-opacity=".5"/>
       </svg>
-    </div>
-
-    <p class="flow-lede">MoldGuard monitors indoor conditions, identifies increasing mold or condensation risk, and can automatically control dehumidification.</p>
-    <p class="flow-note">Illustrative demo data</p>
+        <p class="flow-lede">MoldGuard monitors indoor conditions, identifies increasing mold or condensation risk, and can automatically control dehumidification.</p>
+        <p class="flow-note">Illustrative demo data.</p>
+      </div>
+    </details>
   </div>
 </section>
-
-<!-- 4 ================= HOW IT WORKS — Sense. Score. Act. ================= -->
 <section class="section">
   <div class="page">
     <div style="display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; justify-content:space-between;">
@@ -316,14 +330,19 @@
 </section>
 
 <!-- 6 ================= OWN IT (plain band) ================= -->
-<section class="section section-warm">
+<section class="section section-alt">
   <div class="page ownit">
-    <h2>Own it, don't rent it.</h2>
-    <p style="margin-top:8px;">Open, individually-sourced components around a standard dehumidifier. Fixed development cost, full ownership, no proprietary ecosystem.</p>
+    <div class="ownit-copy">
+      <h2>Own it, don't rent it.</h2>
+      <p>Standard, individually sourced parts built around a dehumidifier you choose. The system is yours, with no proprietary ecosystem.</p>
+    </div>
+    <ul class="ownit-points" role="list">
+      <li><strong>Open hardware</strong>Individually sourced, standard parts.</li>
+      <li><strong>Fixed cost</strong>One development cost, no monthly fees.</li>
+      <li><strong>Your system</strong>Works with your own dehumidifier.</li>
+    </ul>
   </div>
 </section>
-
-<!-- 7 ================= WHERE IT LIVES ================= -->
 <section class="section">
   <div class="page stepgrid">
     <div>
@@ -335,7 +354,7 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
     <div class="photo ph-4x3 plain-photo">
-      <img src="assets/bathroom.jpg" alt="Tiled bathroom with visible moisture on surfaces, the room where mold starts" width="1100" height="733">
+      <img src="assets/pod-bath.png" alt="MoldGuard Pod on a bathroom vanity, monitoring humidity near the shower" width="1024" height="1024">
     </div>
   </div>
 </section>
@@ -369,9 +388,9 @@
       <a href="contact.html">Contact</a>
       <a href="download.html">Get Started</a>
     </div>
-    <div class="mono">
-      moldguard.dev.team@gmail.com<br>
-      0992 543 0608
+    <div style="display:grid; gap:8px; font-size:14px;">
+      <a href="mailto:moldguard.dev.team@gmail.com">moldguard.dev.team@gmail.com</a>
+      <a href="tel:+639925430608">0992 543 0608</a>
     </div>
   </div>
   <div class="page fine">

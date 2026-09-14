@@ -484,9 +484,9 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 }
 .showcase .device-svg { width: min(330px, 76%); height: auto; position: relative; z-index: 1; }
 .showcase-phone {
-  position: absolute; right: 14px; bottom: 14px; z-index: 2;
-  width: 186px; border-radius: 24px; overflow: hidden;
-  background: var(--deeper); box-shadow: var(--shadow-pop);
+  position: absolute; right: 18px; bottom: 18px; z-index: 2;
+  width: 178px; border-radius: 18px; overflow: hidden;
+  background: var(--deeper); box-shadow: 0 18px 40px rgba(24,59,67,.22);
 }
 @media (max-width: 480px) { .showcase { min-height: 360px; padding: 24px 16px 0; } .showcase-phone { width: 150px; right: 12px; bottom: 12px; } }
 
@@ -538,7 +538,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 
 
 /* ---- own-it: plain band (no specline decorations) ---- */
-.ownit { max-width: 680px; }
 .ownit h3 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.8vw, 2.15rem); letter-spacing: -.02em; margin: 0; color: var(--deep); }
 .ownit p { color: var(--ink-2); max-width: 56ch; font-size: 15.5px; margin: 0; }
 
@@ -587,7 +586,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .store-badges a { display: inline-block; line-height: 0; }
 
 /* hero pod photo */
-.pod-hero { width: 100%; height: auto; border-radius: 18px; display: block; border: 1px solid var(--line); }
+.pod-hero { width: 100%; aspect-ratio: 1 / 1.06; object-fit: cover; object-position: 42% 62%; border-radius: 18px; display: block; border: 1px solid var(--line); }
 
 .section-alt--navy { background: var(--deep); color: var(--on-dark); }
 .section-alt--navy h2 { color: var(--on-dark); }
@@ -595,3 +594,31 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 /* ---- landing surface rhythm: paper -> paper-deep -> warm-white tiers ---- */
 .section-hero { background: #FBFBF9; border-bottom: 1px solid var(--line); }
 .section-warm { background: #F2EBDF; }  /* warm beige-leaning band: own-it human moment (one notch deeper so it announces itself) */
+
+/* ---- Meet MoldGuard: product-first composition (photo anchor + stages + collapsible flow) ---- */
+.meet-wrap { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); gap: 48px; align-items: center; margin-top: 40px; }
+.meet-stage { margin: 0; }
+.meet-stage img { width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--line); display: block; }
+.meet-stage figcaption { margin-top: 10px; font-size: 13.5px; color: var(--ink-soft); }
+.meet-stages { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.meet-stages li { display: grid; gap: 2px; padding: 16px 8px 16px 0; border-top: 1px solid var(--line); font-size: 15px; color: var(--ink-soft); }
+.meet-stages li:first-child { border-top: 0; padding-top: 0; }
+.meet-stages li span { font-weight: 650; color: var(--ink-strong); font-size: 16.5px; }
+.meet-stages li em { font-style: normal; font-family: var(--font-mono); font-size: 11.5px; color: var(--accent); margin-right: 10px; vertical-align: 2px; }
+.flow-detail { margin-top: 40px; border-top: 1px solid var(--line); }
+.flow-detail summary { cursor: pointer; padding: 14px 0; font-weight: 600; color: var(--ink-strong); list-style: none; }
+.flow-detail summary::-webkit-details-marker { display: none; }
+.flow-detail summary::after { content: "+"; float: right; font-weight: 400; color: var(--ink-soft); }
+.flow-detail[open] summary::after { content: "\2013"; }
+.flow-detail[open] summary { border-bottom: 1px solid var(--line); }
+@media (max-width: 900px) { .meet-wrap { grid-template-columns: 1fr; gap: 28px; } }
+
+/* ---- Own-it: supporting differentiator (sage, left-aligned, 2-col) ---- */
+.ownit { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); gap: 48px; align-items: start; }
+.ownit-copy { padding-top: 4px; }
+.ownit h2 { margin: 0; }
+.ownit-copy p { margin: 10px 0 0; color: var(--ink-soft); }
+.ownit-points { list-style: none; margin: 0; padding: 0; }
+.ownit-points li { display: grid; gap: 2px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--ink-soft); }
+.ownit-points li strong { color: var(--ink-strong); font-weight: 650; }
+@media (max-width: 900px) { .ownit { grid-template-columns: 1fr; gap: 24px; } }
