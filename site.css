@@ -469,7 +469,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
    ============================================================ */
 
 /* ---- hero: light editorial split ---- */
-.hero-grid--device { max-width: 1240px; grid-template-columns: 1.02fr .98fr; gap: 56px; align-items: center; }
+.hero-grid--device { max-width: 1120px; grid-template-columns: 1.02fr .98fr; gap: 56px; align-items: center; }
 @media (max-width: 900px) { .hero-grid--device { grid-template-columns: 1fr; gap: 40px; } }
 .showcase {
   position: relative; border-radius: 20px; overflow: hidden;
@@ -587,7 +587,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .store-badges a { display: inline-block; line-height: 0; }
 
 /* hero pod photo */
-.pod-hero { width: 100%; aspect-ratio: 1 / 1.06; object-fit: cover; object-position: 42% 62%; border-radius: 18px; display: block; border: 1px solid var(--line); }
+.pod-hero { width: 100%; height: auto; aspect-ratio: 1 / 1.06; object-fit: cover; object-position: 42% 62%; border-radius: 18px; display: block; border: 1px solid var(--line); }
 
 .section-alt--navy { background: var(--deep); color: var(--on-dark); }
 .section-alt--navy h2 { color: var(--on-dark); }
