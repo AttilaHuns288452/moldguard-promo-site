@@ -27,9 +27,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@450;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css?v=final">
 <style>
-/* ---- page-local: stage rail connector ---- */
-.stage-rail { width: 2px; height: 72px; margin: 4px auto; background: var(--line); }
-@media (max-width: 860px) { .stage-rail { display: none; } }
+/* ---- page-local: stage connector (between steps, not at page edges) ---- */
+.stepgrid { position: relative; }
+.stepgrid::before {
+  content: ""; position: absolute; top: -36px; left: 50%; width: 2px; height: 36px;
+  background: var(--line); transform: translateX(-50%);
+}
+.stepgrid:first-of-type::before { display: none; }
+@media (max-width: 860px) { .stepgrid::before { display: none; } }
 
 /* ---- page-local: stage tags 01 SENSE .. 04 PROTECT ----
    number stays mono (index rule); the word is Figtree, no extra caps styling */
@@ -159,7 +164,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
   </div>
 </section>
-<div class="page"><div class="stage-rail" aria-hidden="true"></div></div>
 
 <!-- ================= STAGE 02: ANALYZE ================= -->
 <section class="section section-alt">
@@ -195,7 +199,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
   </div>
 </section>
-<div class="page"><div class="stage-rail" aria-hidden="true"></div></div>
 
 <!-- ================= STAGE 03: RESPOND ================= -->
 <section class="section">
@@ -212,7 +215,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <svg viewBox="0 0 300 190" style="width:100%; height:auto; display:block;">
         <line x1="10" y1="52" x2="64" y2="52" stroke="#2D9A91" stroke-width="2"/>
         <path d="M64 52 l-7 -4 v8 z" fill="#2D9A91"/>
-        <text x="10" y="36" font-family="Figtree" font-size="9.5" fill="#687979">Risk engine signal</text>
+        <text x="8" y="36" font-family="Figtree" font-size="9.5" fill="#687979">Risk signal</text>
         <rect x="72" y="16" width="92" height="118" rx="10" fill="#F2F4F2" stroke="#C7D4D3" stroke-width="1.5"/>
         <rect x="82" y="26" width="72" height="26" rx="6" fill="#183B43"/>
         <text x="118" y="43" text-anchor="middle" font-family="Figtree" font-size="10" font-weight="650" fill="#E9F1F0">AUTO</text>
@@ -233,7 +236,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
   </div>
 </section>
-<div class="page"><div class="stage-rail" aria-hidden="true"></div></div>
 
 <!-- ================= STAGE 04: PROTECT ================= -->
 <section class="section section-alt">

@@ -10,7 +10,7 @@
 
 :root {
   --paper: #F7F8F6;          /* warm off-white foundation */
-  --paper-deep: #EDF1F0;     /* subtle band tint */
+  --paper-deep: #E9EEEC;   /* alternate section band */     /* subtle band tint */
   --surface: #F2F4F2;        /* inputs, subtle fills */
   --card: #ffffff;
   --line: #DDE5E5;
@@ -84,8 +84,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .section-flush { padding: 0; }
 .section-alt {
   background: var(--paper-deep);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 .section-head { max-width: 720px; margin-bottom: 48px; }
 .section-head .lede { margin-top: 8px; }
@@ -590,3 +588,10 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 
 /* hero pod photo */
 .pod-hero { width: 100%; height: auto; border-radius: 18px; display: block; border: 1px solid var(--line); }
+
+.section-alt--navy { background: var(--deep); color: var(--on-dark); }
+.section-alt--navy h2 { color: var(--on-dark); }
+
+/* ---- landing surface rhythm: paper -> paper-deep -> warm-white tiers ---- */
+.section-hero { background: #FBFBF9; border-bottom: 1px solid var(--line); }
+.section-warm { background: #F2EBDF; }  /* warm beige-leaning band: own-it human moment (one notch deeper so it announces itself) */
