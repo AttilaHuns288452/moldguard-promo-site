@@ -486,7 +486,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 }
 .showcase .device-svg { width: min(330px, 76%); height: auto; position: relative; z-index: 1; }
 .showcase-phone {
-  position: absolute; right: 22px; bottom: 26px; z-index: 2;
+  position: absolute; right: 14px; bottom: 14px; z-index: 2;
   width: 186px; border-radius: 24px; overflow: hidden;
   background: var(--deeper); box-shadow: var(--shadow-pop);
 }
@@ -572,8 +572,7 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 }
 .phone-ui .p-top { display: flex; justify-content: space-between; padding: 10px 14px 2px; font-size: 10px; color: var(--on-dark-2); }
 .phone-ui .p-body { padding: 4px 14px 14px; }
-.phone-ui .phone-ui .phone-ui .phone-ui .phone-ui .phone-ui .phone-ui .phone-ui 
-.phone-ui .p-risk { color: var(--on-dark); font-weight: 700; font-size: 10px; letter-spacing: .1em; }
+.phone-ui .p-risk { display: block; color: var(--on-dark); font-weight: 700; font-size: 10px; letter-spacing: .1em; margin-bottom: 6px; }
 .phone-ui .p-cap { font-size: 10.5px; color: var(--on-dark-2); margin-top: 2px; }
 .phone-ui .p-row { display: flex; justify-content: space-between; border-top: 1px solid rgba(233,241,240,.14); padding: 6px 0 0; font-size: 11px; color: var(--on-dark); }
 
@@ -588,3 +587,6 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .phone-ui .p-state.p-elev { color: #fff; font-weight: 600; }
 
 .store-badges a { display: inline-block; line-height: 0; }
+
+/* hero pod photo */
+.pod-hero { width: 100%; height: auto; border-radius: 18px; display: block; border: 1px solid var(--line); }
