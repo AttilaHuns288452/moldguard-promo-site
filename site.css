@@ -508,22 +508,11 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
   .problist .prob { border-right: none !important; padding-left: 0; padding-right: 0; }
 }
 
-/* ---- solution: alternating editorial rows ---- */
-.solrow { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; padding: 72px 0; }
-.solrow:first-of-type { padding-top: 24px; }
-.solrow + .solrow { border-top: none; }  /* separation = whitespace, not rules */
-.solrow.flip .sol-copy { order: 2; }
-.solrow.flip .sol-vis { order: 1; }
-.sol-copy .num { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; color: var(--accent-ink); display: block; margin-bottom: 10px; }
-.sol-copy h3 { font-size: 1.45rem; margin-bottom: 8px; }
-.sol-copy p { color: var(--ink-2); font-size: 15.5px; max-width: 46ch; margin: 0; }
-.sol-vis { min-width: 0; }
-.solrow .device-svg { width: min(300px, 80%); margin: 0 auto; }
-@media (max-width: 860px) {
-  .solrow { grid-template-columns: 1fr; gap: 26px; padding: 48px 0; }
-  .solrow.flip .sol-copy { order: 0; }
-  .solrow.flip .sol-vis { order: 1; }
-}
+/* ---- solution: product flow diagram ---- */
+.flow-wrap { max-width: 920px; margin: 0 auto; }
+.flow-svg { display: block; width: 100%; height: auto; }
+.flow-lede { max-width: 640px; margin: 6px auto 0; text-align: center; color: var(--ink-2); font-size: 15.5px; }
+.flow-note { margin: 10px 0 0; text-align: center; font-size: 12px; color: var(--ink-3); }
 
 /* ---- signature steps: Sense. Score. Act. ---- */
 .steps3 { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--deep); }
@@ -597,3 +586,5 @@ h3 { font-size: 1.13rem; font-weight: 650; letter-spacing: -.01em; }
 .phone-ui .p-room { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(233,241,240,.08); font-size: 11.5px; color: var(--on-dark); }
 .phone-ui .p-state { font-style: normal; font-size: 10.5px; color: var(--on-dark-2); }
 .phone-ui .p-state.p-elev { color: #fff; font-weight: 600; }
+
+.store-badges a { display: inline-block; line-height: 0; }

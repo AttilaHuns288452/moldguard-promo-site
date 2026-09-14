@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<meta name="description" content="How MoldGuard works: sense the room, score the real mold risk, act automatically, and report to your dashboard and phone.">
+<meta name="description" content="How MoldGuard works: sense the room, analyze the real mold risk, respond automatically, and protect with history and alerts.">
 <link rel="canonical" href="https://attilahuns288452.github.io/moldguard-promo-site/how-it-works.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="MoldGuard">
 <meta property="og:title" content="MoldGuard · How it works">
-<meta property="og:description" content="How MoldGuard works: sense the room, score the real mold risk, act automatically, and report to your dashboard and phone.">
+<meta property="og:description" content="How MoldGuard works: sense the room, analyze the real mold risk, respond automatically, and protect with history and alerts.">
 <meta property="og:url" content="https://attilahuns288452.github.io/moldguard-promo-site/how-it-works.html">
 <meta property="og:image" content="https://attilahuns288452.github.io/moldguard-promo-site/assets/og-card.png">
 <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
 <meta property="og:image:alt" content="MoldGuard — Know mold is coming before it shows">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MoldGuard · How it works">
-<meta name="twitter:description" content="How MoldGuard works: sense the room, score the real mold risk, act automatically, and report to your dashboard and phone.">
+<meta name="twitter:description" content="How MoldGuard works: sense the room, analyze the real mold risk, respond automatically, and protect with history and alerts.">
 <meta name="twitter:image" content="https://attilahuns288452.github.io/moldguard-promo-site/assets/og-card.png">
 
 <title>MoldGuard · How it works</title>
@@ -26,6 +26,43 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@450;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css?v=final">
+<style>
+/* ---- page-local: stage rail connector ---- */
+.stage-rail { width: 2px; height: 72px; margin: 4px auto; background: var(--line); }
+@media (max-width: 860px) { .stage-rail { display: none; } }
+
+/* ---- page-local: stage tags 01 SENSE .. 04 PROTECT ----
+   number stays mono (index rule); the word is Figtree, no extra caps styling */
+.step-copy .stage-tag { letter-spacing: .02em; text-transform: none; }
+.stageword { font-family: var(--font-text); font-weight: 650; font-size: 12.5px; }
+.loopnode h2 { font-size: 1.2rem; margin: 6px 0 4px; max-width: none; }
+
+/* ---- page-local: app glimpse chrome (canonical app IA, marketing density) ---- */
+.app-ui { background: var(--deeper); border: 1px solid rgba(233,241,240,.14); border-radius: 20px; overflow: hidden; font-family: var(--font-text); color: var(--on-dark); }
+.au-status { display: flex; justify-content: space-between; padding: 10px 14px 2px; font-size: 10px; color: var(--on-dark-2); }
+.au-body { padding: 10px 14px 14px; }
+.au-hi { font-size: 13.5px; font-weight: 650; color: var(--on-dark); margin-bottom: 8px; }
+.au-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.au-card { border: 1px solid rgba(233,241,240,.14); border-radius: 10px; padding: 9px 10px; display: grid; gap: 2px; }
+.au-card b { font-size: 15px; font-weight: 700; color: #8FD0CC; }
+.au-card small { font-size: 10px; color: var(--on-dark-2); }
+.au-state { font-size: 10.5px; font-weight: 600; color: #8FD0CC; }
+.au-crit b, .au-crit .au-state { color: var(--on-dark); }
+.au-run { font-weight: 600; }
+.au-run-on { color: #8FD0CC; }
+.au-nav { display: flex; justify-content: space-between; border-top: 1px solid rgba(233,241,240,.14); padding: 8px 14px 10px; font-size: 9.5px; color: var(--on-dark-2); }
+.au-nav .on { color: var(--on-dark); font-weight: 650; }
+
+/* ---- page-local: alerts list (PROTECT) ---- */
+.alert-list { display: grid; gap: 10px; max-width: 420px; }
+.alert-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.alert-card b { display: block; font-size: 13px; color: var(--ink); margin-bottom: 2px; }
+.alert-card span { font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
+.alert-card + .alert-card { opacity: .88; }
+
+/* ---- page-local: dehumidifier auto mock (RESPOND) ---- */
+.resp-mock { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -58,35 +95,35 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="page">
     <h1>From invisible risk to handled, automatically.</h1>
     <p class="lede" style="margin-top:16px;">
-      MoldGuard runs a continuous loop: monitor the room, score the real mold risk,
-      and act before conditions turn into growth, informed by the weather forecast too.</p>
+      MoldGuard runs one continuous loop: monitor the room, analyze the real
+      mold risk, respond on its own, and protect your home around the clock.</p>
   </div>
 </section>
 
 <!-- ================= CLOSED LOOP DIAGRAM ================= -->
 <section class="section-tight" style="padding-top:8px;">
   <div class="page">
-    <p style="margin-bottom:22px; font-size:16px; color:var(--ink-2);">The closed loop: <b style="color:var(--accent-ink); font-weight:600;">sense → score → act → report</b></p>
+    <p style="margin-bottom:22px; font-size:16px; color:var(--ink-2);">The closed loop: <b style="color:var(--accent-ink); font-weight:600;">sense → analyze → respond → protect</b></p>
     <div class="loopline">
       <div class="loopnode">
         <span class="stage">01</span>
-        <h3>Sense</h3>
+        <h2>SENSE</h2>
         <small style="font-family:var(--font-text); text-transform:none; letter-spacing:0; font-size:12px; color:var(--ink-3);">Humidity, temperature, VOC</small>
       </div>
       <div class="loopnode">
         <span class="stage">02</span>
-        <h3>Score</h3>
-        <small style="font-family:var(--font-text); text-transform:none; letter-spacing:0; font-size:12px; color:var(--ink-3);">The risk engine</small>
+        <h2>ANALYZE</h2>
+        <small style="font-family:var(--font-text); text-transform:none; letter-spacing:0; font-size:12px; color:var(--ink-3);">The Mold Risk Index engine</small>
       </div>
       <div class="loopnode">
         <span class="stage">03</span>
-        <h3>Act</h3>
+        <h2>RESPOND</h2>
         <small style="font-family:var(--font-text); text-transform:none; letter-spacing:0; font-size:12px; color:var(--ink-3);">Dehumidifier on auto</small>
       </div>
       <div class="loopnode">
         <span class="stage">04</span>
-        <h3>Report</h3>
-        <small style="font-family:var(--font-text); text-transform:none; letter-spacing:0; font-size:12px; color:var(--ink-3);">Dashboard and alerts</small>
+        <h2>PROTECT</h2>
+        <small style="font-family:var(--font-text); text-transform:none; letter-spacing:0; font-size:12px; color:var(--ink-3);">History, alerts, control</small>
       </div>
     </div>
     <svg class="loop-return-svg" viewBox="0 0 1080 64" width="100%" aria-hidden="true" style="display:block; margin-top:6px;">
@@ -97,34 +134,43 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </section>
 
-<!-- ================= STEP 1: SENSE ================= -->
+<!-- ================= STAGE 01: SENSE ================= -->
 <section class="section">
   <div class="page stepgrid">
     <div class="step-copy">
-      <span class="stage-tag"><i>1</i></span>
+      <span class="stage-tag"><i>01</i> <span class="stageword">SENSE</span></span>
       <h2>Sense the room, continuously.</h2>
-      <p>A sensor pod watches the conditions mold actually cares about:</p>
+      <p>A compact sensor pod watches the conditions mold actually cares about:
       relative humidity, temperature, and volatile organic compounds (VOCs).
-      The SHT41 measures the risk engine's core inputs; VOCs add supplementary
-      context, read together with everything else rather than as a verdict.
+      Humidity and temperature feed the risk engine's core inputs. VOCs add
+      context, read together with everything else rather than as a verdict.</p>
     </div>
-    <div class="photo ph-4x3">
-      <img src="assets/window.jpg" alt="Bright white bathroom with a window, plants, and cold tiled surfaces" loading="lazy">
-      <figcaption>Cold surfaces, warm air: condensation waits here</figcaption>
+    <div class="resp-mock" aria-hidden="true">
+      <svg viewBox="0 0 300 190" style="width:100%; height:auto; display:block;">
+        <rect x="118" y="14" width="64" height="118" rx="14" fill="#F2F4F2" stroke="#C7D4D3" stroke-width="1.5"/>
+        <circle cx="150" cy="46" r="5" fill="#2D9A91"/>
+        <circle cx="150" cy="66" r="5" fill="#C7D4D3"/>
+        <circle cx="150" cy="86" r="5" fill="#C7D4D3"/>
+        <text x="150" y="116" text-anchor="middle" font-family="Figtree" font-size="9.5" fill="#687979">Sensor pod</text>
+        <line x1="150" y1="132" x2="150" y2="152" stroke="#C7D4D3" stroke-width="1.5"/>
+        <path d="M96 162 h108" stroke="#DDE5E5" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="150" y="182" text-anchor="middle" font-family="Figtree" font-size="10.5" fill="#465754">Readings stream in around the clock</text>
+      </svg>
     </div>
   </div>
 </section>
+<div class="page"><div class="stage-rail" aria-hidden="true"></div></div>
 
-<!-- ================= STEP 2: SCORE ================= -->
+<!-- ================= STAGE 02: ANALYZE ================= -->
 <section class="section section-alt">
   <div class="page stepgrid flip">
     <div class="step-copy">
-      <span class="stage-tag"><i>2</i></span>
+      <span class="stage-tag"><i>02</i> <span class="stageword">ANALYZE</span></span>
       <h2>Score the risk, not just a number.</h2>
       <p>The Mold Risk Index combines humidity, temperature, and <em>how long</em> those
       conditions persist, instead of reacting to a single humidity threshold. That's
       what makes the prediction early: it catches the window where mold <em>can</em>
-      start, before it does. Outdoor forecast data sharpens that window further.
+      start, before it does. Outdoor forecast data sharpens that window further.</p>
     </div>
     <div class="hero-stage" style="min-height:360px; place-items:center; padding:30px 24px 26px;">
       <div class="dial-wrap" style="width:100%;" aria-hidden="true">
@@ -149,59 +195,90 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
   </div>
 </section>
+<div class="page"><div class="stage-rail" aria-hidden="true"></div></div>
 
-<!-- ================= STEP 3: ACT ================= -->
+<!-- ================= STAGE 03: RESPOND ================= -->
 <section class="section">
   <div class="page stepgrid">
     <div class="step-copy">
-      <span class="stage-tag"><i>3</i></span>
+      <span class="stage-tag"><i>03</i> <span class="stageword">RESPOND</span></span>
       <h2>Act: dehumidify, no hands.</h2>
-      <p>When the index crosses the risk threshold, the ESP32 switches the connected
-      semiconductor dehumidifier on through a solid-state relay and pulls moisture back
-      down, closing the loop without you touching anything. Extracted water collects in
-      the removable 1&nbsp;L tank, monitored so you're told before it's full.</p>
+      <p>When the index crosses the risk threshold, MoldGuard switches the connected
+      dehumidifier on and pulls moisture back down, closing the loop without you
+      touching anything. Extracted water collects in the removable 1&nbsp;L tank,
+      monitored so you're told before it's full.</p>
     </div>
-    <div class="photo ph-4x3">
-      <img src="assets/purifier.jpg" alt="Calm white bathroom with bathtub and plants" loading="lazy">
-      <figcaption>The room the loop protects, pulled back from the threshold</figcaption>
+    <div class="resp-mock" aria-hidden="true">
+      <svg viewBox="0 0 300 190" style="width:100%; height:auto; display:block;">
+        <line x1="10" y1="52" x2="64" y2="52" stroke="#2D9A91" stroke-width="2"/>
+        <path d="M64 52 l-7 -4 v8 z" fill="#2D9A91"/>
+        <text x="10" y="36" font-family="Figtree" font-size="9.5" fill="#687979">Risk engine signal</text>
+        <rect x="72" y="16" width="92" height="118" rx="10" fill="#F2F4F2" stroke="#C7D4D3" stroke-width="1.5"/>
+        <rect x="82" y="26" width="72" height="26" rx="6" fill="#183B43"/>
+        <text x="118" y="43" text-anchor="middle" font-family="Figtree" font-size="10" font-weight="650" fill="#E9F1F0">AUTO</text>
+        <g stroke="#C7D4D3" stroke-width="1.5">
+          <line x1="88" y1="70" x2="138" y2="70"/>
+          <line x1="88" y1="80" x2="138" y2="80"/>
+          <line x1="88" y1="90" x2="138" y2="90"/>
+        </g>
+        <circle cx="118" cy="116" r="4" fill="#2D9A91"/>
+        <text x="118" y="152" text-anchor="middle" font-family="Figtree" font-size="10" fill="#465754">Dehumidifier running on auto</text>
+        <g stroke="#8FBDB8" stroke-width="1.5" fill="none" stroke-linecap="round">
+          <path d="M182 62 q6 8 0 16"/>
+          <path d="M192 56 q9 14 0 28"/>
+          <path d="M202 50 q12 20 0 40"/>
+        </g>
+        <text x="182" y="106" font-family="Figtree" font-size="9" fill="#687979">Dry air out</text>
+      </svg>
     </div>
   </div>
 </section>
+<div class="page"><div class="stage-rail" aria-hidden="true"></div></div>
 
-<!-- ================= STEP 4: REPORT ================= -->
+<!-- ================= STAGE 04: PROTECT ================= -->
 <section class="section section-alt">
   <div class="page stepgrid flip">
     <div class="step-copy">
-      <span class="stage-tag"><i>4</i></span>
+      <span class="stage-tag"><i>04</i> <span class="stageword">PROTECT</span></span>
       <h2>Report: see everything, anywhere.</h2>
-      <p>Live status and historical trends stream to the web dashboard over real-time
-      sync; the mobile app pushes an alert the moment risk rises, and lets you override
-      the unit manually from anywhere.</p>
+      <p>Live status and full history live in the app and web dashboard. The moment
+      risk rises, you get an alert, and the dehumidifier has already responded.
+      You can step in with manual override from anywhere, any time.</p>
     </div>
     <div>
-      <div class="dash" style="margin-bottom:14px; font-family:var(--font-text); text-transform:none; letter-spacing:normal; font-size:12.5px;" aria-hidden="true">
-        <div class="d-top"><span class="d-title">MoldGuard dashboard</span></div>
-        <div class="d-body">
-          <div class="d-chart">
-            <svg viewBox="0 0 260 84" style="width:100%;height:auto">
-              <path d="M0 62 L24 58 L48 60 L72 50 L96 54 L120 44 L144 47 L168 36 L192 30 L216 26 L240 20 L260 16" stroke="#7fd0dd" stroke-width="2" fill="none"/>
-              <path d="M0 72 L24 70 L48 71 L72 66 L96 68 L120 60 L144 62 L168 52 L192 47 L216 40 L240 35 L260 30" stroke="#567b8d" stroke-width="1.5" stroke-dasharray="3 4" fill="none"/>
-            </svg>
-            <div class="d-kpi"><span>RH trend <b>74 → 82%</b></span><span>MRI <b>38</b></span></div>
-          </div>
-          <div class="d-side">
-            <div class="d-room"><span>Living</span><span class="d-badge d-low">Low</span></div>
-            <div class="d-room"><span>Closet</span><span class="d-badge d-elev">Elevated</span></div>
-            <div class="d-room"><span>Bathroom</span><span class="d-badge d-high">High</span></div>
+      <div class="app-ui" aria-hidden="true">
+        <div class="au-status"><span>9:41</span><span>MoldGuard</span><span>&nbsp;</span></div>
+        <div class="au-body">
+          <p class="au-hi">Home</p>
+          <div class="au-cards">
+            <div class="au-card">
+              <b>42%</b><span class="au-state">Safe</span>
+              <small>28°C · 55% RH</small>
+              <small>Living Room Pod</small>
+              <small class="au-run">Standby</small>
+            </div>
+            <div class="au-card au-crit">
+              <b>88%</b><span class="au-state">Critical</span>
+              <small>30°C · 82% RH</small>
+              <small>Master Bedroom Pod</small>
+              <small class="au-run au-run-on">Dehumidifying</small>
+            </div>
           </div>
         </div>
+        <div class="au-nav"><span class="on">Home</span><span>Devices</span><span>Analytics</span><span>Alerts</span><span>Me</span></div>
       </div>
-      <div class="phone-float" style="position:static; width:190px; margin-left:auto;" aria-hidden="true">
-        <div class="phone-ui" style="font-family:var(--font-text); letter-spacing:normal;">
-          <div class="p-body">
-            <span class="p-risk">Risk 38</span>
-            <div class="p-row"><span>Closet</span><span>Watch</span></div>
-          </div>
+      <div class="alert-list" style="margin-top:14px;">
+        <div class="alert-card">
+          <b>High Condensation Risk Detected</b>
+          <span>Master Bedroom sustained 80% RH at 30°C for 4+ hours. Dehumidifier auto-activated.</span>
+        </div>
+        <div class="alert-card">
+          <b>Water Tank Near Capacity</b>
+          <span>Tank at 90% capacity. Empty tank to prevent automatic system pause.</span>
+        </div>
+        <div class="alert-card">
+          <b>Water Tank Removed</b>
+          <span>Magnetic reed switch disconnected. Dehumidification relay disengaged for safety.</span>
         </div>
       </div>
     </div>
@@ -216,10 +293,9 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
     <div class="setuprows">
       <div class="row"><span class="idx">1</span><h3>Place the unit</h3><p>Tabletop or wall-mounted, near humidity-prone areas:
-        bathrooms, closets, basements. Compact housing fits where mold actually starts.</p></div>
-      <div class="row"><span class="idx">2</span><h3>Connect to WiFi</h3><p>The device joins your 2.4&nbsp;GHz network and syncs to
-        the dashboard over a pipeline built for stable real-time data under fluctuating
-        network conditions.</p></div>
+        bathrooms, closets, basements.</p></div>
+      <div class="row"><span class="idx">2</span><h3>Connect to WiFi</h3><p>The device joins your home network and syncs to
+        the dashboard in real time.</p></div>
       <div class="row"><span class="idx">3</span><h3>Watch the loop run</h3><p>From here it's automatic. Check trends in the
         dashboard, get alerts in the app, empty the tank when it's full.</p></div>
     </div>
@@ -238,9 +314,39 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
     <div class="measure">
       <details class="acc">
-        <summary>Do I still need a dehumidifier?</summary>
-        <div class="acc-body">MoldGuard works with its paired semiconductor dehumidifier:
-        the risk engine switches it on and off automatically. The system pairs with the Gaabor dehumidifier specified in the quote.</div>
+        <summary>What is MoldGuard?</summary>
+        <div class="acc-body">A compact device that watches a room's humidity, temperature,
+        and air quality, scores the real mold risk, and runs a paired dehumidifier for you.
+        A web dashboard and a mobile app put the full picture in your pocket.</div>
+      </details>
+      <details class="acc">
+        <summary>How does it detect mold risk?</summary>
+        <div class="acc-body">The Mold Risk Index combines humidity, temperature, and how long
+        those conditions persist, instead of reacting to a single humidity threshold. That is
+        what makes it early: it flags the window where mold can start, before it does.</div>
+      </details>
+      <details class="acc">
+        <summary>Does it control a dehumidifier?</summary>
+        <div class="acc-body">Yes. MoldGuard works with its paired semiconductor dehumidifier:
+        the risk engine switches it on and off automatically. The system pairs with the Gaabor
+        dehumidifier specified in the quote.</div>
+      </details>
+      <details class="acc">
+        <summary>What does the app show?</summary>
+        <div class="acc-body">Every room on one screen: risk state, temperature, humidity, and
+        whether the dehumidifier is running. Alerts arrive the moment risk rises, and manual
+        override lets you take control from anywhere whenever you want to.</div>
+      </details>
+      <details class="acc">
+        <summary>Can I monitor more than one room?</summary>
+        <div class="acc-body">Yes. The dashboard supports multi-room and multi-unit views, so
+        larger households, dormitories, or property managers can watch every space side by side.</div>
+      </details>
+      <details class="acc">
+        <summary>How do I set it up?</summary>
+        <div class="acc-body">Place the unit near a humidity-prone area, connect it to your WiFi,
+        and the loop starts running. Installation support and documentation handover are part of
+        the deployment.</div>
       </details>
       <details class="acc">
         <summary>What maintenance does it need?</summary>
@@ -251,7 +357,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <details class="acc">
         <summary>Does it work without the internet?</summary>
         <div class="acc-body">The device buffers readings locally when connectivity drops
-        and syncs once reconnected; cloud services (MQTT broker, dashboard, database) run
+        and syncs once reconnected; the dashboard, app, and history services run
         hosted, so there's nothing to maintain on your machine.</div>
       </details>
       <details class="acc">

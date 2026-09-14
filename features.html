@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<meta name="description" content="The Mold Risk Index engine, early VOC detection, closed-loop dehumidification, web dashboard, and mobile alerts, the full MoldGuard feature set.">
+<meta name="description" content="What MoldGuard monitors and how it responds: the Mold Risk Index engine, automatic dehumidification, analytics and history, alerts, and automations.">
 <link rel="canonical" href="https://attilahuns288452.github.io/moldguard-promo-site/features.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MoldGuard">
 <meta property="og:title" content="MoldGuard · Features">
-<meta property="og:description" content="The Mold Risk Index engine, early VOC detection, closed-loop dehumidification, web dashboard, and mobile alerts — built for mold, not just moisture.">
+<meta property="og:description" content="What MoldGuard monitors and how it responds: the Mold Risk Index engine, automatic dehumidification, analytics and history, alerts, and automations.">
 <meta property="og:url" content="https://attilahuns288452.github.io/moldguard-promo-site/features.html">
 <meta property="og:image" content="https://attilahuns288452.github.io/moldguard-promo-site/assets/og-card.png">
 <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
 <meta property="og:image:alt" content="MoldGuard — Know mold is coming before it shows">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MoldGuard · Features">
-<meta name="twitter:description" content="The Mold Risk Index engine, early VOC detection, closed-loop dehumidification, web dashboard, and mobile alerts — built for mold, not just moisture.">
+<meta name="twitter:description" content="What MoldGuard monitors and how it responds: the Mold Risk Index engine, automatic dehumidification, analytics and history, alerts, and automations.">
 <meta name="twitter:image" content="https://attilahuns288452.github.io/moldguard-promo-site/assets/og-card.png">
 
 <title>MoldGuard · Features</title>
@@ -26,6 +26,55 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@450;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css?v=final">
+<style>
+/* ---- page-local: capability showcase ---- */
+.cap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 44px; align-items: center; padding: 44px 0; }
+.cap + .cap { border-top: 1px solid var(--line); }
+.cap-copy { max-width: 46ch; }
+.cap-copy h3 { font-size: 1.45rem; margin-bottom: 8px; }
+.cap-vis { display: grid; place-items: center; }
+.cap-vis > * { width: 100%; }
+.cap-tight { max-width: 380px; }
+.duo h2 { font-size: 1.35rem; font-weight: 650; margin-bottom: 8px; max-width: none; }
+@media (max-width: 860px) {
+  .cap { grid-template-columns: 1fr; gap: 24px; padding: 34px 0; }
+  .cap-vis { order: 2; }
+}
+
+/* shared UI-mock chrome (teal on light, severity via label/weight) */
+.mock { background: var(--card); border: 1px solid var(--line); border-radius: 14px; font-family: var(--font-text); color: var(--ink); }
+.mock-pad { padding: 16px 18px; }
+.mono-label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+.seg span { padding: 4px 10px; font-size: 11px; color: var(--ink-2); }
+.seg .on { background: var(--deep); color: var(--on-dark); font-weight: 600; }
+
+/* sensors readouts */
+.sens-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.sens { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: var(--surface); }
+.sens b { display: block; font-family: var(--font-mono); font-size: 17px; font-weight: 600; color: var(--deep); margin-top: 3px; }
+.sens .ok { color: var(--accent-ink); }
+
+/* analytics chart */
+.ch-lines { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; font-size: 11.5px; color: var(--ink-2); }
+.ch-lines i { display: inline-block; width: 16px; height: 3px; border-radius: 2px; vertical-align: 2px; margin-right: 5px; }
+.ch-rng { display: flex; justify-content: flex-end; margin-top: 10px; }
+
+/* alert card */
+.alert-phone { background: var(--deeper); border-radius: 20px; border: 1px solid var(--line-strong); overflow: hidden; }
+.ap-status { display: flex; justify-content: space-between; padding: 10px 16px 6px; font-size: 10px; color: var(--on-dark-2); }
+.ap-note { margin: 2px 12px 14px; background: rgba(233,241,240,.06); border: 1px solid rgba(233,241,240,.16); border-radius: 12px; padding: 11px 13px; color: var(--on-dark); }
+.ap-note b { display: block; font-size: 12.5px; }
+.ap-note span { display: block; font-size: 11.5px; line-height: 1.45; color: var(--on-dark-2); margin-top: 2px; }
+.ap-app { font-size: 9.5px; color: var(--on-dark-2); margin-bottom: 6px; }
+
+/* automation rule row */
+.rule { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.rule .rr { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font-size: 12.5px; color: var(--ink-2); }
+.rule .rr b { color: var(--ink); }
+.rule .arr { color: var(--ink-3); font-size: 14px; }
+.rule .rr-on { background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; font-weight: 650; }
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -70,14 +119,14 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </section>
 
-<!-- ================= SYSTEM FEATURES ================= -->
+<!-- ================= WHAT MOLDGUARD MONITORS (flagship duo) ================= -->
 <section class="section-tight">
   <div class="page">
     <div class="duo" style="align-items:stretch;">
       <div style="padding:28px; display:grid; grid-template-columns:1.15fr .85fr; gap:26px; align-items:center;">
         <div>
           <div class="feat-num">01</div>
-          <h3>Mold Risk Index engine</h3>
+          <h2>Mold Risk Index engine</h2>
           <p style="margin-top:4px;">Real-time risk scoring built from humidity, temperature, and sustained exposure
           duration, with a virtual surface dew point calculation, going beyond the single-threshold
           triggers used by commercial dehumidifiers, and avoiding false triggers during
@@ -100,51 +149,160 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </div>
       <div style="padding:28px;">
         <div class="feat-num">02</div>
-        <h3>Environmental &amp; VOC monitoring</h3>
-        <p>An SGP40 VOC sensor adds supplementary air-quality context alongside humidity,
+        <h2>Environmental &amp; VOC monitoring</h2>
+        <p>A VOC sensor adds supplementary air-quality context alongside humidity,
         temperature, and duration. We treat VOC as context, never standalone proof:
         research shows microbial VOC levels are often too low for reliable detection and
         easily confounded by household sources.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="feat-grid" style="margin-top:34px;">
-      <div class="card">
-        <div class="feat-num">03</div>
-        <h3>Predictive weather integration</h3>
-        <p>Weather API forecasts are combined with indoor readings to anticipate humidity spikes and pre-dry spaces ahead of them.</p>
+<!-- ================= CAPABILITY SHOWCASE (differentiated treatments) ================= -->
+<section class="section">
+  <div class="page">
+    <div class="section-head">
+      <h2>What MoldGuard does for you.</h2>
+      <p class="lede">Six capabilities, one loop: each one exists so you never have to think about mold again.</p>
+    </div>
+
+    <!-- 1 · Automatic Dehumidification: 3-step strip -->
+    <div class="cap">
+      <div class="cap-copy">
+        <div class="feat-num">Automatic Dehumidification</div>
+        <h3>It acts before you would.</h3>
+        <p>When risk climbs, the dehumidifier switches itself on, and off again once
+        conditions return to safe range. The loop closes with no manual action,
+        no scheduling, no remembering.</p>
       </div>
-      <div class="card">
-        <div class="feat-num">04</div>
-        <h3>Closed-loop auto-dehumidification</h3>
-        <p>When the index crosses the risk threshold, the ESP32 switches a connected semiconductor dehumidifier on via a solid-state relay, and off once conditions return to safe range.</p>
-      </div>
-      <div class="card">
-        <div class="feat-num">05</div>
-        <h3>Water-tank monitoring</h3>
-        <p>A time-of-flight sensor and magnetic reed switch track the removable tank's fill level, alerting you before overflow.</p>
-      </div>
-      <div class="card">
-        <div class="feat-num">06</div>
-        <h3>Web dashboard &amp; analytics</h3>
-        <p>Historical trend logging for humidity, temperature, and VOCs, with multi-room and multi-unit views for larger households, dormitories, or property managers.</p>
-      </div>
-      <div class="card card-deep">
-        <div class="feat-num">07</div>
-        <h3>Mobile alerts &amp; control</h3>
-        <p>Real-time push notifications as risk rises, live device status, and manual override of the dehumidification unit from anywhere.</p>
-      </div>
-      <div class="card">
-        <h3>Honest positioning.</h3>
-        <p>See the full comparison below, including our own drawbacks column. No black boxes, no marketing fog.</p>
+      <div class="cap-vis" aria-hidden="true">
+        <div class="mock">
+          <svg viewBox="0 0 320 96" style="width:100%; height:auto; display:block; padding:8px 6px;">
+            <g font-family="Figtree" font-size="10.5" fill="#465754">
+              <text x="22" y="22" text-anchor="middle" fill="#213132" font-weight="650">Risk rises</text>
+              <text x="22" y="36" text-anchor="middle" fill="#687979">76% RH, holding</text>
+              <text x="148" y="22" text-anchor="middle" fill="#213132" font-weight="650">System responds</text>
+              <text x="148" y="36" text-anchor="middle" fill="#687979">Risk engine crosses threshold</text>
+              <text x="276" y="22" text-anchor="middle" fill="#213132" font-weight="650">Dehumidifier on</text>
+              <text x="276" y="36" text-anchor="middle" fill="#687979">Moisture pulled back down</text>
+            </g>
+            <line x1="22" y1="52" x2="120" y2="52" stroke="#DDE5E5" stroke-width="2"/>
+            <line x1="124" y1="52" x2="222" y2="52" stroke="#2D9A91" stroke-width="2"/>
+            <line x1="226" y1="52" x2="302" y2="52" stroke="#2D9A91" stroke-width="2"/>
+            <path d="M120 52 l-7 -4 v8 z" fill="#2D9A91"/>
+            <path d="M226 52 l-7 -4 v8 z" fill="#2D9A91"/>
+            <circle cx="22" cy="52" r="4.5" fill="#2f4157"/>
+            <circle cx="148" cy="52" r="4.5" fill="#2D9A91"/>
+            <circle cx="276" cy="52" r="4.5" fill="#2D9A91"/>
+            <g font-family="Figtree" font-size="9" fill="#687979">
+              <text x="22" y="70" text-anchor="middle">Watch</text>
+              <text x="148" y="70" text-anchor="middle">Decision made</text>
+              <text x="276" y="70" text-anchor="middle">Running on auto</text>
+            </g>
+          </svg>
+        </div>
       </div>
     </div>
-    <div class="statement" style="margin-top:34px;">
-      <div>
-        <h3>Proactive, not reactive.</h3>
-        <p>Weather forecast integration pre-dries your space ahead of incoming humid spells, acting before humidity spikes, not after.</p>
+
+    <!-- 2 · Environmental Sensors: pod + readouts -->
+    <div class="cap">
+      <div class="cap-copy">
+        <div class="feat-num">Environmental Sensors</div>
+        <h3>Every number the risk engine needs.</h3>
+        <p>Temperature, humidity, and air quality measured together, continuously,
+        so the risk score is built on the full picture, not one input.</p>
+      </div>
+      <div class="cap-vis" aria-hidden="true">
+        <div class="mock cap-tight">
+          <div class="mock-pad">
+            <p class="mono-label">Living Room Pod</p>
+            <div class="sens-grid" style="grid-template-columns:1fr 1fr; gap:8px; margin-top:10px;">
+              <div class="sens"><span class="mono-label">Temperature</span><b>28.0°C</b></div>
+              <div class="sens"><span class="mono-label">Humidity</span><b>55% RH</b></div>
+              <div class="sens" style="grid-column:1 / -1;"><span class="mono-label">VOC</span><b class="ok">Normal</b></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- 3 · Analytics & History: real chart panel -->
+    <div class="cap">
+      <div class="cap-copy">
+        <div class="feat-num">Analytics &amp; History</div>
+        <h3>Look back at any room, any week.</h3>
+        <p>Humidity, temperature, and dew point trends are logged over time, with
+        multi-room and multi-unit views for larger households, dormitories, or
+        property managers.</p>
+      </div>
+      <div class="cap-vis" aria-hidden="true">
+        <div class="mock">
+          <div class="mock-pad">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
+              <p class="mono-label">Master Bedroom · 30 days</p>
+              <div class="seg"><span>24 Hours</span><span>7 Days</span><span class="on">30 Days</span></div>
+            </div>
+            <svg viewBox="0 0 320 110" style="width:100%; height:auto; display:block; margin-top:8px;">
+              <path d="M10 30 h300 M10 60 h300 M10 90 h300" stroke="#DDE5E5" stroke-width="1"/>
+              <path d="M10 46 C50 44 70 40 110 42 S180 34 210 38 S290 30 310 32" fill="none" stroke="#2D9A91" stroke-width="2"/>
+              <path d="M10 74 C60 72 90 66 130 68 S200 60 240 64 S300 56 310 58" fill="none" stroke="#2f4157" stroke-width="2"/>
+              <path d="M10 88 C60 86 90 82 130 84 S210 78 250 80 S300 74 310 76" fill="none" stroke="#8FBDB8" stroke-width="1.5" stroke-dasharray="4 4"/>
+            </svg>
+            <div class="ch-lines">
+              <span><i style="background:#2D9A91;"></i>Humidity</span>
+              <span><i style="background:#2f4157;"></i>Temperature</span>
+              <span><i style="background:#8FBDB8; height:2px; background-image:linear-gradient(90deg,#8FBDB8 60%,transparent 0); background-size:5px 2px;"></i>Dew point</span>
+            </div>
+            <div class="ch-rng"><div class="seg"><span>24 Hours</span><span>7 Days</span><span class="on">30 Days</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 · Alerts: one mobile notification card -->
+    <div class="cap">
+      <div class="cap-copy">
+        <div class="feat-num">Alerts</div>
+        <h3>Told the moment it matters.</h3>
+        <p>Real-time push notifications as risk rises, so a room never waits
+        for you to check on it.</p>
+      </div>
+      <div class="cap-vis" aria-hidden="true">
+        <div class="alert-phone cap-tight">
+          <div class="ap-status"><span>9:41</span><span>&nbsp;</span></div>
+          <div class="ap-note">
+            <p class="ap-app">MOLDGUARD</p>
+            <b>High Condensation Risk Detected</b>
+            <span>Master Bedroom sustained 80% RH at 30°C for 4+ hours. Dehumidifier auto-activated.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 · Automations: rule definition row -->
+    <div class="cap">
+      <div class="cap-copy">
+        <div class="feat-num">Automations</div>
+        <h3>Rules that read like plain English.</h3>
+        <p>The loop's decisions are visible, not hidden in a black box: the rule
+        the system runs is written right on the screen.</p>
+      </div>
+      <div class="cap-vis" aria-hidden="true">
+        <div class="mock" style="width:100%;">
+          <div class="mock-pad">
+            <p class="mono-label" style="margin-bottom:10px;">Automation</p>
+            <div class="rule">
+              <span class="rr">When <b>Mold Risk Index</b> stays above <b>75</b></span>
+              <span class="arr">→</span>
+              <span class="rr rr-on">Run the dehumidifier</span>
+            </div>
+            <p style="font-size:11px; color:var(--ink-3); margin-top:10px;">Runs automatically. You can override any time from the app.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -153,7 +311,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="page">
       <p class="swipe-note">Swipe the table sideways to see all columns.</p>
     <div class="section-head">
-      <h2>Where MoldGuard fits.</h2>
+      <h2>How it compares.</h2>
       <p class="lede">Existing options were built for general comfort or simple humidity
       control, not mold-specific risk modeling.</p>
     </div>
@@ -198,7 +356,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <section class="section">
   <div class="page">
     <div class="section-head">
-      <h2>Sensible hardware, no black box.</h2>
+      <h2>Built from parts you can trust.</h2>
       <p class="lede">Open, off-the-shelf components, expand a row for the plain-language spec.</p>
     </div>
     <div class="measure">
