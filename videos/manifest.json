@@ -1,0 +1,156 @@
+[
+ {
+  "frame": 0,
+  "file": "/home/attila/Documents/Projects/moldguard-promo-site/videos/frame_0.png",
+  "w": 1120,
+  "h": 5888,
+  "rects": {
+   "hero_h1": [
+    28,
+    205.5,
+    514.1,
+    213
+   ],
+   "showcase": [
+    598.1,
+    151,
+    493.9,
+    502.3
+   ],
+   "problist": [
+    28,
+    1042.4,
+    1064,
+    302.4
+   ],
+   "meetwrap": [
+    28,
+    1691.5,
+    1064,
+    552
+   ],
+   "flowsvg": [
+    100,
+    2339.8,
+    920,
+    552
+   ],
+   "phoneui": [
+    923,
+    360.6,
+    144,
+    267.8
+   ]
+  }
+ },
+ {
+  "frame": 1,
+  "file": "/home/attila/Documents/Projects/moldguard-promo-site/videos/frame_1.png",
+  "w": 1120,
+  "h": 5243,
+  "rects": {
+   "duo": [
+    28,
+    678.1,
+    1064,
+    420.8
+   ],
+   "dial": [
+    341.2,
+    826.5,
+    190.8,
+    124
+   ],
+   "compare": [
+    29,
+    3345.6,
+    1062,
+    319.7
+   ]
+  }
+ },
+ {
+  "frame": 2,
+  "file": "/home/attila/Documents/Projects/moldguard-promo-site/videos/frame_2.png",
+  "w": 1120,
+  "h": 5896,
+  "rects": {
+   "loopline": [
+    28,
+    600,
+    1064,
+    140.4
+   ],
+   "dial": [
+    53,
+    1560,
+    460,
+    208
+   ],
+   "statline": [
+    53,
+    1787,
+    460,
+    74
+   ],
+   "herostage": [
+    28,
+    1528.5,
+    510,
+    360
+   ]
+  }
+ },
+ {
+  "frame": 3,
+  "file": "/home/attila/Documents/Projects/moldguard-promo-site/videos/frame_3.png",
+  "w": 1120,
+  "h": 3109,
+  "rects": {
+   "formcard": [
+    28,
+    520.9,
+    510,
+    701.9
+   ],
+   "roster": [
+    28,
+    2123.3,
+    1064,
+    265.1
+   ],
+   "ctaband": [
+    28,
+    2568.4,
+    1064,
+    171.1
+   ]
+  }
+ },
+ {
+  "frame": 4,
+  "file": "/home/attila/Documents/Projects/moldguard-promo-site/videos/frame_4.png",
+  "w": 1120,
+  "h": 1109,
+  "rects": {
+   "qr": [
+    430,
+    365.8,
+    260,
+    260
+   ],
+   "badges": [
+    353.3,
+    689.8,
+    413.3,
+    82
+   ],
+   "dlhero": [
+    0,
+    151,
+    1120,
+    620.8
+   ]
+  }
+ }
+]
