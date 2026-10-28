@@ -7,7 +7,10 @@ site inherits this system; changes here are system changes.
 
 **Clean, clinical, trustworthy, domestic.** The site should read like a real
 consumer IoT product company, with the clarity of Google-Nest-style product
-sites. Navy-green + white dominant; **MoldGuard teal is the only loud accent**.
+sites. Deep blue + warm off-white dominant; **indigo is the only loud accent**
+(palette taken from the Canva deck: paper `#F2EFEB`, deep `#1E3680`, accent
+`#3F51B5`). App-screen mocks use the deck's light screens (`#EAF1F4` base,
+white cards, black phone frames).
 Severity (risk states) is communicated through typography and contrast only,
 never colored lamps. Precision is kept; the instrument-station theme is gone.
 
@@ -15,33 +18,32 @@ never colored lamps. Precision is kept; the instrument-station theme is gone.
 
 | Token | Value | Role |
 |---|---|---|
-| `--paper` | `#F7F8F6` | warm off-white page ground |
-| `--paper-deep` | `#EDF1F0` | subtle alternating band tint |
-| `--surface` | `#F2F4F2` | inputs, subtle fills |
+| `--paper` | `#F2EFEB` | warm off-white page ground (Canva reference) |
+| `--paper-deep` | `#EAE6E0` | subtle alternating band tint |
+| `--surface` | `#EFECE7` | inputs, subtle fills |
 | `--card` | `#ffffff` | cards, showcase panels |
-| `--line` / `--line-strong` | `#DDE5E5` / `#C7D4D3` | hairlines, borders |
-| `--deep` / `--deeper` | `#183B43` / `#122C33` | navy-green dark: CTA band, footer, phone chrome (`--deeper` = footer/phone-inset only) |
-| `--accent` | `#2D9A91` | **MoldGuard teal — THE accent:** primary CTA, key data, active states |
-| `--accent-ink` | `#1E6E68` | teal on light backgrounds; CTA fill (white text ≈ 6:1) |
-| `--ink` / `--ink-2` / `--ink-3` | `#213132` / `#465754` / `#687979` | body text / secondary / muted |
-| `--ink-soft` / `--ink-strong` | `#687979` / `#465754` | aliases of the muted grays — kept for token-name compatibility with the other pages |
-| `--sky` | `#8FBDB8` | LEGACY ALIAS, muted teal-gray; only existing chart-bar/state rules reference it — no new uses |
+| `--line` / `--line-strong` | `#E3DED6` / `#CCC5BA` | hairlines, borders |
+| `--deep` / `--deeper` | `#1E3680` / `#16296B` | deep blue dark: CTA band, footer, headings (`--deeper` = footer/phone-inset only) |
+| `--accent` | `#3F51B5` | **MoldGuard indigo — THE accent:** primary CTA, key data, active states |
+| `--accent-ink` | `#2F3F9E` | indigo on light backgrounds; CTA fill (white text 9:1) |
+| `--ink` / `--ink-2` / `--ink-3` | `#2B2B2B` / `#555555` / `#777777` | body text / secondary / muted |
+| `--ink-soft` / `--ink-strong` | `#777777` / `#555555` | aliases of the muted grays — kept for token-name compatibility with the other pages |
+| `--on-dark` / `--on-dark-2` | `#E8EAF6` / `#AAB6E4` | text on the deep blue bands |
 | `--beige` | `#F7F8F6` | LEGACY ALIAS = `--paper`; existing band rules collapse into the foundation |
 | `--amber` / `--coral` / `--ok` | `#d9973b` / `#c25a41` / `#3d8f6a` | RETIRED — definitions kept only for token history; no rule may reference them |
 
 **Simplified 4-role palette:** PAPER (`--paper`/`--paper-deep`/`--card`) ·
-DARK (`--deep`/`--deeper`) · INK (text grays) · TEAL (`--accent`/`--accent-ink`).
-The page must read navy-green + white dominant, teal as the only loud accent.
-No color carries a "narrative" role: no beige warmth bands, no sky environment
-graphics.
+DARK (`--deep`/`--deeper`) · INK (text grays) · INDIGO (`--accent`/`--accent-ink`).
+The page must read deep blue + warm off-white dominant, indigo as the only loud
+accent. No color carries a "narrative" role: no sky environment graphics.
 
 **Severity-via-typography rule:** risk severity (Steady / Watch / Low /
 Elevated / High) is communicated only through label text, type weight, and
-background intensity in the neutral/teal range — never through amber/coral/green
+background intensity in the neutral/indigo range — never through amber/coral/green
 lamps.
 
-Contrast (measured): ink on paper 12.7:1 · ink-2 on paper 7.2:1 · accent-ink on
-paper 5.7:1 · white on accent-ink (CTA) 6.0:1 · on-dark-2 on deep 6.1:1.
+Contrast (measured): ink on paper 12.4:1 · ink-2 on paper 6.5:1 · accent-ink on
+paper 7.9:1 · white on accent-ink (CTA) 9.0:1 · on-dark-2 on deep 5.6:1.
 
 Elevation: **flat by default**. Borders carry structure; the only shadow is on
 the hero showcase panel (`--shadow-card`) and raised phone mocks
@@ -67,11 +69,11 @@ list (`.featlist`: two-column numbered rows) · tide-table rows (`.rows`/
 `.row`, shared grammar) · dashboard mock (`.dash`: trend line + plain-text
 room states, Low/Elevated labels via typography) · phone mocks (`.phone-ui`,
 `.showcase-phone`: app name, risk index, one-line status, plain-text room
-list) · simplified device SVG (clean body, grille, single teal status LED —
+list) · simplified device SVG (clean body, grille, single indigo status LED —
 no control-panel readout, no gauge) · photos with plain figcaption (no float
 status cards) · statement band (`.statement`, features page) · comparison
-table (`.ours-tag` pill, features page) · accordions · forms · roster · navy
-CTA band (`.cta-band`, no bezel ornament) · footer (navy, Figtree fine print).
+table (`.ours-tag` pill, features page) · accordions · forms · roster · deep-blue
+CTA band (`.cta-band`, no bezel ornament) · footer (deep blue, Figtree fine print).
 
 **No chips, no lamps, no speclines, no kickers, no floating status labels.**
 Nothing decorative survives: every element either carries data or structures
@@ -115,7 +117,7 @@ one paragraph, Get Started + See how it works, showcase panel with device SVG
 + phone app screen), (2) problem (4-item editorial numbered list), (3) solution
 "Meet MoldGuard." (3 alternating rows: device / dashboard / app), (4) "Sense.
 Score. Act." 3-step section, (5) features (6-item editorial two-column list),
-(6) own-it band, (7) where-it-lives photo section, (8) navy final CTA. The
+(6) own-it band, (7) where-it-lives photo section, (8) deep-blue final CTA. The
 Mold Risk Index panel moved to features.html; the ecosystem/system diagram
 moved to how-it-works.html.
 
@@ -131,7 +133,7 @@ Live-dot pulse (2.4s) only; reduced-motion kills it. Everything else static.
 
 ## Accessibility floor
 
-Body text ≥4.5:1 (measured ratios above). Focus-visible 2.5px teal ring
+Body text ≥4.5:1 (measured ratios above). Focus-visible 2.5px indigo ring
 everywhere. Decorative SVGs `aria-hidden`; photos carry real alt text; QR
 labeled as placeholder. Forms use real labels + required. Skip link on every
 page.
